@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLy_HocSinh
+namespace DAO
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace QLy_HocSinh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainGUI());
+            Application.Run(new Form1());
         }
     }
 }

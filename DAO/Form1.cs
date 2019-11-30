@@ -8,22 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLy_HocSinh
+namespace DAO
 {
-    public partial class MainGUI : Form
+    public partial class Form1 : Form
     {
-        public MainGUI()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 f = new Form1();
-            
-            f.ShowDialog();
-
         }
     }
 }

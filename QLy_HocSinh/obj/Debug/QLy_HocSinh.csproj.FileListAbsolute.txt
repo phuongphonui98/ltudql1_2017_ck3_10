@@ -6,3 +6,4 @@ D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.Properties.Resou
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.csproj.GenerateResource.cache
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.exe
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.pdb
+D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.MainGUI.resources
