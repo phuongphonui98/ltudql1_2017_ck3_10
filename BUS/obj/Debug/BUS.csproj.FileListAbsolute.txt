@@ -1,0 +1,15 @@
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\BUS.exe.config
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\BUS.exe
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\BUS.pdb
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\DAO.exe
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\DTO.exe
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\DAO.pdb
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\DAO.exe.config
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\DTO.pdb
+D:\source\ltudql1_2017_ck3_10\BUS\bin\Debug\DTO.exe.config
+D:\source\ltudql1_2017_ck3_10\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+D:\source\ltudql1_2017_ck3_10\BUS\obj\Debug\BUS.Properties.Resources.resources
+D:\source\ltudql1_2017_ck3_10\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+D:\source\ltudql1_2017_ck3_10\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\source\ltudql1_2017_ck3_10\BUS\obj\Debug\BUS.exe
+D:\source\ltudql1_2017_ck3_10\BUS\obj\Debug\BUS.pdb

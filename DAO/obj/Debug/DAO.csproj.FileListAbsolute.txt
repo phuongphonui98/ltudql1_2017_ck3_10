@@ -1,0 +1,12 @@
+D:\source\ltudql1_2017_ck3_10\DAO\bin\Debug\DAO.exe.config
+D:\source\ltudql1_2017_ck3_10\DAO\bin\Debug\DAO.exe
+D:\source\ltudql1_2017_ck3_10\DAO\bin\Debug\DAO.pdb
+D:\source\ltudql1_2017_ck3_10\DAO\bin\Debug\DTO.exe
+D:\source\ltudql1_2017_ck3_10\DAO\bin\Debug\DTO.pdb
+D:\source\ltudql1_2017_ck3_10\DAO\bin\Debug\DTO.exe.config
+D:\source\ltudql1_2017_ck3_10\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+D:\source\ltudql1_2017_ck3_10\DAO\obj\Debug\DAO.Properties.Resources.resources
+D:\source\ltudql1_2017_ck3_10\DAO\obj\Debug\DAO.csproj.GenerateResource.cache
+D:\source\ltudql1_2017_ck3_10\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\source\ltudql1_2017_ck3_10\DAO\obj\Debug\DAO.exe
+D:\source\ltudql1_2017_ck3_10\DAO\obj\Debug\DAO.pdb

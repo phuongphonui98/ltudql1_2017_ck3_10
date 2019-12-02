@@ -1,0 +1,8 @@
+D:\source\ltudql1_2017_ck3_10\DTO\bin\Debug\DTO.exe.config
+D:\source\ltudql1_2017_ck3_10\DTO\bin\Debug\DTO.exe
+D:\source\ltudql1_2017_ck3_10\DTO\bin\Debug\DTO.pdb
+D:\source\ltudql1_2017_ck3_10\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\source\ltudql1_2017_ck3_10\DTO\obj\Debug\DTO.Properties.Resources.resources
+D:\source\ltudql1_2017_ck3_10\DTO\obj\Debug\DTO.csproj.GenerateResource.cache
+D:\source\ltudql1_2017_ck3_10\DTO\obj\Debug\DTO.exe
+D:\source\ltudql1_2017_ck3_10\DTO\obj\Debug\DTO.pdb
