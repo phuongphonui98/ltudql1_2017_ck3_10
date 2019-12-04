@@ -32,17 +32,11 @@ namespace DAO
         {
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from Hoc_sinh", cn);
-                DataRow r = dt.NewRow();
-                r["Name"] = hs.Name;
-                r["Address"] = hs.Diachi;
-                r["Email"] = hs.Email;
-                r["Date"] = hs.Ngsinh;
-                r["Sex"] = hs.Gioitinh;
-                dt.Rows.Add(r);
-                SqlCommandBuilder cmd = new SqlCommandBuilder(da);
-                da.Update(dt);
-
+                HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                Hoc_sinh hs2 = new Hoc_sinh { Name = hs.Name, Address = hs.Diachi, Email = hs.Email, Date = (hs.Ngsinh).ToString(), Sex = hs.Gioitinh.ToString() };
+                
+                hdb.Hoc_sinhs.InsertOnSubmit(hs2);
+                hdb.SubmitChanges();
                 return true;
             }
             catch

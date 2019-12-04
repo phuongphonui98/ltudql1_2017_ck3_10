@@ -9,7 +9,7 @@ namespace DTO
     public class HocSinhDTO
     {
         #region Atrributes
-        private String _HocsinhID;
+      
         private String _name;
         private bool _gioitinh;
         
@@ -19,9 +19,9 @@ namespace DTO
   
         #endregion
         #region Default Constructor
-        public HocSinhDTO(string id , string name, string mail,string dc,bool gt ,DateTime date)
+        public HocSinhDTO( string name, string mail,string dc,bool gt ,DateTime date)
         {
-            _HocsinhID = id;
+            
             _name = name;
             _email = mail;
             _gioitinh = gt;
@@ -30,7 +30,7 @@ namespace DTO
             
         }
 
-        public string HocsinhID { get => _HocsinhID; set => _HocsinhID = value; }
+        
         public string Name { get => _name; set => _name = value; }
         
      

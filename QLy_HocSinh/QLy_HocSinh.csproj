@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseValidator.Designer.cs">
+      <DependentUpon>BaseValidator.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,10 @@
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{d9180dbc-bdea-4a88-bb76-6d965347a40d}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{d9de0ba3-d4b0-4fce-816f-150604db7dbb}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

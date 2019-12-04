@@ -28,18 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblmail = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtdc = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkgirl = new System.Windows.Forms.RadioButton();
+            this.checkboy = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.checkName1 = new QLy_HocSinh.Form1.CheckName();
+            this.checkName2 = new QLy_HocSinh.Form1.CheckName();
+            this.requiredFieldValidator21 = new QLy_HocSinh.Form1.RequiredFieldValidator2();
+            this.checkDate1 = new QLy_HocSinh.Form1.CheckDate();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -50,6 +57,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Tiếp nhận";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblName
             // 
@@ -96,58 +104,100 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Giới Tính";
             // 
-            // textBox1
+            // txtdc
             // 
-            this.textBox1.Location = new System.Drawing.Point(282, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtdc.Location = new System.Drawing.Point(282, 120);
+            this.txtdc.Name = "txtdc";
+            this.txtdc.Size = new System.Drawing.Size(201, 20);
+            this.txtdc.TabIndex = 6;
             // 
-            // textBox2
+            // txtname
             // 
-            this.textBox2.Location = new System.Drawing.Point(282, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(201, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtname.Location = new System.Drawing.Point(282, 73);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(201, 20);
+            this.txtname.TabIndex = 7;
             // 
-            // textBox3
+            // txtmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(282, 158);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(282, 209);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(201, 20);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(282, 274);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(201, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtmail.Location = new System.Drawing.Point(282, 158);
+            this.txtmail.Name = "txtmail";
+            this.txtmail.Size = new System.Drawing.Size(201, 20);
+            this.txtmail.TabIndex = 8;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkgirl);
+            this.panel1.Controls.Add(this.checkboy);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Location = new System.Drawing.Point(194, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 285);
             this.panel1.TabIndex = 11;
+            // 
+            // checkgirl
+            // 
+            this.checkgirl.AutoSize = true;
+            this.checkgirl.Location = new System.Drawing.Point(204, 240);
+            this.checkgirl.Name = "checkgirl";
+            this.checkgirl.Size = new System.Drawing.Size(39, 17);
+            this.checkgirl.TabIndex = 25;
+            this.checkgirl.Text = "Nữ";
+            this.checkgirl.UseVisualStyleBackColor = true;
+            // 
+            // checkboy
+            // 
+            this.checkboy.AutoSize = true;
+            this.checkboy.Checked = true;
+            this.checkboy.Location = new System.Drawing.Point(127, 240);
+            this.checkboy.Name = "checkboy";
+            this.checkboy.Size = new System.Drawing.Size(47, 17);
+            this.checkboy.TabIndex = 24;
+            this.checkboy.TabStop = true;
+            this.checkboy.Text = "Nam";
+            this.checkboy.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/mm/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(88, 169);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // checkName1
+            // 
+            this.checkName1.ControlToValidate = this.txtname;
+            this.checkName1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkName1.ErrorIcon")));
+            this.checkName1.ErrorMessage = null;
+            // 
+            // checkName2
+            // 
+            this.checkName2.ControlToValidate = this.txtdc;
+            this.checkName2.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkName2.ErrorIcon")));
+            this.checkName2.ErrorMessage = null;
+            // 
+            // requiredFieldValidator21
+            // 
+            this.requiredFieldValidator21.ControlToValidate = this.txtmail;
+            this.requiredFieldValidator21.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator21.ErrorIcon")));
+            this.requiredFieldValidator21.ErrorMessage = null;
+            // 
+            // checkDate1
+            // 
+            this.checkDate1.ControlToValidate = this.dateTimePicker1;
+            this.checkDate1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkDate1.ErrorIcon")));
+            this.checkDate1.ErrorMessage = null;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 603);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtmail);
+            this.Controls.Add(this.txtname);
+            this.Controls.Add(this.txtdc);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblmail);
@@ -158,6 +208,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,12 +223,17 @@
         private System.Windows.Forms.Label lblmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtdc;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtmail;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private CheckName checkName1;
+        private CheckName checkName2;
+        private RequiredFieldValidator2 requiredFieldValidator21;
+        private System.Windows.Forms.RadioButton checkgirl;
+        private System.Windows.Forms.RadioButton checkboy;
+        private CheckDate checkDate1;
     }
 }
 
