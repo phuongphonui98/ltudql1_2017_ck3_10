@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 
 namespace QLy_HocSinh
@@ -20,7 +20,10 @@ namespace QLy_HocSinh
             InitializeComponent();
             menu.Width = 70;
         }
-        
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hmd, int wmsg, int wparam, int lparam);
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -99,6 +102,12 @@ namespace QLy_HocSinh
         private void button1_Click(object sender, EventArgs e)
         {
             showinpanel(new Form1());
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
