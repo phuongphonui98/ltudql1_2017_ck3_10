@@ -275,6 +275,7 @@
             this.mainpn.Name = "mainpn";
             this.mainpn.Size = new System.Drawing.Size(750, 603);
             this.mainpn.TabIndex = 17;
+            this.mainpn.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpn_Paint);
             // 
             // MainGUI
             // 

@@ -10,9 +10,15 @@ namespace BUS
 {
     public class HocSinhBUS
     {
+      
         HocSinhDAO HS = new HocSinhDAO();
+        public void Load()
+        {
+            HS.Get();
+        }
         public bool Insert(HocSinhDTO hs)
         {
+            
             return HS.Insert(hs);
         }
     }

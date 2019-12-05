@@ -72,6 +72,14 @@ namespace DAO
 				return this.GetTable<Hoc_sinh>();
 			}
 		}
+		
+		public System.Data.Linq.Table<THAMSO> THAMSOs
+		{
+			get
+			{
+				return this.GetTable<THAMSO>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hoc_sinh")]
@@ -252,6 +260,51 @@ namespace DAO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
+	public partial class THAMSO
+	{
+		
+		private System.Nullable<int> _TuoiToiThieu;
+		
+		private System.Nullable<int> _TuoiToiDa;
+		
+		public THAMSO()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuoiToiThieu", DbType="Int")]
+		public System.Nullable<int> TuoiToiThieu
+		{
+			get
+			{
+				return this._TuoiToiThieu;
+			}
+			set
+			{
+				if ((this._TuoiToiThieu != value))
+				{
+					this._TuoiToiThieu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuoiToiDa", DbType="Int")]
+		public System.Nullable<int> TuoiToiDa
+		{
+			get
+			{
+				return this._TuoiToiDa;
+			}
+			set
+			{
+				if ((this._TuoiToiDa != value))
+				{
+					this._TuoiToiDa = value;
+				}
 			}
 		}
 	}

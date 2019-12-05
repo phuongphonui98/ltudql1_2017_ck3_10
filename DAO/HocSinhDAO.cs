@@ -12,18 +12,22 @@ namespace DAO
 {
    public  class HocSinhDAO : DBConnect
     {
-        public DataTable Get()
+       
+        public void Get()
         {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from Hoc_sinh",cn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
+                var q = from s in hdb.THAMSOs select s.TuoiToiThieu;
+                var kq = q.FirstOrDefault();
+                HocSinhDTO.toithieu = int.Parse(kq.ToString());
+                var q2 = from s in hdb.THAMSOs select s.TuoiToiDa;
+                var kq2 = q2.FirstOrDefault();
+                HocSinhDTO.toida = int.Parse(kq2.ToString());
             }
             catch
             {
-                return null;
+              
             }
         }
         DataTable dt = new DataTable();
@@ -32,7 +36,9 @@ namespace DAO
         {
             try
             {
+                
                 HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                
                 Hoc_sinh hs2 = new Hoc_sinh { Name = hs.Name, Address = hs.Diachi, Email = hs.Email, Date = (hs.Ngsinh).ToString(), Sex = hs.Gioitinh.ToString() };
                 
                 hdb.Hoc_sinhs.InsertOnSubmit(hs2);

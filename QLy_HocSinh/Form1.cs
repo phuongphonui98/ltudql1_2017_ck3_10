@@ -16,6 +16,7 @@ namespace QLy_HocSinh
 {
     public partial class Form1 : Form
     {
+        
         HocSinhBUS HSB = new HocSinhBUS();
         public Form1()
         {
@@ -105,14 +106,15 @@ namespace QLy_HocSinh
                 DateTime oDate = Convert.ToDateTime(ControlToValidate.Text);
                 TimeSpan okk = now.Subtract(oDate);
                
-                if (okk.Days / 365 > 15 && okk.Days / 365 < 20)
+                if (okk.Days / 365 > HocSinhDTO.toithieu && okk.Days / 365 < HocSinhDTO.toida)
                 {
+                    
                     ErrorMessage = null;
                     return true;
                 }
                 else
                 {
-                    ErrorMessage = "Tuổi học sinh phải từ 15 đến 20 tuổi ";
+                    ErrorMessage = "Tuổi học sinh phải từ "+ HocSinhDTO.toithieu + " đến "+ HocSinhDTO.toida  + "tuổi ";
                     return false;
 
                 }
@@ -151,6 +153,12 @@ namespace QLy_HocSinh
               
                 MessageBox.Show("nhập đúng và đầy đủ các dòng trên");
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            HSB.Load();
+            MessageBox.Show(HocSinhDTO.toithieu.ToString());
         }
     }
 }

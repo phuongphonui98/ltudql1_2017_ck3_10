@@ -10,4 +10,10 @@
       <Column Name="Sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.THAMSO" Member="THAMSOs">
+    <Type Name="THAMSO">
+      <Column Name="TuoiToiThieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TuoiToiDa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

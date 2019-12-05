@@ -109,5 +109,9 @@ namespace QLy_HocSinh
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void mainpn_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }
