@@ -33,6 +33,15 @@ namespace DAO
     partial void InsertHoc_sinh(Hoc_sinh instance);
     partial void UpdateHoc_sinh(Hoc_sinh instance);
     partial void DeleteHoc_sinh(Hoc_sinh instance);
+    partial void InsertCHITIETDSLOP(CHITIETDSLOP instance);
+    partial void UpdateCHITIETDSLOP(CHITIETDSLOP instance);
+    partial void DeleteCHITIETDSLOP(CHITIETDSLOP instance);
+    partial void InsertDANHSACHLOP(DANHSACHLOP instance);
+    partial void UpdateDANHSACHLOP(DANHSACHLOP instance);
+    partial void DeleteDANHSACHLOP(DANHSACHLOP instance);
+    partial void InsertKHOILOP(KHOILOP instance);
+    partial void UpdateKHOILOP(KHOILOP instance);
+    partial void DeleteKHOILOP(KHOILOP instance);
     #endregion
 		
 		public HocSinhDBDataContext() : 
@@ -80,6 +89,30 @@ namespace DAO
 				return this.GetTable<THAMSO>();
 			}
 		}
+		
+		public System.Data.Linq.Table<CHITIETDSLOP> CHITIETDSLOPs
+		{
+			get
+			{
+				return this.GetTable<CHITIETDSLOP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DANHSACHLOP> DANHSACHLOPs
+		{
+			get
+			{
+				return this.GetTable<DANHSACHLOP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KHOILOP> KHOILOPs
+		{
+			get
+			{
+				return this.GetTable<KHOILOP>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hoc_sinh")]
@@ -99,6 +132,8 @@ namespace DAO
 		private string _Date;
 		
 		private string _Sex;
+		
+		private EntitySet<CHITIETDSLOP> _CHITIETDSLOPs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -120,6 +155,7 @@ namespace DAO
 		
 		public Hoc_sinh()
 		{
+			this._CHITIETDSLOPs = new EntitySet<CHITIETDSLOP>(new Action<CHITIETDSLOP>(this.attach_CHITIETDSLOPs), new Action<CHITIETDSLOP>(this.detach_CHITIETDSLOPs));
 			OnCreated();
 		}
 		
@@ -243,6 +279,19 @@ namespace DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hoc_sinh_CHITIETDSLOP", Storage="_CHITIETDSLOPs", ThisKey="ID", OtherKey="MaHocSinh")]
+		public EntitySet<CHITIETDSLOP> CHITIETDSLOPs
+		{
+			get
+			{
+				return this._CHITIETDSLOPs;
+			}
+			set
+			{
+				this._CHITIETDSLOPs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -261,6 +310,18 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_CHITIETDSLOPs(CHITIETDSLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hoc_sinh = this;
+		}
+		
+		private void detach_CHITIETDSLOPs(CHITIETDSLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hoc_sinh = null;
 		}
 	}
 	
@@ -306,6 +367,563 @@ namespace DAO
 					this._TuoiToiDa = value;
 				}
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHITIETDSLOP")]
+	public partial class CHITIETDSLOP : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaChiTietDSLop;
+		
+		private string _MaLop;
+		
+		private int _MaHocSinh;
+		
+		private System.Nullable<double> _TBHocKi1;
+		
+		private System.Nullable<double> _TBHocKi2;
+		
+		private EntityRef<Hoc_sinh> _Hoc_sinh;
+		
+		private EntityRef<DANHSACHLOP> _DANHSACHLOP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaChiTietDSLopChanging(string value);
+    partial void OnMaChiTietDSLopChanged();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
+    partial void OnMaHocSinhChanging(int value);
+    partial void OnMaHocSinhChanged();
+    partial void OnTBHocKi1Changing(System.Nullable<double> value);
+    partial void OnTBHocKi1Changed();
+    partial void OnTBHocKi2Changing(System.Nullable<double> value);
+    partial void OnTBHocKi2Changed();
+    #endregion
+		
+		public CHITIETDSLOP()
+		{
+			this._Hoc_sinh = default(EntityRef<Hoc_sinh>);
+			this._DANHSACHLOP = default(EntityRef<DANHSACHLOP>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChiTietDSLop", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaChiTietDSLop
+		{
+			get
+			{
+				return this._MaChiTietDSLop;
+			}
+			set
+			{
+				if ((this._MaChiTietDSLop != value))
+				{
+					this.OnMaChiTietDSLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaChiTietDSLop = value;
+					this.SendPropertyChanged("MaChiTietDSLop");
+					this.OnMaChiTietDSLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					if (this._DANHSACHLOP.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaLop = value;
+					this.SendPropertyChanged("MaLop");
+					this.OnMaLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocSinh", DbType="Int NOT NULL")]
+		public int MaHocSinh
+		{
+			get
+			{
+				return this._MaHocSinh;
+			}
+			set
+			{
+				if ((this._MaHocSinh != value))
+				{
+					if (this._Hoc_sinh.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaHocSinhChanging(value);
+					this.SendPropertyChanging();
+					this._MaHocSinh = value;
+					this.SendPropertyChanged("MaHocSinh");
+					this.OnMaHocSinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi1", DbType="Float")]
+		public System.Nullable<double> TBHocKi1
+		{
+			get
+			{
+				return this._TBHocKi1;
+			}
+			set
+			{
+				if ((this._TBHocKi1 != value))
+				{
+					this.OnTBHocKi1Changing(value);
+					this.SendPropertyChanging();
+					this._TBHocKi1 = value;
+					this.SendPropertyChanged("TBHocKi1");
+					this.OnTBHocKi1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi2", DbType="Float")]
+		public System.Nullable<double> TBHocKi2
+		{
+			get
+			{
+				return this._TBHocKi2;
+			}
+			set
+			{
+				if ((this._TBHocKi2 != value))
+				{
+					this.OnTBHocKi2Changing(value);
+					this.SendPropertyChanging();
+					this._TBHocKi2 = value;
+					this.SendPropertyChanged("TBHocKi2");
+					this.OnTBHocKi2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hoc_sinh_CHITIETDSLOP", Storage="_Hoc_sinh", ThisKey="MaHocSinh", OtherKey="ID", IsForeignKey=true)]
+		public Hoc_sinh Hoc_sinh
+		{
+			get
+			{
+				return this._Hoc_sinh.Entity;
+			}
+			set
+			{
+				Hoc_sinh previousValue = this._Hoc_sinh.Entity;
+				if (((previousValue != value) 
+							|| (this._Hoc_sinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Hoc_sinh.Entity = null;
+						previousValue.CHITIETDSLOPs.Remove(this);
+					}
+					this._Hoc_sinh.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDSLOPs.Add(this);
+						this._MaHocSinh = value.ID;
+					}
+					else
+					{
+						this._MaHocSinh = default(int);
+					}
+					this.SendPropertyChanged("Hoc_sinh");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DANHSACHLOP_CHITIETDSLOP", Storage="_DANHSACHLOP", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
+		public DANHSACHLOP DANHSACHLOP
+		{
+			get
+			{
+				return this._DANHSACHLOP.Entity;
+			}
+			set
+			{
+				DANHSACHLOP previousValue = this._DANHSACHLOP.Entity;
+				if (((previousValue != value) 
+							|| (this._DANHSACHLOP.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DANHSACHLOP.Entity = null;
+						previousValue.CHITIETDSLOPs.Remove(this);
+					}
+					this._DANHSACHLOP.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDSLOPs.Add(this);
+						this._MaLop = value.MaLop;
+					}
+					else
+					{
+						this._MaLop = default(string);
+					}
+					this.SendPropertyChanged("DANHSACHLOP");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANHSACHLOP")]
+	public partial class DANHSACHLOP : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaLop;
+		
+		private string _TenLop;
+		
+		private System.Nullable<int> _SiSo;
+		
+		private string _MaKhoiLop;
+		
+		private EntitySet<CHITIETDSLOP> _CHITIETDSLOPs;
+		
+		private EntityRef<KHOILOP> _KHOILOP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
+    partial void OnTenLopChanging(string value);
+    partial void OnTenLopChanged();
+    partial void OnSiSoChanging(System.Nullable<int> value);
+    partial void OnSiSoChanged();
+    partial void OnMaKhoiLopChanging(string value);
+    partial void OnMaKhoiLopChanged();
+    #endregion
+		
+		public DANHSACHLOP()
+		{
+			this._CHITIETDSLOPs = new EntitySet<CHITIETDSLOP>(new Action<CHITIETDSLOP>(this.attach_CHITIETDSLOPs), new Action<CHITIETDSLOP>(this.detach_CHITIETDSLOPs));
+			this._KHOILOP = default(EntityRef<KHOILOP>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this.OnMaLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaLop = value;
+					this.SendPropertyChanged("MaLop");
+					this.OnMaLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLop", DbType="VarChar(10)")]
+		public string TenLop
+		{
+			get
+			{
+				return this._TenLop;
+			}
+			set
+			{
+				if ((this._TenLop != value))
+				{
+					this.OnTenLopChanging(value);
+					this.SendPropertyChanging();
+					this._TenLop = value;
+					this.SendPropertyChanged("TenLop");
+					this.OnTenLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SiSo", DbType="Int")]
+		public System.Nullable<int> SiSo
+		{
+			get
+			{
+				return this._SiSo;
+			}
+			set
+			{
+				if ((this._SiSo != value))
+				{
+					this.OnSiSoChanging(value);
+					this.SendPropertyChanging();
+					this._SiSo = value;
+					this.SendPropertyChanged("SiSo");
+					this.OnSiSoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoiLop", DbType="VarChar(10)")]
+		public string MaKhoiLop
+		{
+			get
+			{
+				return this._MaKhoiLop;
+			}
+			set
+			{
+				if ((this._MaKhoiLop != value))
+				{
+					if (this._KHOILOP.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaKhoiLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaKhoiLop = value;
+					this.SendPropertyChanged("MaKhoiLop");
+					this.OnMaKhoiLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DANHSACHLOP_CHITIETDSLOP", Storage="_CHITIETDSLOPs", ThisKey="MaLop", OtherKey="MaLop")]
+		public EntitySet<CHITIETDSLOP> CHITIETDSLOPs
+		{
+			get
+			{
+				return this._CHITIETDSLOPs;
+			}
+			set
+			{
+				this._CHITIETDSLOPs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOILOP_DANHSACHLOP", Storage="_KHOILOP", ThisKey="MaKhoiLop", OtherKey="MaKhoiLop", IsForeignKey=true)]
+		public KHOILOP KHOILOP
+		{
+			get
+			{
+				return this._KHOILOP.Entity;
+			}
+			set
+			{
+				KHOILOP previousValue = this._KHOILOP.Entity;
+				if (((previousValue != value) 
+							|| (this._KHOILOP.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHOILOP.Entity = null;
+						previousValue.DANHSACHLOPs.Remove(this);
+					}
+					this._KHOILOP.Entity = value;
+					if ((value != null))
+					{
+						value.DANHSACHLOPs.Add(this);
+						this._MaKhoiLop = value.MaKhoiLop;
+					}
+					else
+					{
+						this._MaKhoiLop = default(string);
+					}
+					this.SendPropertyChanged("KHOILOP");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CHITIETDSLOPs(CHITIETDSLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.DANHSACHLOP = this;
+		}
+		
+		private void detach_CHITIETDSLOPs(CHITIETDSLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.DANHSACHLOP = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KHOILOP")]
+	public partial class KHOILOP : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaKhoiLop;
+		
+		private string _TenKhoiLop;
+		
+		private EntitySet<DANHSACHLOP> _DANHSACHLOPs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaKhoiLopChanging(string value);
+    partial void OnMaKhoiLopChanged();
+    partial void OnTenKhoiLopChanging(string value);
+    partial void OnTenKhoiLopChanged();
+    #endregion
+		
+		public KHOILOP()
+		{
+			this._DANHSACHLOPs = new EntitySet<DANHSACHLOP>(new Action<DANHSACHLOP>(this.attach_DANHSACHLOPs), new Action<DANHSACHLOP>(this.detach_DANHSACHLOPs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoiLop", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaKhoiLop
+		{
+			get
+			{
+				return this._MaKhoiLop;
+			}
+			set
+			{
+				if ((this._MaKhoiLop != value))
+				{
+					this.OnMaKhoiLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaKhoiLop = value;
+					this.SendPropertyChanged("MaKhoiLop");
+					this.OnMaKhoiLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKhoiLop", DbType="VarChar(10)")]
+		public string TenKhoiLop
+		{
+			get
+			{
+				return this._TenKhoiLop;
+			}
+			set
+			{
+				if ((this._TenKhoiLop != value))
+				{
+					this.OnTenKhoiLopChanging(value);
+					this.SendPropertyChanging();
+					this._TenKhoiLop = value;
+					this.SendPropertyChanged("TenKhoiLop");
+					this.OnTenKhoiLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOILOP_DANHSACHLOP", Storage="_DANHSACHLOPs", ThisKey="MaKhoiLop", OtherKey="MaKhoiLop")]
+		public EntitySet<DANHSACHLOP> DANHSACHLOPs
+		{
+			get
+			{
+				return this._DANHSACHLOPs;
+			}
+			set
+			{
+				this._DANHSACHLOPs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DANHSACHLOPs(DANHSACHLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHOILOP = this;
+		}
+		
+		private void detach_DANHSACHLOPs(DANHSACHLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHOILOP = null;
 		}
 	}
 }

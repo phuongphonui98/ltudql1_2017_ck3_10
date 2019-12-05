@@ -8,12 +8,41 @@
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Hoc_sinh_CHITIETDSLOP" Member="CHITIETDSLOPs" ThisKey="ID" OtherKey="MaHocSinh" Type="CHITIETDSLOP" />
     </Type>
   </Table>
   <Table Name="dbo.THAMSO" Member="THAMSOs">
     <Type Name="THAMSO">
       <Column Name="TuoiToiThieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TuoiToiDa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHITIETDSLOP" Member="CHITIETDSLOPs">
+    <Type Name="CHITIETDSLOP">
+      <Column Name="MaChiTietDSLop" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TBHocKi1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Hoc_sinh_CHITIETDSLOP" Member="Hoc_sinh" ThisKey="MaHocSinh" OtherKey="ID" Type="Hoc_sinh" IsForeignKey="true" />
+      <Association Name="DANHSACHLOP_CHITIETDSLOP" Member="DANHSACHLOP" ThisKey="MaLop" OtherKey="MaLop" Type="DANHSACHLOP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHSACHLOP" Member="DANHSACHLOPs">
+    <Type Name="DANHSACHLOP">
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SiSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaKhoiLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="DANHSACHLOP_CHITIETDSLOP" Member="CHITIETDSLOPs" ThisKey="MaLop" OtherKey="MaLop" Type="CHITIETDSLOP" />
+      <Association Name="KHOILOP_DANHSACHLOP" Member="KHOILOP" ThisKey="MaKhoiLop" OtherKey="MaKhoiLop" Type="KHOILOP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHOILOP" Member="KHOILOPs">
+    <Type Name="KHOILOP">
+      <Column Name="MaKhoiLop" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKhoiLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="KHOILOP_DANHSACHLOP" Member="DANHSACHLOPs" ThisKey="MaKhoiLop" OtherKey="MaKhoiLop" Type="DANHSACHLOP" />
     </Type>
   </Table>
 </Database>
