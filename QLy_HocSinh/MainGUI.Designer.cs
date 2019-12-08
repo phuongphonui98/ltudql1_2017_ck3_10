@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dslopcbox = new System.Windows.Forms.ComboBox();
             this.menu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -78,13 +78,13 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // comboBox1
+            // dslopcbox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(65, 21);
-            this.comboBox1.TabIndex = 6;
+            this.dslopcbox.FormattingEnabled = true;
+            this.dslopcbox.Location = new System.Drawing.Point(182, 119);
+            this.dslopcbox.Name = "dslopcbox";
+            this.dslopcbox.Size = new System.Drawing.Size(65, 21);
+            this.dslopcbox.TabIndex = 6;
             // 
             // menu
             // 
@@ -92,7 +92,7 @@
             this.menu.Controls.Add(this.label3);
             this.menu.Controls.Add(this.button5);
             this.menu.Controls.Add(this.button4);
-            this.menu.Controls.Add(this.comboBox1);
+            this.menu.Controls.Add(this.dslopcbox);
             this.menu.Controls.Add(this.button3);
             this.menu.Controls.Add(this.pictureBox3);
             this.menu.Controls.Add(this.button2);
@@ -308,7 +308,7 @@
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox dslopcbox;
         private System.Windows.Forms.Panel menu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox option;

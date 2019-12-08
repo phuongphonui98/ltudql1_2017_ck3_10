@@ -36,19 +36,25 @@ namespace DAO
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             try
             {
-                
-                  var q = from kq in hdb.KHOILOPs select kq;
-                if(q == null)
+                   var kk = from l in hdb.DANHSACHLOPs select l;
+                var q = from kq in hdb.KHOILOPs select kq;
+                if(q == null || kk ==null)
                 {
+                    clasDTO.TonTail = false;
                     ClassDTO.TonTai = false;
                 }
                 else {
                     ClassDTO.TonTai = true;
-                    
+                    clasDTO.TonTail = true;
                     foreach (var x in q)
                     {
                         ClassDTO kl = new ClassDTO(x.MaKhoiLop, x.TenKhoiLop);
                         ClassDTO.khoilop.Add(kl) ;
+                    }
+                    foreach (var n in kk)
+                    {
+                        clasDTO lop = new clasDTO(n.MaLop, n.TenLop, 0, n.MaKhoiLop);
+                        clasDTO.lop.Add(lop);
                     }
                 }
                

@@ -141,10 +141,231 @@ namespace QLy_HocSinh
 
             }
         }
+        public class CheckTenL : BaseValidator
+        {
+            public CheckTenL()
+            {
+
+            }
+            public override bool Validate()
+            {
+
+                if (ControlToValidate.Text.Length <= 0)
+                {
+                    ErrorMessage = "không được để trống";
+                    return false;
+
+                }
+
+                else
+                {
+                    string x = ControlToValidate.Text;
+                    char[] ar = x.ToCharArray();
+                    
+                    string so = ar[0].ToString() + ar[1].ToString();
+                    string chu = ar[2].ToString();
+                    int so2 = ar[3];
+                    MessageBox.Show(so);
+                    if(ar.Length > 4 && chu != "A")
+                    {
+                        ErrorMessage = "cần nhập đúng tên lớp vd : 10A1";
+                        return false;
+
+                    }
+                    else
+                    {
+                       
+
+                        if (so == "10" || so == "11" || so == "12")
+                        {
+                            if (so == "10")
+                            {
+
+                                if (so2 < 1 || so2 > 4)
+                                {
+                                    ErrorMessage = "khối 10 chỉ có (10A1 - > 10A4)";
+                                    return false;
+                                }
+                                else
+                                {
+                                    if (ClassDTO.TonTai == true)
+                                    {
+                                        foreach (var n in clasDTO.lop)
+                                        {
+                                            if (x == n.TenL1)
+                                            {
+                                                ErrorMessage = "tên lớp đã tồn tại";
+                                                return false;
+
+
+                                            }
+                                           
+                                        }
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                if(so == "11"){
+                                    if (so2 < 1 || so2 > 3)
+                                    {
+                                        ErrorMessage = "khối 11 chỉ có (11A1 - > 11A3)";
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        if (ClassDTO.TonTai == true)
+                                        {
+                                            foreach (var n in clasDTO.lop)
+                                            {
+                                                if (x == n.TenL1)
+                                                {
+                                                    ErrorMessage = "tên lớp đã tồn tại";
+                                                    return false;
+
+
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if(so == "12")
+                                    {
+                                        if (so2 < 1 || so2 > 2)
+                                        {
+                                            ErrorMessage = "khối 12 chỉ có (12A1 - > 12A2)";
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (ClassDTO.TonTai == true)
+                                            {
+                                                foreach (var n in clasDTO.lop)
+                                                {
+                                                    if (x == n.TenL1)
+                                                    {
+                                                        ErrorMessage = "tên lớp đã tồn tại";
+                                                        return false;
+
+
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            ErrorMessage = "Chỉ được thêm 3 khối lớp (10, 11 ,12)";
+                            return false;
+                        }
+
+                    }
+                  
+                }
+                ErrorMessage = null;
+                return true;
+
+            }
+        }
+        public class CheckMaL : BaseValidator
+        {
+            public CheckMaL()
+            {
+
+            }
+            public override bool Validate()
+            {
+
+                if (ControlToValidate.Text.Length <= 0)
+                {
+                    ErrorMessage = "không được để trống";
+                    return false;
+
+                }
+
+                else
+                {
+                    string x = ControlToValidate.Text;
+
+                    if (clasDTO.TonTail == true)
+                    {
+                        foreach (var n in clasDTO.lop)
+                        {
+                            if (x == n.MaL1)
+                            {
+                                ErrorMessage = "Mã lớp đã tồn tại";
+                                return false;
+
+                            }
+                        }
+                    }
+
+
+
+                }
+                ErrorMessage = null;
+                return true;
+
+            }
+        }
+        public class CheckSS : BaseValidator
+        {
+            public CheckSS()
+            {
+
+            }
+            public override bool Validate()
+            {
+
+                if (ControlToValidate.Text.Length <= 0)
+                {
+                    ErrorMessage = "không được để trống";
+                    return false;
+
+                }
+
+                else
+                {
+                    string x = ControlToValidate.Text;
+                    int siso = int.Parse(x);
+                    if( siso >40 || siso<1)
+                    {
+                        ErrorMessage = "sỉ số nhỏ nhất là 1 và lớn nhất là 40";
+                        return false;
+                    }
+                   
+
+
+
+                }
+                ErrorMessage = null;
+                return true;
+
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             
         }
-                    
+
+        private void AddClass_Load(object sender, EventArgs e)
+        {
+            List<string> tl = new List<string>();
+            foreach(var i in ClassDTO.khoilop)
+            {
+                tl.Add(i.MaK1);
+            }
+            mkcombo.DataSource = tl.ToList();
+            
+        }
     }
 }

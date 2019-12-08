@@ -47,7 +47,14 @@ namespace QLy_HocSinh
 
         private void MainGUI_Load(object sender, EventArgs e)
         {
-
+            HSB.Loadkl();
+            List<string> l = new List<string>();
+           foreach(var s in clasDTO.lop)
+            {
+                l.Add(s.TenL1);
+            }
+            dslopcbox.DataSource = l.ToList();
+          
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -114,7 +121,7 @@ namespace QLy_HocSinh
 
         private void mainpn_Paint(object sender, PaintEventArgs e)
         {
-            HSB.Loadkl();
+          
             
         }
 

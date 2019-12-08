@@ -32,6 +32,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.paneladdclass = new System.Windows.Forms.Panel();
+            this.mkcombo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtlop = new System.Windows.Forms.TextBox();
             this.txtml = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +49,9 @@
             this.pnaddK = new System.Windows.Forms.Panel();
             this.checkMaK1 = new QLy_HocSinh.AddClass.CheckMaK();
             this.checkTenK1 = new QLy_HocSinh.AddClass.CheckTenK();
+            this.checkMaL1 = new QLy_HocSinh.AddClass.CheckMaL();
+            this.checkTenL1 = new QLy_HocSinh.AddClass.CheckTenL();
+            this.checkSS1 = new QLy_HocSinh.AddClass.CheckSS();
             this.paneladdclass.SuspendLayout();
             this.pnaddK.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +80,10 @@
             // 
             // paneladdclass
             // 
+            this.paneladdclass.Controls.Add(this.mkcombo);
+            this.paneladdclass.Controls.Add(this.label6);
+            this.paneladdclass.Controls.Add(this.textBox1);
+            this.paneladdclass.Controls.Add(this.label5);
             this.paneladdclass.Controls.Add(this.txtlop);
             this.paneladdclass.Controls.Add(this.txtml);
             this.paneladdclass.Controls.Add(this.label3);
@@ -84,16 +95,50 @@
             this.paneladdclass.TabIndex = 1;
             this.paneladdclass.Visible = false;
             // 
+            // mkcombo
+            // 
+            this.mkcombo.FormattingEnabled = true;
+            this.mkcombo.Location = new System.Drawing.Point(186, 17);
+            this.mkcombo.Name = "mkcombo";
+            this.mkcombo.Size = new System.Drawing.Size(102, 21);
+            this.mkcombo.TabIndex = 8;
+            this.mkcombo.Text = "Chọn mã khối";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(98, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Mã Khối ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(186, 141);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(111, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Sỉ Số";
+            // 
             // txtlop
             // 
-            this.txtlop.Location = new System.Drawing.Point(187, 96);
+            this.txtlop.Location = new System.Drawing.Point(187, 99);
             this.txtlop.Name = "txtlop";
             this.txtlop.Size = new System.Drawing.Size(100, 20);
             this.txtlop.TabIndex = 4;
             // 
             // txtml
             // 
-            this.txtml.Location = new System.Drawing.Point(187, 48);
+            this.txtml.Location = new System.Drawing.Point(186, 58);
             this.txtml.Name = "txtml";
             this.txtml.Size = new System.Drawing.Size(100, 20);
             this.txtml.TabIndex = 3;
@@ -101,7 +146,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 96);
+            this.label3.Location = new System.Drawing.Point(100, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -110,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 48);
+            this.label4.Location = new System.Drawing.Point(100, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 1;
@@ -118,11 +163,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(187, 151);
+            this.button2.Location = new System.Drawing.Point(186, 180);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 23);
             this.button2.TabIndex = 0;
-            this.button2.Text = "Thêm Khối";
+            this.button2.Text = "Thêm Lớp";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -194,6 +239,24 @@
             this.checkTenK1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkTenK1.ErrorIcon")));
             this.checkTenK1.ErrorMessage = null;
             // 
+            // checkMaL1
+            // 
+            this.checkMaL1.ControlToValidate = this.txtml;
+            this.checkMaL1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkMaL1.ErrorIcon")));
+            this.checkMaL1.ErrorMessage = null;
+            // 
+            // checkTenL1
+            // 
+            this.checkTenL1.ControlToValidate = this.txtlop;
+            this.checkTenL1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkTenL1.ErrorIcon")));
+            this.checkTenL1.ErrorMessage = null;
+            // 
+            // checkSS1
+            // 
+            this.checkSS1.ControlToValidate = null;
+            this.checkSS1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkSS1.ErrorIcon")));
+            this.checkSS1.ErrorMessage = null;
+            // 
             // AddClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +269,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddClass";
             this.Text = "p";
+            this.Load += new System.EventHandler(this.AddClass_Load);
             this.paneladdclass.ResumeLayout(false);
             this.paneladdclass.PerformLayout();
             this.pnaddK.ResumeLayout(false);
@@ -231,5 +295,12 @@
         private System.Windows.Forms.Panel pnaddK;
         private CheckMaK checkMaK1;
         private CheckTenK checkTenK1;
+        private System.Windows.Forms.ComboBox mkcombo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private CheckMaL checkMaL1;
+        private CheckTenL checkTenL1;
+        private CheckSS checkSS1;
     }
 }
