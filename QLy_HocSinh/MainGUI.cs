@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
+using DTO;
 
 namespace QLy_HocSinh
 {
     public partial class MainGUI : Form
     {
+        HocSinhBUS HSB = new HocSinhBUS();
         public MainGUI()
         {
             
@@ -112,6 +114,8 @@ namespace QLy_HocSinh
 
         private void mainpn_Paint(object sender, PaintEventArgs e)
         {
+            HSB.Loadkl();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

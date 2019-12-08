@@ -158,7 +158,7 @@ namespace QLy_HocSinh
         private void Form1_Load(object sender, EventArgs e)
         {
             HSB.Load();
-            MessageBox.Show(HocSinhDTO.toithieu.ToString());
+           
         }
     }
 }

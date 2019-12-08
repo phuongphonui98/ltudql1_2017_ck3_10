@@ -12,7 +12,7 @@ namespace DAO
 {
    public  class HocSinhDAO : DBConnect
     {
-       
+     
         public void Get()
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
@@ -24,10 +24,39 @@ namespace DAO
                 var q2 = from s in hdb.THAMSOs select s.TuoiToiDa;
                 var kq2 = q2.FirstOrDefault();
                 HocSinhDTO.toida = int.Parse(kq2.ToString());
+              
             }
             catch
             {
               
+            }
+        }
+        public void GetKL()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            {
+                
+                  var q = from kq in hdb.KHOILOPs select kq;
+                if(q == null)
+                {
+                    ClassDTO.TonTai = false;
+                }
+                else {
+                    ClassDTO.TonTai = true;
+                    
+                    foreach (var x in q)
+                    {
+                        ClassDTO kl = new ClassDTO(x.MaKhoiLop, x.TenKhoiLop);
+                        ClassDTO.khoilop.Add(kl) ;
+                    }
+                }
+               
+                
+            }
+            catch
+            {
+
             }
         }
         DataTable dt = new DataTable();
@@ -43,6 +72,24 @@ namespace DAO
                 
                 hdb.Hoc_sinhs.InsertOnSubmit(hs2);
                 hdb.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool InsertKL(ClassDTO kl)
+        {
+            try
+            {
+
+                HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                KHOILOP KL = new KHOILOP { MaKhoiLop = kl.MaK1, TenKhoiLop = kl.TenK1 };
+
+                hdb.KHOILOPs.InsertOnSubmit(KL);
+                hdb.SubmitChanges();
+                
                 return true;
             }
             catch

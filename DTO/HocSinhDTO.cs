@@ -8,6 +8,7 @@ namespace DTO
 {
     public class HocSinhDTO
     {
+
         #region Atrributes
         public static int toithieu;
         public static int toida;

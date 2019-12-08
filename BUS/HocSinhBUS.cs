@@ -16,10 +16,20 @@ namespace BUS
         {
             HS.Get();
         }
+        public void Loadkl()
+        {
+            HS.GetKL();
+        }
         public bool Insert(HocSinhDTO hs)
         {
             
             return HS.Insert(hs);
+        }
+        public bool InsertKL(ClassDTO KL)
+        {
+
+            return HS.InsertKL(KL);
+           
         }
     }
 }

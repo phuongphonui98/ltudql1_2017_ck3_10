@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClass));
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.paneladdclass = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtml = new System.Windows.Forms.TextBox();
             this.txtlop = new System.Windows.Forms.TextBox();
+            this.txtml = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtmk = new System.Windows.Forms.TextBox();
             this.txttk = new System.Windows.Forms.TextBox();
             this.pnaddK = new System.Windows.Forms.Panel();
+            this.checkMaK1 = new QLy_HocSinh.AddClass.CheckMaK();
+            this.checkTenK1 = new QLy_HocSinh.AddClass.CheckTenK();
             this.paneladdclass.SuspendLayout();
             this.pnaddK.SuspendLayout();
             this.SuspendLayout();
@@ -81,23 +84,19 @@
             this.paneladdclass.TabIndex = 1;
             this.paneladdclass.Visible = false;
             // 
-            // button2
+            // txtlop
             // 
-            this.button2.Location = new System.Drawing.Point(187, 151);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Thêm Khối";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtlop.Location = new System.Drawing.Point(187, 96);
+            this.txtlop.Name = "txtlop";
+            this.txtlop.Size = new System.Drawing.Size(100, 20);
+            this.txtlop.TabIndex = 4;
             // 
-            // label4
+            // txtml
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Mã Lớp";
+            this.txtml.Location = new System.Drawing.Point(187, 48);
+            this.txtml.Name = "txtml";
+            this.txtml.Size = new System.Drawing.Size(100, 20);
+            this.txtml.TabIndex = 3;
             // 
             // label3
             // 
@@ -108,19 +107,24 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên Lớp";
             // 
-            // txtml
+            // label4
             // 
-            this.txtml.Location = new System.Drawing.Point(187, 48);
-            this.txtml.Name = "txtml";
-            this.txtml.Size = new System.Drawing.Size(100, 20);
-            this.txtml.TabIndex = 3;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(93, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Mã Lớp";
             // 
-            // txtlop
+            // button2
             // 
-            this.txtlop.Location = new System.Drawing.Point(187, 96);
-            this.txtlop.Name = "txtlop";
-            this.txtlop.Size = new System.Drawing.Size(100, 20);
-            this.txtlop.TabIndex = 4;
+            this.button2.Location = new System.Drawing.Point(187, 151);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Thêm Khối";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -178,6 +182,18 @@
             this.pnaddK.Visible = false;
             this.pnaddK.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // checkMaK1
+            // 
+            this.checkMaK1.ControlToValidate = this.txtmk;
+            this.checkMaK1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkMaK1.ErrorIcon")));
+            this.checkMaK1.ErrorMessage = null;
+            // 
+            // checkTenK1
+            // 
+            this.checkTenK1.ControlToValidate = this.txttk;
+            this.checkTenK1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkTenK1.ErrorIcon")));
+            this.checkTenK1.ErrorMessage = null;
+            // 
             // AddClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +229,7 @@
         private System.Windows.Forms.TextBox txtmk;
         private System.Windows.Forms.TextBox txttk;
         private System.Windows.Forms.Panel pnaddK;
+        private CheckMaK checkMaK1;
+        private CheckTenK checkTenK1;
     }
 }
