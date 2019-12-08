@@ -34,7 +34,7 @@
             this.paneladdclass = new System.Windows.Forms.Panel();
             this.mkcombo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtss = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtlop = new System.Windows.Forms.TextBox();
             this.txtml = new System.Windows.Forms.TextBox();
@@ -82,7 +82,7 @@
             // 
             this.paneladdclass.Controls.Add(this.mkcombo);
             this.paneladdclass.Controls.Add(this.label6);
-            this.paneladdclass.Controls.Add(this.textBox1);
+            this.paneladdclass.Controls.Add(this.txtss);
             this.paneladdclass.Controls.Add(this.label5);
             this.paneladdclass.Controls.Add(this.txtlop);
             this.paneladdclass.Controls.Add(this.txtml);
@@ -113,12 +113,12 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Mã Khối ";
             // 
-            // textBox1
+            // txtss
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtss.Location = new System.Drawing.Point(186, 141);
+            this.txtss.Name = "txtss";
+            this.txtss.Size = new System.Drawing.Size(100, 20);
+            this.txtss.TabIndex = 6;
             // 
             // label5
             // 
@@ -253,7 +253,7 @@
             // 
             // checkSS1
             // 
-            this.checkSS1.ControlToValidate = null;
+            this.checkSS1.ControlToValidate = this.txtss;
             this.checkSS1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkSS1.ErrorIcon")));
             this.checkSS1.ErrorMessage = null;
             // 
@@ -297,7 +297,7 @@
         private CheckTenK checkTenK1;
         private System.Windows.Forms.ComboBox mkcombo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtss;
         private System.Windows.Forms.Label label5;
         private CheckMaL checkMaL1;
         private CheckTenL checkTenL1;

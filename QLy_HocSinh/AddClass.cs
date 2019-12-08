@@ -161,12 +161,9 @@ namespace QLy_HocSinh
                 {
                     string x = ControlToValidate.Text;
                     char[] ar = x.ToCharArray();
+
                     
-                    string so = ar[0].ToString() + ar[1].ToString();
-                    string chu = ar[2].ToString();
-                    int so2 = ar[3];
-                    MessageBox.Show(so);
-                    if(ar.Length > 4 && chu != "A")
+                    if (ar.Length > 4 || ar.Length < 4 )
                     {
                         ErrorMessage = "cần nhập đúng tên lớp vd : 10A1";
                         return false;
@@ -174,43 +171,21 @@ namespace QLy_HocSinh
                     }
                     else
                     {
+                        string so = ar[0].ToString() + ar[1].ToString();
+                        string chu = ar[2].ToString();
                        
-
-                        if (so == "10" || so == "11" || so == "12")
+                        int so2 = int.Parse(ar[3].ToString());
+                       
+                        if (chu=="A")
                         {
-                            if (so == "10")
+                            if (so == "10" || so == "11" || so == "12")
                             {
-
-                                if (so2 < 1 || so2 > 4)
+                                if (so == "10")
                                 {
-                                    ErrorMessage = "khối 10 chỉ có (10A1 - > 10A4)";
-                                    return false;
-                                }
-                                else
-                                {
-                                    if (ClassDTO.TonTai == true)
+                                    
+                                    if (so2 < 1 || so2 > 4)
                                     {
-                                        foreach (var n in clasDTO.lop)
-                                        {
-                                            if (x == n.TenL1)
-                                            {
-                                                ErrorMessage = "tên lớp đã tồn tại";
-                                                return false;
-
-
-                                            }
-                                           
-                                        }
-                                    }
-                                }
-
-                            }
-                            else
-                            {
-                                if(so == "11"){
-                                    if (so2 < 1 || so2 > 3)
-                                    {
-                                        ErrorMessage = "khối 11 chỉ có (11A1 - > 11A3)";
+                                        ErrorMessage = "khối 10 chỉ có (10A1 - > 10A4)";
                                         return false;
                                     }
                                     else
@@ -230,14 +205,15 @@ namespace QLy_HocSinh
                                             }
                                         }
                                     }
+
                                 }
                                 else
                                 {
-                                    if(so == "12")
+                                    if (so == "11")
                                     {
-                                        if (so2 < 1 || so2 > 2)
+                                        if (so2 < 1 || so2 > 3)
                                         {
-                                            ErrorMessage = "khối 12 chỉ có (12A1 - > 12A2)";
+                                            ErrorMessage = "khối 11 chỉ có (11A1 - > 11A3)";
                                             return false;
                                         }
                                         else
@@ -258,15 +234,50 @@ namespace QLy_HocSinh
                                             }
                                         }
                                     }
+                                    else
+                                    {
+                                        if (so == "12")
+                                        {
+                                            if (so2 < 1 || so2 > 2)
+                                            {
+                                                ErrorMessage = "khối 12 chỉ có (12A1 - > 12A2)";
+                                                return false;
+                                            }
+                                            else
+                                            {
+                                                if (ClassDTO.TonTai == true)
+                                                {
+                                                    foreach (var n in clasDTO.lop)
+                                                    {
+                                                        if (x == n.TenL1)
+                                                        {
+                                                            ErrorMessage = "tên lớp đã tồn tại";
+                                                            return false;
+
+
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
+
+                            }
+                            else
+                            {
+                                ErrorMessage = "Chỉ được thêm 3 khối lớp (10, 11 ,12)";
+                                return false;
                             }
 
                         }
                         else
                         {
-                            ErrorMessage = "Chỉ được thêm 3 khối lớp (10, 11 ,12)";
+                            ErrorMessage = "cần nhập đúng tên lớp vd : 10A1";
                             return false;
                         }
+                        
 
                     }
                   
@@ -354,7 +365,32 @@ namespace QLy_HocSinh
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            string mk = mkcombo.SelectedItem.ToString();
+            MessageBox.Show(mk);
+            char[] ar = mk.ToCharArray();
+            string test = ar[1].ToString() + ar[2].ToString();
+            if(txtml.Text!= "" && txtlop.Text != "" && txtss.Text != "" && checkMaL1.ErrorMessage == null && checkTenL1.ErrorMessage == null)
+            {
+                char[] ar2 = txtlop.Text.ToCharArray();
+                string test2 = ar2[0].ToString() + ar2[1].ToString();
+                
+                if(test != test2)
+                {
+                    MessageBox.Show("vui lòng nhập tên lớp phù hợp với  khối");
+                }
+                else
+                {
+                    clasDTO lopp = new clasDTO(txtml.Text,txtlop.Text,int.Parse(txtss.Text),mk);
+                    HSB.InsertL(lopp);
+                    HSB.Loadkl();
+                    MessageBox.Show("successfull");
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("vui lòng nhập đầy đủ ");
+            }
         }
 
         private void AddClass_Load(object sender, EventArgs e)

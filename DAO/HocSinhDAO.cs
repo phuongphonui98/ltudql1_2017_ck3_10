@@ -103,6 +103,24 @@ namespace DAO
                 return false;
             }
         }
+        public bool InsertL(clasDTO l)
+        {
+            try
+            {
+
+                HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                DANHSACHLOP L = new DANHSACHLOP { MaLop=l.MaL1,TenLop=l.TenL1,SiSo=l.SiSo1,MaKhoiLop=l.MaK1 };
+
+                hdb.DANHSACHLOPs.InsertOnSubmit(L);
+                hdb.SubmitChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public bool Delete(string Mhs)
         {
             try

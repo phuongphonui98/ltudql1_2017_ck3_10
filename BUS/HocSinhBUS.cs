@@ -31,5 +31,11 @@ namespace BUS
             return HS.InsertKL(KL);
            
         }
+        public bool InsertL(clasDTO KL)
+        {
+
+            return HS.InsertL(KL);
+
+        }
     }
 }

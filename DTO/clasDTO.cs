@@ -24,8 +24,9 @@ namespace DTO
         }
         
         public int SiSo1 { get => SiSo; set => SiSo = value; }
-        public string MaK2 { get => MaK; set => MaK = value; }
+    
         public string MaL1 { get => MaL; set => MaL = value; }
         public string TenL1 { get => TenL; set => TenL = value; }
+        public string MaK1 { get => MaK; set => MaK = value; }
     }
 }
