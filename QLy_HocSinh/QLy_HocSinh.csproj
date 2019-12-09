@@ -80,6 +80,18 @@
       <DependentUpon>BaseValidator.cs</DependentUpon>
     </Compile>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DSclass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSclass.Designer.cs">
+      <DependentUpon>DSclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DShocsinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DShocsinh.Designer.cs">
+      <DependentUpon>DShocsinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
