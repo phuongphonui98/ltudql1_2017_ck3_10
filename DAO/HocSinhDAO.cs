@@ -18,6 +18,23 @@ namespace DAO
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             try
             {
+                HocSinhDTO.lisths.Clear();
+                var q0 = from s0 in hdb.Hoc_sinhs select s0;
+                
+                foreach (var x in q0)
+                {
+                    
+                    DateTime oDate = Convert.ToDateTime(x.Date);
+                    bool kt;
+                    if(bool.Parse(x.Sex) == true)
+                    {
+                        kt = true;
+                    }
+                    else { kt = false; }
+                    
+                    HocSinhDTO hs = new HocSinhDTO(x.Name,x.Email,x.Address,kt,oDate);
+                    HocSinhDTO.lisths.Add(hs);
+                }
                 var q = from s in hdb.THAMSOs select s.TuoiToiThieu;
                 var kq = q.FirstOrDefault();
                 HocSinhDTO.toithieu = int.Parse(kq.ToString());
@@ -36,7 +53,9 @@ namespace DAO
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             try
             {
-                   var kk = from l in hdb.DANHSACHLOPs select l;
+                ClassDTO.khoilop.Clear();
+                clasDTO.lop.Clear();
+                var kk = from l in hdb.DANHSACHLOPs select l;
                 var q = from kq in hdb.KHOILOPs select kq;
                 if(q == null || kk ==null)
                 {

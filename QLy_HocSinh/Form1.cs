@@ -105,8 +105,8 @@ namespace QLy_HocSinh
                 DateTime now = DateTime.Now;
                 DateTime oDate = Convert.ToDateTime(ControlToValidate.Text);
                 TimeSpan okk = now.Subtract(oDate);
-               
-                if (okk.Days / 365 > HocSinhDTO.toithieu && okk.Days / 365 < HocSinhDTO.toida)
+                int x = okk.Days / 365;
+                if (x>= HocSinhDTO.toithieu && x <= HocSinhDTO.toida)
                 {
                     
                     ErrorMessage = null;
@@ -158,7 +158,7 @@ namespace QLy_HocSinh
         private void Form1_Load(object sender, EventArgs e)
         {
             HSB.Load();
-           
+
         }
     }
 }

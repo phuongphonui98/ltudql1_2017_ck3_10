@@ -35,3 +35,4 @@ D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\bin\Debug\Google.Apis.Core.pdb
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\bin\Debug\Google.Apis.Core.xml
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\bin\Debug\Newtonsoft.Json.xml
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.AddClass.resources
+D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.Addhstoclass.resources

@@ -8,7 +8,7 @@ namespace DTO
 {
     public class HocSinhDTO
     {
-
+        public static List<HocSinhDTO> lisths = new List<HocSinhDTO>();
         #region Atrributes
         public static int toithieu;
         public static int toida;

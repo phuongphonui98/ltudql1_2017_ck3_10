@@ -15,6 +15,7 @@ namespace QLy_HocSinh
 {
     public partial class MainGUI : Form
     {
+        
         HocSinhBUS HSB = new HocSinhBUS();
         public MainGUI()
         {
@@ -47,10 +48,12 @@ namespace QLy_HocSinh
 
         private void MainGUI_Load(object sender, EventArgs e)
         {
+           
             HSB.Loadkl();
             List<string> l = new List<string>();
            foreach(var s in clasDTO.lop)
             {
+
                 l.Add(s.TenL1);
             }
             dslopcbox.DataSource = l.ToList();
@@ -128,6 +131,11 @@ namespace QLy_HocSinh
         private void button2_Click(object sender, EventArgs e)
         {
             showinpanel(new AddClass());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            showinpanel(new Addhstoclass());
         }
     }
 }
