@@ -37,5 +37,15 @@ namespace BUS
             return HS.InsertL(KL);
 
         }
+        public bool GetMaHS(string hs)
+        {
+            return HS.GetMaHS(hs);
+        }
+        public bool InsertCT(ChiTietClass ct)
+        {
+
+            return HS.InsertHStoClass(ct);
+
+        }
     }
 }

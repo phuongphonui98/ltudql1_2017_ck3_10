@@ -93,5 +93,43 @@ namespace QLy_HocSinh
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool erro = false ;
+            DataGridViewRow row = DShsgridview.SelectedRows[0];
+            string mail = row.Cells[4].Value.ToString();
+            HSB.GetMaHS(mail);
+            string ML = "";
+            foreach(var i in clasDTO.lop)
+            {
+                if(Classcombo.SelectedItem.ToString() == i.TenL1)
+                {
+                    ML = i.MaL1;
+                }
+            }
+            string mct = ML + HocSinhDTO.id.ToString();
+            ChiTietClass ct = new ChiTietClass(mct, ML, HocSinhDTO.id, 0, 0);
+            if(ML != "")
+            {
+                foreach(var m in ChiTietClass.ctclas)
+                {
+                    if (mct == m.MaCT1)
+                    {
+                        erro = true;
+                        MessageBox.Show("mã chi tiết lớp đã tồn tại");
+                        break;
+                     
+                    }
+                }
+                if(erro == false)
+                {
+                    HSB.InsertCT(ct);
+                    MessageBox.Show("successfull");
+                }
+             
+            }
+            
+        }
     }
 }

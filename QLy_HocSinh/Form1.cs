@@ -54,6 +54,17 @@ namespace QLy_HocSinh
                         ErrorMessage = "cần nhập đúng định dạng email";
                         return false;
                     }
+                    else
+                    {
+                        foreach(var i in HocSinhDTO.lisths)
+                        {
+                            if(ControlToValidate.Text == i.Email)
+                            {
+                                ErrorMessage = "email này đã có người dùng";
+                                return false;
+                            }
+                        }
+                    }
                 }
                 ErrorMessage = null;
                 return true;

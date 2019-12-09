@@ -19,6 +19,7 @@ namespace DAO
             try
             {
                 HocSinhDTO.lisths.Clear();
+              
                 var q0 = from s0 in hdb.Hoc_sinhs select s0;
                 
                 foreach (var x in q0)
@@ -41,7 +42,16 @@ namespace DAO
                 var q2 = from s in hdb.THAMSOs select s.TuoiToiDa;
                 var kq2 = q2.FirstOrDefault();
                 HocSinhDTO.toida = int.Parse(kq2.ToString());
-              
+                ChiTietClass.ctclas.Clear();
+                var ct = from st in hdb.CHITIETDSLOPs select st;
+
+                foreach (var x in ct)
+                {
+                    string tb1 = x.TBHocKi1.ToString();
+                    string tb2 = x.TBHocKi2.ToString();
+                    ChiTietClass hsct = new ChiTietClass(x.MaChiTietDSLop, x.MaLop, x.MaHocSinh, float.Parse(tb1), float.Parse(tb2));
+                    ChiTietClass.ctclas.Add(hsct);
+                }
             }
             catch
             {
@@ -86,6 +96,22 @@ namespace DAO
         }
         DataTable dt = new DataTable();
 
+        public bool GetMaHS(string email)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var kq = from s in hdb.Hoc_sinhs select s;
+            foreach(var hs in kq.ToList())
+            {
+                if(email == hs.Email)
+                {
+                    HocSinhDTO.id = hs.ID;
+                    return true;
+                }
+
+            }
+            return false;
+        }
+      
         public bool Insert(HocSinhDTO hs)
         {
             try
@@ -131,6 +157,24 @@ namespace DAO
                 DANHSACHLOP L = new DANHSACHLOP { MaLop=l.MaL1,TenLop=l.TenL1,SiSo=l.SiSo1,MaKhoiLop=l.MaK1 };
 
                 hdb.DANHSACHLOPs.InsertOnSubmit(L);
+                hdb.SubmitChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool InsertHStoClass(ChiTietClass CT)
+        {
+            try
+            {
+
+                HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                CHITIETDSLOP L = new CHITIETDSLOP { MaChiTietDSLop= CT.MaCT1,MaLop=CT.MaL1,MaHocSinh=CT.MaHS1,TBHocKi1=CT.TB11,TBHocKi2=CT.TB21 };
+
+                hdb.CHITIETDSLOPs.InsertOnSubmit(L);
                 hdb.SubmitChanges();
 
                 return true;
