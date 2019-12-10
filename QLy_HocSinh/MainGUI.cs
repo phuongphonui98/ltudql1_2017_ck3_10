@@ -137,5 +137,10 @@ namespace QLy_HocSinh
         {
             showinpanel(new Addhstoclass());
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showinpanel(new DSclass());
+        }
     }
 }

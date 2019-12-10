@@ -121,11 +121,21 @@ namespace QLy_HocSinh
                         break;
                      
                     }
+                    else
+                    {
+                        if(m.MaHS1 == HocSinhDTO.id)
+                        {
+                            erro = true;
+                            MessageBox.Show("học sinh đã có lớp");
+                            break;
+                        }
+                    }
                 }
                 if(erro == false)
                 {
                     HSB.InsertCT(ct);
                     MessageBox.Show("successfull");
+                    HSB.Load();
                 }
              
             }
