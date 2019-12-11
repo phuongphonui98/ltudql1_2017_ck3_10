@@ -229,7 +229,7 @@
 </value>
   </data>
   <metadata name="requiredFieldValidator21.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>258, 13</value>
+    <value>444, 13</value>
   </metadata>
   <data name="requiredFieldValidator21.ErrorIcon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -284,7 +284,7 @@
 </value>
   </data>
   <metadata name="checkDate1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>444, 13</value>
+    <value>17, 52</value>
   </metadata>
   <data name="checkDate1.ErrorIcon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

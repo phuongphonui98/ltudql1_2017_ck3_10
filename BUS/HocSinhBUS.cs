@@ -57,5 +57,10 @@ namespace BUS
             return HS.InsertHStoClass(ct);
 
         }
+        public bool UpdateHS(HocSinhDTO hs,int id)
+        {
+
+            return HS.UpdateHS(hs,id);
+        }
     }
 }

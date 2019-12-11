@@ -128,17 +128,17 @@ namespace DAO
 			return ((ISingleResult<TracuuhocsinhLopResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateHS")]
-		public int updateHS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenL", DbType="VarChar(10)")] string tenL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="Int")] System.Nullable<int> maHS, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sex)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenL, maHS, name, address, mail, date, sex);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaHS")]
 		public int XoaHS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="Int")] System.Nullable<int> maHS)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHS);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateHS")]
+		public int updateHS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenL", DbType="VarChar(10)")] string tenL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="Int")] System.Nullable<int> maHS, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sex)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenL, maHS, name, address, mail, date, sex);
 			return ((int)(result.ReturnValue));
 		}
 	}

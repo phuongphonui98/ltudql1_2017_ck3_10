@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSclass));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dshsgrid = new System.Windows.Forms.DataGridView();
             this.HT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkName1 = new Register.CheckName();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).BeginInit();
             this.panel2.SuspendLayout();
@@ -410,6 +412,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // checkName1
+            // 
+            this.checkName1.ControlToValidate = this.txtht;
+            this.checkName1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkName1.ErrorIcon")));
+            this.checkName1.ErrorMessage = null;
+            // 
             // DSclass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,5 +501,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private Register.CheckName checkName1;
     }
 }

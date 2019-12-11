@@ -251,21 +251,12 @@ namespace DAO
                 return false;
             }
         }
-        public bool Update(HocSinhDTO hs)
+        public bool UpdateHS(HocSinhDTO hs,int id)
         {
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from Hoc_sinh", cn);
-                DataRow r = dt.NewRow();
-                r["Name"] = hs.Name;
-                r["Address"] = hs.Diachi;
-                r["Email"] = hs.Email;
-                r["Date"] = hs.Ngsinh;
-                r["Sex"] = hs.Gioitinh;
-                dt.Rows.Add(r);
-                SqlCommandBuilder cmd = new SqlCommandBuilder(da);
-                da.Update(dt);
-
+                HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                hdb.updateHS(hs.Clas, id, hs.Name, hs.Diachi, hs.Email, hs.Ngsinh.ToString(), hs.Gioitinh.ToString());
                 return true;
             }
             catch

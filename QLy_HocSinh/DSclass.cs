@@ -274,6 +274,10 @@ namespace QLy_HocSinh
                 {
                     namradio.Checked = true;
                 }
+                else
+                {
+                    nuradio.Checked = true;
+                }
                 HSB.GetMaHS(row.Cells[5].Value.ToString());
                 txtma.Text = HocSinhDTO.id.ToString();
 
@@ -282,7 +286,20 @@ namespace QLy_HocSinh
 
         private void button2_Click(object sender, EventArgs e)
         {
+            DateTime oDate = Convert.ToDateTime(txtdate.Text);
+            bool kt;
+            if (namradio.Checked == true)
+            {
+                kt = true;
+            }
+            else { kt = false; }
+            HocSinhDTO k = new HocSinhDTO(txtht.Text, txtmail.Text, txtaddr.Text,kt,oDate,txtclass.Text);
+            int x = int.Parse(txtma.Text);
+            HSB.UpdateHS(k, x);
+            MessageBox.Show("successfull");
+         
 
+           
         }
     }
 }

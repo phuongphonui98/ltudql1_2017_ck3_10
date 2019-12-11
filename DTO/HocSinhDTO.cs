@@ -48,6 +48,18 @@ namespace DTO
             HK2 = tb2;
 
         }
+        public HocSinhDTO(string name, string mail, string dc, bool gt, DateTime date, string lop)
+        {
+
+            _name = name;
+            _email = mail;
+            _gioitinh = gt;
+            _diachi = dc;
+            _ngsinh = date;
+            clas = lop;
+           
+
+        }
 
         public string Name { get => _name; set => _name = value; }
         

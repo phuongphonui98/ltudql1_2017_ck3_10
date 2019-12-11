@@ -32,21 +32,21 @@
         <elementListCompartment Id="80732c79-9c27-4c93-a90c-b56b3a00c6e8" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 1.78929768880208); (6.25 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.78929768880208); (6.25 : 1.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/DANHSACHLOP/DANHSACHLOP_CHITIETDSLOP" />
       <nodes>
         <classShapeMoniker Id="0a0c7439-af52-47f7-84e2-a0409b80cfba" />
         <classShapeMoniker Id="ff7db931-1cc4-4d72-a975-04aa4166928a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.85659912109375); (7.25 : 4.85659912109375); (7.25 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.85659912109375); (7.25 : 4.85659912109375); (7.25 : 2.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/Hoc_sinh/Hoc_sinh_CHITIETDSLOP" />
       <nodes>
         <classShapeMoniker Id="e95d944e-3581-4154-a83d-3a8f5bfa7d53" />
         <classShapeMoniker Id="ff7db931-1cc4-4d72-a975-04aa4166928a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/KHOILOP/KHOILOP_DANHSACHLOP" />
       <nodes>
         <classShapeMoniker Id="bb9dd2b6-d604-493d-ac2b-4e8416991f9d" />
