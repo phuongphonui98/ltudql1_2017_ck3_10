@@ -456,6 +456,15 @@ namespace QLy_HocSinh
             int x = int.Parse(txtma.Text);
             HSB.UpdateHS(k, x);
             MessageBox.Show("successfull");
+            if(KL.Checked ==true)
+            {
+                kLcombo_SelectedIndexChanged(sender, e);
+            }
+            else
+                if(Lop.Checked==true)
+            {
+                classcombo_SelectedIndexChanged(sender, e);
+            }
          
 
            
