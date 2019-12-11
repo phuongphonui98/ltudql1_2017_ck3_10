@@ -62,5 +62,9 @@ namespace BUS
 
             return HS.UpdateHS(hs,id);
         }
+        public bool DeleteHS(int id)
+        {
+            return HS.DeleteHS(id);
+        }
     }
 }

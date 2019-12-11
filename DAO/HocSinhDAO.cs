@@ -264,5 +264,18 @@ namespace DAO
                 return false;
             }
         }
+        public bool DeleteHS(int id)
+        {
+            try
+            {
+                HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+                hdb.XoaHS(id);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

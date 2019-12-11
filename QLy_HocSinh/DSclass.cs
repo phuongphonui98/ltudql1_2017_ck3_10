@@ -23,6 +23,10 @@ namespace QLy_HocSinh
         private void DSclass_Load(object sender, EventArgs e)
         {
             HSB.Load();
+            if(dshsgrid.SelectedRows.Count <0)
+            {
+                button1.Visible = false;
+            }
             List<string> kl = new List<string>();
             foreach (var s in ClassDTO.khoilop)
             {
@@ -414,6 +418,8 @@ namespace QLy_HocSinh
         {
             if (dshsgrid.SelectedRows.Count > 0)
             {
+                button1.Visible = true;
+                button2.Visible = true;
                 DataGridViewRow row = dshsgrid.SelectedRows[0];
                 txtht.Text = row.Cells[0].Value.ToString();
                 txtclass.Text = row.Cells[1].Value.ToString();
@@ -453,6 +459,25 @@ namespace QLy_HocSinh
          
 
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(txtma.Text);
+            DialogResult result = MessageBox.Show("Đồng Ý Sẽ Không Khôi Phục Được", "Xóa Học Sinh", MessageBoxButtons.YesNo, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button2);
+            switch (result)
+            {
+                case DialogResult.Abort:
+                    break;
+                case DialogResult.Yes:
+                    {
+                        HSB.DeleteHS(x);
+                        MessageBox.Show("Seccessfull");
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
 }
