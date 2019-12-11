@@ -12,7 +12,51 @@ namespace DAO
 {
    public  class HocSinhDAO : DBConnect
     {
-     
+
+        public void GetHSL(string MLop)
+        {
+            HocSinhDTO.lisths.Clear();
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var list = hdb.TracuuhocsinhLop(MLop);
+
+            foreach (var x in list)
+            {
+
+                DateTime oDate = Convert.ToDateTime(x.Date);
+                bool kt;
+                if (bool.Parse(x.Sex) == true)
+                {
+                    kt = true;
+                }
+                else { kt = false; }
+                string tb1 = x.TBHocKi1.ToString();
+                string tb2 = x.TBHocKi2.ToString();
+                HocSinhDTO hs = new HocSinhDTO(x.Name, x.Email, x.Address, kt, oDate, x.TenLop, float.Parse(tb1), float.Parse(tb2));
+                HocSinhDTO.lisths.Add(hs);
+            }
+        }
+        public void GetHSK(string MK)
+        {
+            HocSinhDTO.lisths.Clear();
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var list = hdb.TracuuhocsinhKL(MK);
+
+            foreach (var x in list)
+            {
+
+                DateTime oDate = Convert.ToDateTime(x.Date);
+                bool kt;
+                if (bool.Parse(x.Sex) == true)
+                {
+                    kt = true;
+                }
+                else { kt = false; }
+                string tb1 = x.TBHocKi1.ToString();
+                string tb2 = x.TBHocKi2.ToString();
+                HocSinhDTO hs = new HocSinhDTO(x.Name, x.Email, x.Address, kt, oDate,x.TenLop,float.Parse(tb1),float.Parse(tb2));
+                HocSinhDTO.lisths.Add(hs);
+            }
+        }
         public void Get()
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
@@ -52,6 +96,8 @@ namespace DAO
                     ChiTietClass hsct = new ChiTietClass(x.MaChiTietDSLop, x.MaLop, x.MaHocSinh, float.Parse(tb1), float.Parse(tb2));
                     ChiTietClass.ctclas.Add(hsct);
                 }
+            
+
             }
             catch
             {

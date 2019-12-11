@@ -30,15 +30,15 @@ namespace DAO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertHoc_sinh(Hoc_sinh instance);
-    partial void UpdateHoc_sinh(Hoc_sinh instance);
-    partial void DeleteHoc_sinh(Hoc_sinh instance);
     partial void InsertCHITIETDSLOP(CHITIETDSLOP instance);
     partial void UpdateCHITIETDSLOP(CHITIETDSLOP instance);
     partial void DeleteCHITIETDSLOP(CHITIETDSLOP instance);
     partial void InsertDANHSACHLOP(DANHSACHLOP instance);
     partial void UpdateDANHSACHLOP(DANHSACHLOP instance);
     partial void DeleteDANHSACHLOP(DANHSACHLOP instance);
+    partial void InsertHoc_sinh(Hoc_sinh instance);
+    partial void UpdateHoc_sinh(Hoc_sinh instance);
+    partial void DeleteHoc_sinh(Hoc_sinh instance);
     partial void InsertKHOILOP(KHOILOP instance);
     partial void UpdateKHOILOP(KHOILOP instance);
     partial void DeleteKHOILOP(KHOILOP instance);
@@ -74,14 +74,6 @@ namespace DAO
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Hoc_sinh> Hoc_sinhs
-		{
-			get
-			{
-				return this.GetTable<Hoc_sinh>();
-			}
-		}
-		
 		public System.Data.Linq.Table<THAMSO> THAMSOs
 		{
 			get
@@ -106,6 +98,14 @@ namespace DAO
 			}
 		}
 		
+		public System.Data.Linq.Table<Hoc_sinh> Hoc_sinhs
+		{
+			get
+			{
+				return this.GetTable<Hoc_sinh>();
+			}
+		}
+		
 		public System.Data.Linq.Table<KHOILOP> KHOILOPs
 		{
 			get
@@ -113,215 +113,33 @@ namespace DAO
 				return this.GetTable<KHOILOP>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hoc_sinh")]
-	public partial class Hoc_sinh : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Name;
-		
-		private string _Address;
-		
-		private string _Email;
-		
-		private string _Date;
-		
-		private string _Sex;
-		
-		private EntitySet<CHITIETDSLOP> _CHITIETDSLOPs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnDateChanging(string value);
-    partial void OnDateChanged();
-    partial void OnSexChanging(string value);
-    partial void OnSexChanged();
-    #endregion
-		
-		public Hoc_sinh()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TracuuhocsinhKL")]
+		public ISingleResult<TracuuhocsinhKLResult> TracuuhocsinhKL([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaK", DbType="VarChar(10)")] string maK)
 		{
-			this._CHITIETDSLOPs = new EntitySet<CHITIETDSLOP>(new Action<CHITIETDSLOP>(this.attach_CHITIETDSLOPs), new Action<CHITIETDSLOP>(this.detach_CHITIETDSLOPs));
-			OnCreated();
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maK);
+			return ((ISingleResult<TracuuhocsinhKLResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TracuuhocsinhLop")]
+		public ISingleResult<TracuuhocsinhLopResult> TracuuhocsinhLop([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="VarChar(10)")] string maLop)
 		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop);
+			return ((ISingleResult<TracuuhocsinhLopResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
-		public string Name
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateHS")]
+		public int updateHS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenL", DbType="VarChar(10)")] string tenL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="Int")] System.Nullable<int> maHS, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sex)
 		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenL, maHS, name, address, mail, date, sex);
+			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50)")]
-		public string Address
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaHS")]
+		public int XoaHS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="Int")] System.Nullable<int> maHS)
 		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50)")]
-		public string Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sex", DbType="NChar(10)")]
-		public string Sex
-		{
-			get
-			{
-				return this._Sex;
-			}
-			set
-			{
-				if ((this._Sex != value))
-				{
-					this.OnSexChanging(value);
-					this.SendPropertyChanging();
-					this._Sex = value;
-					this.SendPropertyChanged("Sex");
-					this.OnSexChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hoc_sinh_CHITIETDSLOP", Storage="_CHITIETDSLOPs", ThisKey="ID", OtherKey="MaHocSinh")]
-		public EntitySet<CHITIETDSLOP> CHITIETDSLOPs
-		{
-			get
-			{
-				return this._CHITIETDSLOPs;
-			}
-			set
-			{
-				this._CHITIETDSLOPs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CHITIETDSLOPs(CHITIETDSLOP entity)
-		{
-			this.SendPropertyChanging();
-			entity.Hoc_sinh = this;
-		}
-		
-		private void detach_CHITIETDSLOPs(CHITIETDSLOP entity)
-		{
-			this.SendPropertyChanging();
-			entity.Hoc_sinh = null;
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHS);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -386,9 +204,9 @@ namespace DAO
 		
 		private System.Nullable<double> _TBHocKi2;
 		
-		private EntityRef<Hoc_sinh> _Hoc_sinh;
-		
 		private EntityRef<DANHSACHLOP> _DANHSACHLOP;
+		
+		private EntityRef<Hoc_sinh> _Hoc_sinh;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -408,8 +226,8 @@ namespace DAO
 		
 		public CHITIETDSLOP()
 		{
-			this._Hoc_sinh = default(EntityRef<Hoc_sinh>);
 			this._DANHSACHLOP = default(EntityRef<DANHSACHLOP>);
+			this._Hoc_sinh = default(EntityRef<Hoc_sinh>);
 			OnCreated();
 		}
 		
@@ -521,40 +339,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hoc_sinh_CHITIETDSLOP", Storage="_Hoc_sinh", ThisKey="MaHocSinh", OtherKey="ID", IsForeignKey=true)]
-		public Hoc_sinh Hoc_sinh
-		{
-			get
-			{
-				return this._Hoc_sinh.Entity;
-			}
-			set
-			{
-				Hoc_sinh previousValue = this._Hoc_sinh.Entity;
-				if (((previousValue != value) 
-							|| (this._Hoc_sinh.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Hoc_sinh.Entity = null;
-						previousValue.CHITIETDSLOPs.Remove(this);
-					}
-					this._Hoc_sinh.Entity = value;
-					if ((value != null))
-					{
-						value.CHITIETDSLOPs.Add(this);
-						this._MaHocSinh = value.ID;
-					}
-					else
-					{
-						this._MaHocSinh = default(int);
-					}
-					this.SendPropertyChanged("Hoc_sinh");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DANHSACHLOP_CHITIETDSLOP", Storage="_DANHSACHLOP", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
 		public DANHSACHLOP DANHSACHLOP
 		{
@@ -585,6 +369,40 @@ namespace DAO
 						this._MaLop = default(string);
 					}
 					this.SendPropertyChanged("DANHSACHLOP");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hoc_sinh_CHITIETDSLOP", Storage="_Hoc_sinh", ThisKey="MaHocSinh", OtherKey="ID", IsForeignKey=true)]
+		public Hoc_sinh Hoc_sinh
+		{
+			get
+			{
+				return this._Hoc_sinh.Entity;
+			}
+			set
+			{
+				Hoc_sinh previousValue = this._Hoc_sinh.Entity;
+				if (((previousValue != value) 
+							|| (this._Hoc_sinh.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Hoc_sinh.Entity = null;
+						previousValue.CHITIETDSLOPs.Remove(this);
+					}
+					this._Hoc_sinh.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDSLOPs.Add(this);
+						this._MaHocSinh = value.ID;
+					}
+					else
+					{
+						this._MaHocSinh = default(int);
+					}
+					this.SendPropertyChanged("Hoc_sinh");
 				}
 			}
 		}
@@ -813,6 +631,216 @@ namespace DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hoc_sinh")]
+	public partial class Hoc_sinh : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Address;
+		
+		private string _Email;
+		
+		private string _Date;
+		
+		private string _Sex;
+		
+		private EntitySet<CHITIETDSLOP> _CHITIETDSLOPs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnDateChanging(string value);
+    partial void OnDateChanged();
+    partial void OnSexChanging(string value);
+    partial void OnSexChanged();
+    #endregion
+		
+		public Hoc_sinh()
+		{
+			this._CHITIETDSLOPs = new EntitySet<CHITIETDSLOP>(new Action<CHITIETDSLOP>(this.attach_CHITIETDSLOPs), new Action<CHITIETDSLOP>(this.detach_CHITIETDSLOPs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sex", DbType="NChar(10)")]
+		public string Sex
+		{
+			get
+			{
+				return this._Sex;
+			}
+			set
+			{
+				if ((this._Sex != value))
+				{
+					this.OnSexChanging(value);
+					this.SendPropertyChanging();
+					this._Sex = value;
+					this.SendPropertyChanged("Sex");
+					this.OnSexChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hoc_sinh_CHITIETDSLOP", Storage="_CHITIETDSLOPs", ThisKey="ID", OtherKey="MaHocSinh")]
+		public EntitySet<CHITIETDSLOP> CHITIETDSLOPs
+		{
+			get
+			{
+				return this._CHITIETDSLOPs;
+			}
+			set
+			{
+				this._CHITIETDSLOPs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CHITIETDSLOPs(CHITIETDSLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hoc_sinh = this;
+		}
+		
+		private void detach_CHITIETDSLOPs(CHITIETDSLOP entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hoc_sinh = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KHOILOP")]
 	public partial class KHOILOP : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -924,6 +952,346 @@ namespace DAO
 		{
 			this.SendPropertyChanging();
 			entity.KHOILOP = null;
+		}
+	}
+	
+	public partial class TracuuhocsinhKLResult
+	{
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Address;
+		
+		private string _Email;
+		
+		private string _Date;
+		
+		private string _Sex;
+		
+		private string _TenLop;
+		
+		private System.Nullable<double> _TBHocKi1;
+		
+		private System.Nullable<double> _TBHocKi2;
+		
+		public TracuuhocsinhKLResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sex", DbType="NChar(10)")]
+		public string Sex
+		{
+			get
+			{
+				return this._Sex;
+			}
+			set
+			{
+				if ((this._Sex != value))
+				{
+					this._Sex = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLop", DbType="VarChar(10)")]
+		public string TenLop
+		{
+			get
+			{
+				return this._TenLop;
+			}
+			set
+			{
+				if ((this._TenLop != value))
+				{
+					this._TenLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi1", DbType="Float")]
+		public System.Nullable<double> TBHocKi1
+		{
+			get
+			{
+				return this._TBHocKi1;
+			}
+			set
+			{
+				if ((this._TBHocKi1 != value))
+				{
+					this._TBHocKi1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi2", DbType="Float")]
+		public System.Nullable<double> TBHocKi2
+		{
+			get
+			{
+				return this._TBHocKi2;
+			}
+			set
+			{
+				if ((this._TBHocKi2 != value))
+				{
+					this._TBHocKi2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TracuuhocsinhLopResult
+	{
+		
+		private int _ID;
+		
+		private string _Name;
+		
+		private string _Address;
+		
+		private string _Email;
+		
+		private string _Date;
+		
+		private string _Sex;
+		
+		private string _TenLop;
+		
+		private System.Nullable<double> _TBHocKi1;
+		
+		private System.Nullable<double> _TBHocKi2;
+		
+		public TracuuhocsinhLopResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sex", DbType="NChar(10)")]
+		public string Sex
+		{
+			get
+			{
+				return this._Sex;
+			}
+			set
+			{
+				if ((this._Sex != value))
+				{
+					this._Sex = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLop", DbType="VarChar(10)")]
+		public string TenLop
+		{
+			get
+			{
+				return this._TenLop;
+			}
+			set
+			{
+				if ((this._TenLop != value))
+				{
+					this._TenLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi1", DbType="Float")]
+		public System.Nullable<double> TBHocKi1
+		{
+			get
+			{
+				return this._TBHocKi1;
+			}
+			set
+			{
+				if ((this._TBHocKi1 != value))
+				{
+					this._TBHocKi1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi2", DbType="Float")]
+		public System.Nullable<double> TBHocKi2
+		{
+			get
+			{
+				return this._TBHocKi2;
+			}
+			set
+			{
+				if ((this._TBHocKi2 != value))
+				{
+					this._TBHocKi2 = value;
+				}
+			}
 		}
 	}
 }

@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLHS" Class="HocSinhDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-L34EHS5\SQLEXPRESS;Initial Catalog=QLHS;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLHSConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Hoc_sinh" Member="Hoc_sinhs">
-    <Type Name="Hoc_sinh">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="Hoc_sinh_CHITIETDSLOP" Member="CHITIETDSLOPs" ThisKey="ID" OtherKey="MaHocSinh" Type="CHITIETDSLOP" />
-    </Type>
-  </Table>
   <Table Name="dbo.THAMSO" Member="THAMSOs">
     <Type Name="THAMSO">
       <Column Name="TuoiToiThieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -24,8 +13,8 @@
       <Column Name="MaHocSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TBHocKi1" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="Hoc_sinh_CHITIETDSLOP" Member="Hoc_sinh" ThisKey="MaHocSinh" OtherKey="ID" Type="Hoc_sinh" IsForeignKey="true" />
       <Association Name="DANHSACHLOP_CHITIETDSLOP" Member="DANHSACHLOP" ThisKey="MaLop" OtherKey="MaLop" Type="DANHSACHLOP" IsForeignKey="true" />
+      <Association Name="Hoc_sinh_CHITIETDSLOP" Member="Hoc_sinh" ThisKey="MaHocSinh" OtherKey="ID" Type="Hoc_sinh" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DANHSACHLOP" Member="DANHSACHLOPs">
@@ -38,6 +27,17 @@
       <Association Name="KHOILOP_DANHSACHLOP" Member="KHOILOP" ThisKey="MaKhoiLop" OtherKey="MaKhoiLop" Type="KHOILOP" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Hoc_sinh" Member="Hoc_sinhs">
+    <Type Name="Hoc_sinh">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Hoc_sinh_CHITIETDSLOP" Member="CHITIETDSLOPs" ThisKey="ID" OtherKey="MaHocSinh" Type="CHITIETDSLOP" />
+    </Type>
+  </Table>
   <Table Name="dbo.KHOILOP" Member="KHOILOPs">
     <Type Name="KHOILOP">
       <Column Name="MaKhoiLop" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -45,4 +45,32 @@
       <Association Name="KHOILOP_DANHSACHLOP" Member="DANHSACHLOPs" ThisKey="MaKhoiLop" OtherKey="MaKhoiLop" Type="DANHSACHLOP" />
     </Type>
   </Table>
+  <Function Name="dbo.TracuuhocsinhKL" Method="TracuuhocsinhKL">
+    <Parameter Name="MaK" Parameter="maK" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="TracuuhocsinhKLResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TenLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TBHocKi1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TracuuhocsinhLop" Method="TracuuhocsinhLop">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="TracuuhocsinhLopResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TenLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TBHocKi1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

@@ -16,6 +16,16 @@ namespace BUS
         {
             HS.Get();
         }
+        public void Loadhsk(string x)
+        {
+           
+            HS.GetHSK(x);
+        }
+        public void Loadhsl(string x)
+        {
+
+            HS.GetHSL(x);
+        }
         public void Loadkl()
         {
             HS.GetKL();

@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.classcombo = new System.Windows.Forms.ComboBox();
             this.dshsgrid = new System.Windows.Forms.DataGridView();
+            this.HT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBHK1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBHK2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classcombo = new System.Windows.Forms.ComboBox();
             this.txtma = new System.Windows.Forms.TextBox();
             this.txtdate = new System.Windows.Forms.TextBox();
             this.txtaddr = new System.Windows.Forms.TextBox();
@@ -51,36 +59,28 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.kLcombo = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.HT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TBHK1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TBHK2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Lop = new System.Windows.Forms.RadioButton();
+            this.KL = new System.Windows.Forms.RadioButton();
+            this.txtmail = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dshsgrid);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 123);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 327);
             this.panel1.TabIndex = 0;
-            // 
-            // classcombo
-            // 
-            this.classcombo.FormattingEnabled = true;
-            this.classcombo.Location = new System.Drawing.Point(226, 29);
-            this.classcombo.Name = "classcombo";
-            this.classcombo.Size = new System.Drawing.Size(261, 21);
-            this.classcombo.TabIndex = 1;
             // 
             // dshsgrid
             // 
@@ -94,16 +94,67 @@
             this.Mail,
             this.TBHK1,
             this.TBHK2});
-            this.dshsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dshsgrid.Location = new System.Drawing.Point(0, 0);
+            this.dshsgrid.Location = new System.Drawing.Point(0, 37);
             this.dshsgrid.Name = "dshsgrid";
-            this.dshsgrid.Size = new System.Drawing.Size(800, 327);
+            this.dshsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dshsgrid.Size = new System.Drawing.Size(800, 290);
             this.dshsgrid.TabIndex = 0;
+            this.dshsgrid.SelectionChanged += new System.EventHandler(this.dshsgrid_SelectionChanged);
+            // 
+            // HT
+            // 
+            this.HT.HeaderText = "Họ Tên";
+            this.HT.Name = "HT";
+            // 
+            // Class
+            // 
+            this.Class.HeaderText = "Lớp";
+            this.Class.Name = "Class";
+            // 
+            // Sex
+            // 
+            this.Sex.HeaderText = "Giới Tính";
+            this.Sex.Name = "Sex";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Ngày sinh";
+            this.Date.Name = "Date";
+            // 
+            // Addr
+            // 
+            this.Addr.HeaderText = "Địa chỉ";
+            this.Addr.Name = "Addr";
+            // 
+            // Mail
+            // 
+            this.Mail.HeaderText = "Email";
+            this.Mail.Name = "Mail";
+            // 
+            // TBHK1
+            // 
+            this.TBHK1.HeaderText = "TB HK1";
+            this.TBHK1.Name = "TBHK1";
+            // 
+            // TBHK2
+            // 
+            this.TBHK2.HeaderText = "TB HK2";
+            this.TBHK2.Name = "TBHK2";
+            // 
+            // classcombo
+            // 
+            this.classcombo.FormattingEnabled = true;
+            this.classcombo.Location = new System.Drawing.Point(226, 33);
+            this.classcombo.Name = "classcombo";
+            this.classcombo.Size = new System.Drawing.Size(261, 21);
+            this.classcombo.TabIndex = 1;
+            this.classcombo.SelectedIndexChanged += new System.EventHandler(this.classcombo_SelectedIndexChanged);
             // 
             // txtma
             // 
             this.txtma.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtma.Location = new System.Drawing.Point(115, 56);
+            this.txtma.Enabled = false;
+            this.txtma.Location = new System.Drawing.Point(65, 59);
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(49, 20);
             this.txtma.TabIndex = 2;
@@ -119,7 +170,7 @@
             // txtaddr
             // 
             this.txtaddr.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtaddr.Location = new System.Drawing.Point(636, 56);
+            this.txtaddr.Location = new System.Drawing.Point(476, 62);
             this.txtaddr.Name = "txtaddr";
             this.txtaddr.Size = new System.Drawing.Size(100, 20);
             this.txtaddr.TabIndex = 4;
@@ -127,15 +178,15 @@
             // txtclass
             // 
             this.txtclass.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtclass.Location = new System.Drawing.Point(443, 56);
+            this.txtclass.Location = new System.Drawing.Point(364, 62);
             this.txtclass.Name = "txtclass";
-            this.txtclass.Size = new System.Drawing.Size(100, 20);
+            this.txtclass.Size = new System.Drawing.Size(30, 20);
             this.txtclass.TabIndex = 5;
             // 
             // txtht
             // 
             this.txtht.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtht.Location = new System.Drawing.Point(257, 56);
+            this.txtht.Location = new System.Drawing.Point(188, 59);
             this.txtht.Name = "txtht";
             this.txtht.Size = new System.Drawing.Size(100, 20);
             this.txtht.TabIndex = 6;
@@ -167,6 +218,7 @@
             // txthk1
             // 
             this.txthk1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txthk1.Enabled = false;
             this.txthk1.Location = new System.Drawing.Point(443, 98);
             this.txthk1.Name = "txthk1";
             this.txthk1.Size = new System.Drawing.Size(100, 20);
@@ -175,6 +227,7 @@
             // txthk2
             // 
             this.txthk2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txthk2.Enabled = false;
             this.txthk2.Location = new System.Drawing.Point(636, 99);
             this.txthk2.Name = "txthk2";
             this.txthk2.Size = new System.Drawing.Size(100, 20);
@@ -184,7 +237,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 59);
+            this.label1.Location = new System.Drawing.Point(7, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 11;
@@ -214,7 +267,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(571, 59);
+            this.label4.Location = new System.Drawing.Point(411, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 14;
@@ -224,7 +277,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(390, 59);
+            this.label5.Location = new System.Drawing.Point(311, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 15;
@@ -234,7 +287,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(208, 59);
+            this.label6.Location = new System.Drawing.Point(139, 62);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 16;
@@ -285,74 +338,86 @@
             this.kLcombo.Name = "kLcombo";
             this.kLcombo.Size = new System.Drawing.Size(261, 21);
             this.kLcombo.TabIndex = 20;
+            this.kLcombo.SelectedIndexChanged += new System.EventHandler(this.kLcombo_SelectedIndexChanged);
             // 
-            // checkBox1
+            // panel2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(531, 8);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(120, 17);
-            this.checkBox1.TabIndex = 24;
-            this.checkBox1.Text = "Xem Theo Khối Lớp";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.Lop);
+            this.panel2.Controls.Add(this.KL);
+            this.panel2.Location = new System.Drawing.Point(536, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 50);
+            this.panel2.TabIndex = 1;
             // 
-            // checkBox2
+            // Lop
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(531, 31);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(96, 17);
-            this.checkBox2.TabIndex = 25;
-            this.checkBox2.Text = "Xem Theo Lớp";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.Lop.AutoSize = true;
+            this.Lop.Location = new System.Drawing.Point(36, 27);
+            this.Lop.Name = "Lop";
+            this.Lop.Size = new System.Drawing.Size(87, 17);
+            this.Lop.TabIndex = 1;
+            this.Lop.TabStop = true;
+            this.Lop.Text = "Xem theo lớp";
+            this.Lop.UseVisualStyleBackColor = true;
+            this.Lop.CheckedChanged += new System.EventHandler(this.Lop_CheckedChanged);
             // 
-            // HT
+            // KL
             // 
-            this.HT.HeaderText = "Họ Tên";
-            this.HT.Name = "HT";
+            this.KL.AutoSize = true;
+            this.KL.Location = new System.Drawing.Point(36, 3);
+            this.KL.Name = "KL";
+            this.KL.Size = new System.Drawing.Size(110, 17);
+            this.KL.TabIndex = 0;
+            this.KL.TabStop = true;
+            this.KL.Text = "Xem theo khối lớp";
+            this.KL.UseVisualStyleBackColor = true;
+            this.KL.CheckedChanged += new System.EventHandler(this.KL_CheckedChanged);
             // 
-            // Class
+            // txtmail
             // 
-            this.Class.HeaderText = "Lớp";
-            this.Class.Name = "Class";
+            this.txtmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtmail.Location = new System.Drawing.Point(636, 61);
+            this.txtmail.Name = "txtmail";
+            this.txtmail.Size = new System.Drawing.Size(100, 20);
+            this.txtmail.TabIndex = 22;
             // 
-            // Sex
+            // label11
             // 
-            this.Sex.HeaderText = "Giới Tính";
-            this.Sex.Name = "Sex";
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(589, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Email";
             // 
-            // Date
+            // button1
             // 
-            this.Date.HeaderText = "Ngày sinh";
-            this.Date.Name = "Date";
+            this.button1.Location = new System.Drawing.Point(241, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Xóa Học Sinh";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // Addr
+            // button2
             // 
-            this.Addr.HeaderText = "Địa chỉ";
-            this.Addr.Name = "Addr";
-            // 
-            // Mail
-            // 
-            this.Mail.HeaderText = "Email";
-            this.Mail.Name = "Mail";
-            // 
-            // TBHK1
-            // 
-            this.TBHK1.HeaderText = "TB HK1";
-            this.TBHK1.Name = "TBHK1";
-            // 
-            // TBHK2
-            // 
-            this.TBHK2.HeaderText = "TB HK2";
-            this.TBHK2.Name = "TBHK2";
+            this.button2.Location = new System.Drawing.Point(414, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(162, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Cập nhật chỉnh sửa thông tin";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DSclass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtmail);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.kLcombo);
             this.Controls.Add(this.label9);
@@ -381,6 +446,8 @@
             this.Load += new System.EventHandler(this.DSclass_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,8 +478,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox kLcombo;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn HT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
@@ -421,5 +486,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mail;
         private System.Windows.Forms.DataGridViewTextBoxColumn TBHK1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TBHK2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton Lop;
+        private System.Windows.Forms.RadioButton KL;
+        private System.Windows.Forms.TextBox txtmail;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

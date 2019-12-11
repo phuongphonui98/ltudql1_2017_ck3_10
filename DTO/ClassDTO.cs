@@ -9,6 +9,7 @@ namespace DTO
    public class ClassDTO
     {
         public static List<ClassDTO> khoilop = new List<ClassDTO>();
+
         public static bool TonTai;
         private string MaK;
         private string TenK;

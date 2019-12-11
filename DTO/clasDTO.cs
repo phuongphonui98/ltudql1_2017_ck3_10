@@ -9,6 +9,7 @@ namespace DTO
     public  class clasDTO
     {
         public static List<clasDTO> lop = new List<clasDTO>();
+        public static List<string> TenLopp = new List<string>();
         public static bool TonTail;
         private string MaL;
         private string TenL;

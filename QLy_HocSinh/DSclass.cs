@@ -14,6 +14,7 @@ namespace QLy_HocSinh
 {
     public partial class DSclass : Form
     {
+        HocSinhBUS HSB = new HocSinhBUS();
         public DSclass()
         {
             InitializeComponent();
@@ -21,13 +22,267 @@ namespace QLy_HocSinh
 
         private void DSclass_Load(object sender, EventArgs e)
         {
-            List<string> l = new List<string>();
-            foreach (var s in clasDTO.lop)
+            HSB.Load();
+            List<string> kl = new List<string>();
+            foreach (var s in ClassDTO.khoilop)
             {
-
-                l.Add(s.TenL1);
+                kl.Add(s.TenK1);
             }
-            classcombo.DataSource = l.ToList();
+
+            kLcombo.DataSource = kl.ToList();
+        }
+
+        private void kLcombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (kLcombo.SelectedItem != null)
+            {
+                List<string> l = new List<string>();
+                foreach (var s in clasDTO.lop)
+                {
+                    string tk = kLcombo.SelectedItem.ToString();
+                    char[] ar = s.TenL1.ToCharArray();
+                    string test = ar[0].ToString() + ar[1].ToString();
+                    if (tk == test)
+                    {
+                        l.Add(s.TenL1);
+                    }
+
+                }
+
+                classcombo.DataSource = l.ToList();
+
+                if (l.Count() == 0)
+                {
+                   classcombo.Text = null;
+                }
+                if(KL.Checked == true)
+                {
+                    dshsgrid.Rows.Clear();
+                    HSB.Loadhsk(kLcombo.SelectedItem.ToString());
+                    foreach (var s in HocSinhDTO.lisths)
+                    {
+                        string gt = "";
+                        if (s.Gioitinh == true)
+                        {
+                            gt = "Nam";
+                        }
+                        else
+                            gt = "Nữ";
+                        DataGridViewRow row = new DataGridViewRow();
+
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.Name;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.Clas;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = gt;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.Ngsinh;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.Diachi;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.Email;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.HK11;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = s.HK21;
+                        row.Cells.Add(cell);
+
+                        dshsgrid.Rows.Add(row);
+
+                    }
+                }
+                else
+                {
+                    dshsgrid.Rows.Clear();
+                   
+                }
+
+            }
+            
+
+        }
+
+        private void KL_CheckedChanged(object sender, EventArgs e)
+        {
+           if(KL.Checked==true)
+            {
+                dshsgrid.Rows.Clear();
+                HSB.Loadhsk(kLcombo.SelectedItem.ToString());
+                foreach (var s in HocSinhDTO.lisths)
+                {
+                    string gt = "";
+                    if (s.Gioitinh == true)
+                    {
+                        gt = "Nam";
+                    }
+                    else
+                        gt = "Nữ";
+                    DataGridViewRow row = new DataGridViewRow();
+
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Name;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Clas;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = gt;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Ngsinh;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Diachi;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Email;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.HK11;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.HK21;
+                    row.Cells.Add(cell);
+
+                    dshsgrid.Rows.Add(row);
+
+                }
+            }
+        }
+
+        private void classcombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (classcombo.SelectedItem != null)
+            {
+                if (Lop.Checked == true)
+            {
+                dshsgrid.Rows.Clear();
+                HSB.Loadhsl(classcombo.SelectedItem.ToString());
+                foreach (var s in HocSinhDTO.lisths)
+                {
+                    string gt = "";
+                    if (s.Gioitinh == true)
+                    {
+                        gt = "Nam";
+                    }
+                    else
+                        gt = "Nữ";
+                    DataGridViewRow row = new DataGridViewRow();
+
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Name;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Clas;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = gt;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Ngsinh;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Diachi;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Email;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.HK11;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.HK21;
+                    row.Cells.Add(cell);
+
+                    dshsgrid.Rows.Add(row);
+
+                }
+            }
+            }
+        }
+
+        private void Lop_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Lop.Checked== true)
+            {
+                dshsgrid.Rows.Clear();
+                HSB.Loadhsl(classcombo.SelectedItem.ToString());
+                foreach (var s in HocSinhDTO.lisths)
+                {
+                    string gt = "";
+                    if (s.Gioitinh == true)
+                    {
+                        gt = "Nam";
+                    }
+                    else
+                        gt = "Nữ";
+                    DataGridViewRow row = new DataGridViewRow();
+
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Name;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Clas;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = gt;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Ngsinh;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Diachi;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.Email;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.HK11;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.HK21;
+                    row.Cells.Add(cell);
+
+                    dshsgrid.Rows.Add(row);
+
+                }
+            }
+        }
+
+        private void dshsgrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dshsgrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dshsgrid.SelectedRows[0];
+                txtht.Text = row.Cells[0].Value.ToString();
+                txtclass.Text = row.Cells[1].Value.ToString();
+                txtdate.Text = row.Cells[3].Value.ToString();
+                txtaddr.Text = row.Cells[4].Value.ToString();
+                txtmail.Text = row.Cells[5].Value.ToString();
+                txthk1.Text = row.Cells[6].Value.ToString();
+                txthk2.Text = row.Cells[7].Value.ToString();
+
+                if (row.Cells[2].Value.ToString() == "Nam")
+                {
+                    namradio.Checked = true;
+                }
+                HSB.GetMaHS(row.Cells[5].Value.ToString());
+                txtma.Text = HocSinhDTO.id.ToString();
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
