@@ -68,6 +68,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkName1 = new Register.CheckName();
+            this.requiredFieldValidator21 = new Register.RequiredFieldValidator2();
+            this.checkDate1 = new QLy_HocSinh.Form1.CheckDate();
+            this.checkName2 = new Register.CheckName();
+            this.checkTenL21 = new QLy_HocSinh.DSclass.CheckTenL2();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).BeginInit();
             this.panel2.SuspendLayout();
@@ -259,7 +263,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 99);
+            this.label3.Location = new System.Drawing.Point(30, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 13;
@@ -418,6 +422,30 @@
             this.checkName1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkName1.ErrorIcon")));
             this.checkName1.ErrorMessage = null;
             // 
+            // requiredFieldValidator21
+            // 
+            this.requiredFieldValidator21.ControlToValidate = this.txtmail;
+            this.requiredFieldValidator21.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator21.ErrorIcon")));
+            this.requiredFieldValidator21.ErrorMessage = null;
+            // 
+            // checkDate1
+            // 
+            this.checkDate1.ControlToValidate = this.txtdate;
+            this.checkDate1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkDate1.ErrorIcon")));
+            this.checkDate1.ErrorMessage = null;
+            // 
+            // checkName2
+            // 
+            this.checkName2.ControlToValidate = this.txtaddr;
+            this.checkName2.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkName2.ErrorIcon")));
+            this.checkName2.ErrorMessage = null;
+            // 
+            // checkTenL21
+            // 
+            this.checkTenL21.ControlToValidate = this.txtclass;
+            this.checkTenL21.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkTenL21.ErrorIcon")));
+            this.checkTenL21.ErrorMessage = null;
+            // 
             // DSclass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,5 +530,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private Register.CheckName checkName1;
+        private Register.RequiredFieldValidator2 requiredFieldValidator21;
+        private Form1.CheckDate checkDate1;
+        private Register.CheckName checkName2;
+        private CheckTenL2 checkTenL21;
     }
 }

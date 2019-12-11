@@ -257,6 +257,159 @@ namespace QLy_HocSinh
             }
         }
 
+        public class CheckTenL2 : BaseValidator
+        {
+            public CheckTenL2()
+            {
+
+            }
+            public override bool Validate()
+            {
+
+                if (ControlToValidate.Text.Length <= 0)
+                {
+                    ErrorMessage = "không được để trống";
+                    return false;
+
+                }
+
+                else
+                {
+                    string x = ControlToValidate.Text;
+                    char[] ar = x.ToCharArray();
+
+
+                    if (ar.Length > 4 || ar.Length < 4)
+                    {
+                        ErrorMessage = "cần nhập đúng tên lớp vd : 10A1";
+                        return false;
+
+                    }
+                    else
+                    {
+                        string so = ar[0].ToString() + ar[1].ToString();
+                        string chu = ar[2].ToString();
+
+                        int so2 = int.Parse(ar[3].ToString());
+
+                        if (chu == "A")
+                        {
+                            if (so == "10" || so == "11" || so == "12")
+                            {
+                                if (so == "10")
+                                {
+
+                                    if (so2 < 1 || so2 > 4)
+                                    {
+                                        ErrorMessage = "khối 10 chỉ có (10A1 - > 10A4)";
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        if (ClassDTO.TonTai == true)
+                                        {
+                                            foreach (var n in clasDTO.lop)
+                                            {
+                                                if (x == n.TenL1)
+                                                {
+                                                    
+                                                    return true;
+
+
+                                                }
+
+                                            }
+                                            ErrorMessage = "tên lớp không tồn tại";
+                                            return false;
+
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (so == "11")
+                                    {
+                                        if (so2 < 1 || so2 > 3)
+                                        {
+                                            ErrorMessage = "khối 11 chỉ có (11A1 - > 11A3)";
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (ClassDTO.TonTai == true)
+                                            {
+                                                foreach (var n in clasDTO.lop)
+                                                {
+                                                    if (x == n.TenL1)
+                                                    {
+                                                        
+                                                        return true;
+
+
+                                                    }
+
+                                                }
+                                                ErrorMessage = "tên lớp không tồn tại";
+                                                return false;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (so == "12")
+                                        {
+                                            if (so2 < 1 || so2 > 2)
+                                            {
+                                                ErrorMessage = "khối 12 chỉ có (12A1 - > 12A2)";
+                                                return false;
+                                            }
+                                            else
+                                            {
+                                                if (ClassDTO.TonTai == true)
+                                                {
+                                                    foreach (var n in clasDTO.lop)
+                                                    {
+                                                        if (x == n.TenL1)
+                                                        {
+                                                            
+                                                            return true;
+
+
+                                                        }
+
+                                                    }
+                                                    ErrorMessage = "tên lớp không tồn tại";
+                                                    return false;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                ErrorMessage = "Chỉ được thêm 3 khối lớp (10, 11 ,12)";
+                                return false;
+                            }
+
+                        }
+                        else
+                        {
+                            ErrorMessage = "cần nhập đúng tên lớp vd : 10A1";
+                            return false;
+                        }
+
+
+                    }
+
+                }
+                ErrorMessage = "tên lớp phải tồn tại";
+                return false;
+
+            }
+        }
         private void dshsgrid_SelectionChanged(object sender, EventArgs e)
         {
             if (dshsgrid.SelectedRows.Count > 0)
