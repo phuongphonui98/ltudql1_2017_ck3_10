@@ -70,5 +70,9 @@ namespace BUS
         {
             return HS.checkHK();
         }
+        public bool AddHK(HocKi hk)
+        {
+            return HS.AddHK(hk);
+        }
     }
 }

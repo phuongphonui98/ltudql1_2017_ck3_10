@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
@@ -19,6 +20,56 @@ namespace QLy_HocSinh
         {
             InitializeComponent();
         }
+       
+        public class CheckNH : BaseValidator
+        {
+            public bool IsNumber(string pText)
+            {
+                Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+                return regex.IsMatch(pText);
+            }
+            public CheckNH()
+            {
+
+            }
+            public override bool Validate()
+            {
+
+
+                if (ControlToValidate.Text.Length <= 0)
+                {
+                    ErrorMessage = "không được để trống";
+                    return false;
+
+                }
+
+                else
+                {
+                    if(IsNumber(ControlToValidate.Text)==false)
+                    {
+                        ErrorMessage = "năm học phải là số ";
+                        return false;
+                    }
+                    else
+                    {
+                        int x = int.Parse(ControlToValidate.Text);
+                        if(x<DateTime.Now.Year || x >2030)
+                        {
+                            ErrorMessage = "năm học phải trong khoảng từ "+DateTime.Now.Year+" đến 2030 vd:2019";
+                            return false;
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                }
+                ErrorMessage = null;
+                return true;
+
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -298,5 +298,19 @@ namespace DAO
                 return false;
             }
         }
+        public  bool AddHK(HocKi hk)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            {
+                hdb.AddHK(hk.MaHK1, hk.TenHK1);
+               
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

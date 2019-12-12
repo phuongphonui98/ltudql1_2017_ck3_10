@@ -8,7 +8,7 @@ namespace DTO
 {
     public class HocKi
     {
-        
+        public List<HocKi> HK = new List<HocKi>();   
         private int MaHK;
         private string TenHK;
 
