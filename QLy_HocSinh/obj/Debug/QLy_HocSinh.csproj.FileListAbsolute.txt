@@ -40,3 +40,4 @@ D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.DSclass.resource
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\bin\Debug\Register.exe
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\bin\Debug\Register.pdb
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\bin\Debug\Register.exe.config
+D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.MonHoc.resources

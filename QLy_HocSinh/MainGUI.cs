@@ -142,5 +142,10 @@ namespace QLy_HocSinh
         {
             showinpanel(new DSclass());
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            showinpanel(new MonHoc());
+        }
     }
 }

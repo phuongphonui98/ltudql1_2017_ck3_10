@@ -33,6 +33,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dslopcbox = new System.Windows.Forms.ComboBox();
             this.menu = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.option = new System.Windows.Forms.PictureBox();
             this.mainpn = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -90,6 +91,7 @@
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.menu.Controls.Add(this.button7);
             this.menu.Controls.Add(this.button6);
             this.menu.Controls.Add(this.label3);
             this.menu.Controls.Add(this.button5);
@@ -108,13 +110,27 @@
             this.menu.Size = new System.Drawing.Size(250, 650);
             this.menu.TabIndex = 15;
             // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Location = new System.Drawing.Point(1, 251);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(250, 23);
+            this.button6.TabIndex = 20;
+            this.button6.Text = "Lập danh sách lớp";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button5
             // 
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(0, 564);
+            this.button5.Location = new System.Drawing.Point(-3, 590);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(250, 23);
             this.button5.TabIndex = 19;
@@ -127,7 +143,7 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(0, 475);
+            this.button4.Location = new System.Drawing.Point(-3, 530);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(250, 23);
             this.button4.TabIndex = 18;
@@ -281,19 +297,19 @@
             this.mainpn.TabIndex = 17;
             this.mainpn.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpn_Paint);
             // 
-            // button6
+            // button7
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(1, 251);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(250, 23);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Lập danh sách lớp";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button7.Location = new System.Drawing.Point(0, 453);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(250, 23);
+            this.button7.TabIndex = 21;
+            this.button7.Text = "Môn học";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MainGUI
             // 
@@ -342,5 +358,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel mainpn;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
