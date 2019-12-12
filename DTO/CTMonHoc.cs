@@ -8,7 +8,7 @@ namespace DTO
 {
     public  class CTMonHoc
     {
-        
+        public static List<CTMonHoc> ctmh = new List<CTMonHoc>();
         private string TenMon;
         private int MaHS;
         private int MaHK;

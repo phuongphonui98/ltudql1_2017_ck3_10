@@ -203,6 +203,13 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenL, maHS, name, address, mail, date, sex);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddMH")]
+		public int AddMH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenmh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mamh, tenmh);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]

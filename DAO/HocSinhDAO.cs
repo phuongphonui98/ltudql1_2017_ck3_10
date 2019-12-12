@@ -119,6 +119,16 @@ namespace DAO
                         HocKi.HK.Add(lst);
                     }
                 }
+                CTMonHoc.ctmh.Clear();
+                var ct = from mh in hdb.MONHOCs select mh;
+                if (ct != null)
+                {
+                    foreach (var b in ct)
+                    {
+                        CTMonHoc lst = new CTMonHoc (b.MaMonHoc,b.TenMonHoc);
+                        CTMonHoc.ctmh.Add(lst);
+                    }
+                }
                 ClassDTO.khoilop.Clear();
                 clasDTO.lop.Clear();
                 var kk = from l in hdb.DANHSACHLOPs select l;
@@ -315,6 +325,20 @@ namespace DAO
             {
                 hdb.AddHK(hk.MaHK1, hk.TenHK1);
                
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool AddMH(CTMonHoc mh)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            {
+                hdb.AddMH(mh.MaMon1, mh.TenMon1);
+
                 return true;
             }
             catch

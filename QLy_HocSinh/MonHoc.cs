@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using System.Globalization;
 
 namespace QLy_HocSinh
 {
@@ -20,7 +21,18 @@ namespace QLy_HocSinh
         {
             InitializeComponent();
         }
-       
+        private void showinpanel(object fom)
+        {
+            if (this.panel1.Controls.Count > 0)
+                this.panel1.Controls.RemoveAt(0);
+            Form f = fom as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panel1.Controls.Add(f);
+            this.panel1.Tag = f;
+            f.Show();
+        }
+
         public class CheckNH : BaseValidator
         {
             public bool IsNumber(string pText)
@@ -91,7 +103,7 @@ namespace QLy_HocSinh
                 }
                 if(i==0)
                 {
-                    HocKi h = new HocKi(ma, namhoc.Text);
+                    HocKi h = new HocKi(ma, hkcombo.Text);
                     HSB.AddHK(h);
                     MessageBox.Show("successfull");
                     MonHoc_Load(sender, e);
@@ -116,6 +128,7 @@ namespace QLy_HocSinh
         private void MonHoc_Load(object sender, EventArgs e)
         {
             HSB.Loadkl();
+            hkcombo.SelectedItem = null;
            bool i = HSB.Checkhk();
             if (i == true)
             {
@@ -128,7 +141,18 @@ namespace QLy_HocSinh
                 label3.Visible = false;
                 hkcombo.Visible = false;
             }
+            List<string> NH = new List<string>();
+            foreach (var s in HocKi.HK)
+            {
+                string x = s.MaHK1.ToString();
+                char[] ar = x.ToCharArray();
+                string nam = ar[1].ToString() + ar[2].ToString() + ar[3].ToString() + ar[4].ToString();
+                NH.Add(nam);
 
+            }
+
+            namhoccombo.DataSource = NH.ToList();
+           
         }
 
         private void a_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,5 +160,119 @@ namespace QLy_HocSinh
            
           
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            label1.Visible = true;
+            button1.Visible = true;
+            namhoc.Visible = true;
+            
+            label2.Visible = true;
+            label3.Visible = true;
+            hkcombo.Visible = true;
+        }
+
+        private void namhoccombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<string> hocki = new List<string>();
+            if(namhoccombo.SelectedItem != null)
+            {
+
+                foreach(var kq in HocKi.HK)
+                {
+                    string x = kq.MaHK1.ToString();
+                    char[] ar = x.ToCharArray();
+                    string nam = ar[1].ToString() + ar[2].ToString() + ar[3].ToString() + ar[4].ToString();
+                    if(nam==namhoccombo.SelectedItem.ToString())
+                    {
+                        if (ar[0].ToString() == "1")
+                        {
+                            hocki.Add("HK1");
+                        }
+                        else
+                            hocki.Add("HK2");
+                    }
+
+                }
+                hockicomboo.DataSource = hocki.ToList();
+
+            }
+        }
+
+        public static string VietHoa(string s)
+        {
+            if (String.IsNullOrEmpty(s))
+                return s;
+
+            string result = "";
+
+            //lấy danh sách các từ  
+
+            string[] words = s.Split(' ');
+
+            foreach (string word in words)
+            {
+                // từ nào là các khoảng trắng thừa thì bỏ  
+                if (word.Trim() != "")
+                {
+                    if (word.Length > 1)
+                        result += word.Substring(0, 1).ToUpper() + word.Substring(1).ToLower() + " ";
+                    else
+                        result += word.ToUpper() + " ";
+                }
+
+            }
+            return result.Trim();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            showinpanel(new AddMonHoc());
+        }
+        public class CheckNameMH : BaseValidator
+        {
+            public CheckNameMH()
+            {
+
+            }
+            public override bool Validate()
+            {
+
+                if (ControlToValidate.Text.Length <= 0)
+                {
+                    ErrorMessage = "không được để trống";
+                    return false;
+
+                }
+
+                else
+                {
+                    string mh = ControlToValidate.Text;
+                    string c = mh.ToLower();
+                    string d = VietHoa(c);
+                    if (c =="toán" || c == "lý" || c == "hóa" || c == "sinh" || c == "sử" || c == "địa" || c == "văn" || c == "đạo đức" || c == "thể dục" )
+                    {
+                        
+                        foreach(var s in CTMonHoc.ctmh)
+                        {
+                            if(d==s.TenMon1)
+                            {
+                                ErrorMessage = "môn học đã có trong hệ thống";
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ErrorMessage = "chỉ được thêm trong 9 môn {toán, lý, hóa, sinh , sử ,địa,văn,đạo đức,thể dục}";
+                        return false;
+                    }
+                }
+                ErrorMessage = null;
+                return true;
+
+            }
+        }
+
     }
 }

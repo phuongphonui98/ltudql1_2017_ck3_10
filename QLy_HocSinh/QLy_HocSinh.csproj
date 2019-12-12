@@ -83,6 +83,12 @@
     <Compile Include="Addhstoclass.Designer.cs">
       <DependentUpon>Addhstoclass.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMonHoc.Designer.cs">
+      <DependentUpon>AddMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseValidator.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Addhstoclass.resx">
       <DependentUpon>Addhstoclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMonHoc.resx">
+      <DependentUpon>AddMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DSclass.resx">
       <DependentUpon>DSclass.cs</DependentUpon>
