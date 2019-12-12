@@ -31,24 +31,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ChiTietMonHKgrid = new System.Windows.Forms.DataGridView();
             this.a = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.DSMonHocgrid = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DSMonHocgrid = new System.Windows.Forms.DataGridView();
+            this.ChiTietMonHKgrid = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChiTietMonHKgrid)).BeginInit();
             this.a.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DSMonHocgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChiTietMonHKgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -75,32 +75,12 @@
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.a);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(802, 450);
             this.panel1.TabIndex = 2;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.DSMonHocgrid);
-            this.panel2.Controls.Add(this.ChiTietMonHKgrid);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 232);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 218);
-            this.panel2.TabIndex = 0;
-            // 
-            // ChiTietMonHKgrid
-            // 
-            this.ChiTietMonHKgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ChiTietMonHKgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChiTietMonHKgrid.Location = new System.Drawing.Point(0, 0);
-            this.ChiTietMonHKgrid.Name = "ChiTietMonHKgrid";
-            this.ChiTietMonHKgrid.Size = new System.Drawing.Size(800, 218);
-            this.ChiTietMonHKgrid.TabIndex = 0;
             // 
             // a
             // 
@@ -110,33 +90,22 @@
             this.a.Location = new System.Drawing.Point(0, 0);
             this.a.Name = "a";
             this.a.SelectedIndex = 0;
-            this.a.Size = new System.Drawing.Size(800, 205);
+            this.a.Size = new System.Drawing.Size(802, 201);
             this.a.TabIndex = 3;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.DSMonHocgrid);
             this.tabPage1.Controls.Add(this.comboBox2);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 189);
+            this.tabPage1.Size = new System.Drawing.Size(794, 175);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Chi Tiết Môn Học Theo Học Kì";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 179);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Thêm Môn Học Vào Học Kì";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
@@ -154,40 +123,69 @@
             this.comboBox1.Size = new System.Drawing.Size(182, 21);
             this.comboBox1.TabIndex = 3;
             // 
-            // DSMonHocgrid
+            // tabPage2
             // 
-            this.DSMonHocgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DSMonHocgrid.Location = new System.Drawing.Point(138, 49);
-            this.DSMonHocgrid.Name = "DSMonHocgrid";
-            this.DSMonHocgrid.Size = new System.Drawing.Size(240, 150);
-            this.DSMonHocgrid.TabIndex = 1;
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(794, 175);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Thêm Môn Học Vào Học Kì";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.Location = new System.Drawing.Point(374, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(417, 169);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Học Kì 2";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Left;
             this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(363, 173);
+            this.button2.Size = new System.Drawing.Size(363, 169);
             this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
+            this.button2.Text = "Học Kì 1";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // panel2
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.Location = new System.Drawing.Point(372, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(417, 173);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.ChiTietMonHKgrid);
+            this.panel2.Location = new System.Drawing.Point(168, 232);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(392, 218);
+            this.panel2.TabIndex = 0;
+            // 
+            // DSMonHocgrid
+            // 
+            this.DSMonHocgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DSMonHocgrid.Location = new System.Drawing.Point(563, 44);
+            this.DSMonHocgrid.Name = "DSMonHocgrid";
+            this.DSMonHocgrid.Size = new System.Drawing.Size(188, 150);
+            this.DSMonHocgrid.TabIndex = 1;
+            // 
+            // ChiTietMonHKgrid
+            // 
+            this.ChiTietMonHKgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ChiTietMonHKgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChiTietMonHKgrid.Location = new System.Drawing.Point(0, 0);
+            this.ChiTietMonHKgrid.Name = "ChiTietMonHKgrid";
+            this.ChiTietMonHKgrid.Size = new System.Drawing.Size(392, 218);
+            this.ChiTietMonHKgrid.TabIndex = 0;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(277, 204);
+            this.button4.Location = new System.Drawing.Point(269, 203);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(195, 23);
-            this.button4.TabIndex = 4;
+            this.button4.TabIndex = 5;
             this.button4.Text = "Bổ Sung Môn Học Vào Hệ Thống";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -203,12 +201,12 @@
             this.Name = "MonHoc";
             this.Text = "MonHoc";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ChiTietMonHKgrid)).EndInit();
             this.a.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DSMonHocgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChiTietMonHKgrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,9 +224,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView DSMonHocgrid;
+        private System.Windows.Forms.Button button4;
     }
 }
