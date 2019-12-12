@@ -66,5 +66,9 @@ namespace BUS
         {
             return HS.DeleteHS(id);
         }
+        public bool Checkhk()
+        {
+            return HS.checkHK();
+        }
     }
 }

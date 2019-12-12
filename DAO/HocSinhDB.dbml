@@ -10,8 +10,8 @@
       <Column Name="Diem1Tiet" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="DiemCuoiKi" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="Hoc_sinh_BANGDIEM" Member="Hoc_sinh" ThisKey="MaHocSinh" OtherKey="ID" Type="Hoc_sinh" IsForeignKey="true" />
-      <Association Name="HOCKI_BANGDIEM" Member="HOCKI" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="HOCKI" IsForeignKey="true" />
       <Association Name="MONHOC_BANGDIEM" Member="MONHOC" ThisKey="MaMonHoc" OtherKey="MaMonHoc" Type="MONHOC" IsForeignKey="true" />
+      <Association Name="HOCKI_BANGDIEM" Member="HOCKI" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="HOCKI" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.THAMSO" Member="THAMSOs">
@@ -29,8 +29,8 @@
       <Column Name="SoLuongDatMon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TiLeDatMon" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="DANHSACHLOP_BAOCAOTONGKETMON" Member="DANHSACHLOP" ThisKey="MaLop" OtherKey="MaLop" Type="DANHSACHLOP" IsForeignKey="true" />
-      <Association Name="HOCKI_BAOCAOTONGKETMON" Member="HOCKI" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="HOCKI" IsForeignKey="true" />
       <Association Name="MONHOC_BAOCAOTONGKETMON" Member="MONHOC" ThisKey="MaMon" OtherKey="MaMonHoc" Type="MONHOC" IsForeignKey="true" />
+      <Association Name="HOCKI_BAOCAOTONGKETMON" Member="HOCKI" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="HOCKI" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BAOCAOTONGKETHK" Member="BAOCAOTONGKETHKs">
@@ -79,15 +79,6 @@
       <Association Name="Hoc_sinh_CHITIETDSLOP" Member="CHITIETDSLOPs" ThisKey="ID" OtherKey="MaHocSinh" Type="CHITIETDSLOP" />
     </Type>
   </Table>
-  <Table Name="dbo.HOCKI" Member="HOCKIs">
-    <Type Name="HOCKI">
-      <Column Name="MaHocKi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenHocKi" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="HOCKI_BANGDIEM" Member="BANGDIEMs" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="BANGDIEM" />
-      <Association Name="HOCKI_BAOCAOTONGKETMON" Member="BAOCAOTONGKETMONs" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="BAOCAOTONGKETMON" />
-      <Association Name="HOCKI_BAOCAOTONGKETHK" Member="BAOCAOTONGKETHKs" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="BAOCAOTONGKETHK" />
-    </Type>
-  </Table>
   <Table Name="dbo.KHOILOP" Member="KHOILOPs">
     <Type Name="KHOILOP">
       <Column Name="MaKhoiLop" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -101,6 +92,15 @@
       <Column Name="TenMonHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="MONHOC_BANGDIEM" Member="BANGDIEMs" ThisKey="MaMonHoc" OtherKey="MaMonHoc" Type="BANGDIEM" />
       <Association Name="MONHOC_BAOCAOTONGKETMON" Member="BAOCAOTONGKETMONs" ThisKey="MaMonHoc" OtherKey="MaMon" Type="BAOCAOTONGKETMON" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOCKI" Member="HOCKIs">
+    <Type Name="HOCKI">
+      <Column Name="MaHocKi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHocKi" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="HOCKI_BANGDIEM" Member="BANGDIEMs" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="BANGDIEM" />
+      <Association Name="HOCKI_BAOCAOTONGKETMON" Member="BAOCAOTONGKETMONs" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="BAOCAOTONGKETMON" />
+      <Association Name="HOCKI_BAOCAOTONGKETHK" Member="BAOCAOTONGKETHKs" ThisKey="MaHocKi" OtherKey="MaHocKi" Type="BAOCAOTONGKETHK" />
     </Type>
   </Table>
   <Function Name="dbo.TracuuhocsinhKL" Method="TracuuhocsinhKL">

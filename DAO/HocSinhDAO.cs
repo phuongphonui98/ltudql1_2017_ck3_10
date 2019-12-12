@@ -157,7 +157,7 @@ namespace DAO
             }
             return false;
         }
-      
+        
         public bool Insert(HocSinhDTO hs)
         {
             try
@@ -271,6 +271,27 @@ namespace DAO
                 HocSinhDBDataContext hdb = new HocSinhDBDataContext();
                 hdb.XoaHS(id);
                 return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool checkHK()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            { 
+
+                var q = from s in hdb.HOCKIs select s.MaHocKi;
+                List<int> mahk = new List<int>();
+                mahk = q.ToList();
+                if(mahk.Count()>0)
+                {
+                    return true;
+
+                }
+                return false;
             }
             catch
             {

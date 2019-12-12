@@ -32,7 +32,7 @@ namespace DTO
             DiemCuoiKi = ck;
         }
         public int MaHS1 { get => MaHS; set => MaHS = value; }
-        public string MaHK1 { get => MaHK; set => MaHK = value; }
+        public int MaHK1 { get => MaHK; set => MaHK = value; }
         public string MaMon1 { get => MaMon; set => MaMon = value; }
         public float Diem15p1 { get => Diem15p; set => Diem15p = value; }
         public float Diem1t1 { get => Diem1t; set => Diem1t = value; }
