@@ -70,10 +70,37 @@ namespace QLy_HocSinh
             }
         }
 
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (namhoc.Text != "" && checkNH1.ErrorMessage == null && hkcombo.SelectedItem !=null)
+            {
+                string mahk = hkcombo.SelectedItem.ToString() + namhoc.Text;
+                int ma = int.Parse(mahk);
+                int i = 0;
+                foreach(var x in HocKi.HK)
+                {
+                    if(x.MaHK1 == ma)
+                    {
+                        i = 1;
+                        MessageBox.Show("năm học này đã có học kì " + namhoc.Text);
+                        break;
+                    }
+                    
+                }
+                if(i==0)
+                {
+                    HocKi h = new HocKi(ma, namhoc.Text);
+                    HSB.AddHK(h);
+                    MessageBox.Show("successfull");
+                    MonHoc_Load(sender, e);
+                }
+            }
+            else
+            {
+                MessageBox.Show("phải điền đúng và đầy đủ năm học và học kì");
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -88,12 +115,18 @@ namespace QLy_HocSinh
 
         private void MonHoc_Load(object sender, EventArgs e)
         {
+            HSB.Loadkl();
            bool i = HSB.Checkhk();
             if (i == true)
             {
                 panel1.Visible = true;
                 label1.Visible = false;
                 button1.Visible = false;
+                namhoc.Visible = false;
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Visible = false;
+                hkcombo.Visible = false;
             }
 
         }

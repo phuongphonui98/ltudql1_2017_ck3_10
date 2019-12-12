@@ -109,6 +109,16 @@ namespace DAO
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             try
             {
+                HocKi.HK.Clear();
+                var hocki = from hk in hdb.HOCKIs select hk;
+                if(hocki != null)
+                {
+                    foreach (var hki in hocki)
+                    {
+                        HocKi lst = new HocKi(hki.MaHocKi, hki.TenHocKi);
+                        HocKi.HK.Add(lst);
+                    }
+                }
                 ClassDTO.khoilop.Clear();
                 clasDTO.lop.Clear();
                 var kk = from l in hdb.DANHSACHLOPs select l;

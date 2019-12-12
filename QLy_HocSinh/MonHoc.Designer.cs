@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHoc));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.a = new System.Windows.Forms.TabControl();
@@ -45,8 +46,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.namhoc = new System.Windows.Forms.TextBox();
+            this.hkcombo = new System.Windows.Forms.ComboBox();
+            this.checkNH1 = new QLy_HocSinh.MonHoc.CheckNH();
+            this.button5 = new System.Windows.Forms.Button();
             this.a.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,7 +98,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(794, 387);
+            this.tabPage1.Size = new System.Drawing.Size(792, 424);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Chi Tiết Môn Học Theo Học Kì";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -134,6 +137,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.button3);
@@ -157,16 +161,14 @@
             // DSMonHocgrid
             // 
             this.DSMonHocgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DSMonHocgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DSMonHocgrid.Location = new System.Drawing.Point(0, 0);
             this.DSMonHocgrid.Name = "DSMonHocgrid";
             this.DSMonHocgrid.Size = new System.Drawing.Size(392, 218);
             this.DSMonHocgrid.TabIndex = 1;
-            this.DSMonHocgrid.Visible = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(285, 178);
+            this.button4.Location = new System.Drawing.Point(190, 181);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(195, 23);
             this.button4.TabIndex = 7;
@@ -207,9 +209,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(209, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Tên Học Kì";
+            this.label3.Text = "Học Kì";
             // 
             // label2
             // 
@@ -220,29 +222,47 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Năm học";
             // 
-            // textBox2
+            // namhoc
             // 
-            this.textBox2.Location = new System.Drawing.Point(286, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.namhoc.Location = new System.Drawing.Point(286, 94);
+            this.namhoc.Name = "namhoc";
+            this.namhoc.Size = new System.Drawing.Size(156, 20);
+            this.namhoc.TabIndex = 8;
+            this.namhoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // hkcombo
             // 
-            this.textBox1.Location = new System.Drawing.Point(286, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.hkcombo.FormattingEnabled = true;
+            this.hkcombo.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.hkcombo.Location = new System.Drawing.Point(334, 140);
+            this.hkcombo.Name = "hkcombo";
+            this.hkcombo.Size = new System.Drawing.Size(90, 21);
+            this.hkcombo.TabIndex = 9;
+            // 
+            // checkNH1
+            // 
+            this.checkNH1.ControlToValidate = this.namhoc;
+            this.checkNH1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkNH1.ErrorIcon")));
+            this.checkNH1.ErrorMessage = null;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(415, 181);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(133, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Thêm Học Kì";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // MonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.hkcombo);
+            this.Controls.Add(this.namhoc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -284,7 +304,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox namhoc;
+        private System.Windows.Forms.ComboBox hkcombo;
+        private CheckNH checkNH1;
+        private System.Windows.Forms.Button button5;
     }
 }
