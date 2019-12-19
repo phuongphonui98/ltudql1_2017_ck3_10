@@ -71,7 +71,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(223, 120);
+            this.lblAddress.Location = new System.Drawing.Point(29, 79);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(41, 13);
             this.lblAddress.TabIndex = 2;
@@ -80,7 +80,7 @@
             // lblmail
             // 
             this.lblmail.AutoSize = true;
-            this.lblmail.Location = new System.Drawing.Point(223, 161);
+            this.lblmail.Location = new System.Drawing.Point(38, 123);
             this.lblmail.Name = "lblmail";
             this.lblmail.Size = new System.Drawing.Size(32, 13);
             this.lblmail.TabIndex = 3;
@@ -89,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 209);
+            this.label4.Location = new System.Drawing.Point(26, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 4;
@@ -98,7 +98,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(223, 274);
+            this.label5.Location = new System.Drawing.Point(38, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 5;
@@ -106,7 +106,7 @@
             // 
             // txtdc
             // 
-            this.txtdc.Location = new System.Drawing.Point(282, 120);
+            this.txtdc.Location = new System.Drawing.Point(88, 79);
             this.txtdc.Name = "txtdc";
             this.txtdc.Size = new System.Drawing.Size(201, 20);
             this.txtdc.TabIndex = 6;
@@ -120,25 +120,32 @@
             // 
             // txtmail
             // 
-            this.txtmail.Location = new System.Drawing.Point(282, 158);
+            this.txtmail.Location = new System.Drawing.Point(87, 120);
             this.txtmail.Name = "txtmail";
             this.txtmail.Size = new System.Drawing.Size(201, 20);
             this.txtmail.TabIndex = 8;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtmail);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.checkgirl);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.checkboy);
+            this.panel1.Controls.Add(this.txtdc);
             this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.lblAddress);
+            this.panel1.Controls.Add(this.lblmail);
             this.panel1.Location = new System.Drawing.Point(194, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 285);
+            this.panel1.Size = new System.Drawing.Size(336, 266);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // checkgirl
             // 
             this.checkgirl.AutoSize = true;
-            this.checkgirl.Location = new System.Drawing.Point(204, 240);
+            this.checkgirl.Location = new System.Drawing.Point(196, 238);
             this.checkgirl.Name = "checkgirl";
             this.checkgirl.Size = new System.Drawing.Size(39, 17);
             this.checkgirl.TabIndex = 25;
@@ -149,7 +156,7 @@
             // 
             this.checkboy.AutoSize = true;
             this.checkboy.Checked = true;
-            this.checkboy.Location = new System.Drawing.Point(127, 240);
+            this.checkboy.Location = new System.Drawing.Point(122, 238);
             this.checkboy.Name = "checkboy";
             this.checkboy.Size = new System.Drawing.Size(47, 17);
             this.checkboy.TabIndex = 24;
@@ -161,7 +168,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "dd/mm/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(88, 169);
+            this.dateTimePicker1.Location = new System.Drawing.Point(88, 163);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 23;
@@ -195,13 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 603);
-            this.Controls.Add(this.txtmail);
             this.Controls.Add(this.txtname);
-            this.Controls.Add(this.txtdc);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblmail);
-            this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);

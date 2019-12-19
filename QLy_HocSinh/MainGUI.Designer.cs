@@ -33,6 +33,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dslopcbox = new System.Windows.Forms.ComboBox();
             this.menu = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.option = new System.Windows.Forms.PictureBox();
             this.mainpn = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -109,6 +109,20 @@
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(250, 650);
             this.menu.TabIndex = 15;
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button7.Location = new System.Drawing.Point(0, 453);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(250, 23);
+            this.button7.TabIndex = 21;
+            this.button7.Text = "Môn học";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -195,22 +209,22 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.Location = new System.Drawing.Point(112, 51);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(123, 27);
+            this.label9.Size = new System.Drawing.Size(107, 25);
             this.label9.TabIndex = 2;
             this.label9.Text = "Học Sinh";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label8.Location = new System.Drawing.Point(74, 24);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 27);
+            this.label8.Size = new System.Drawing.Size(107, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "Quản Lý ";
             // 
@@ -242,9 +256,9 @@
             this.btnMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMini.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMini.Image = ((System.Drawing.Image)(resources.GetObject("btnMini.Image")));
-            this.btnMini.Location = new System.Drawing.Point(623, 6);
+            this.btnMini.Location = new System.Drawing.Point(627, 6);
             this.btnMini.Name = "btnMini";
-            this.btnMini.Size = new System.Drawing.Size(31, 26);
+            this.btnMini.Size = new System.Drawing.Size(27, 26);
             this.btnMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMini.TabIndex = 3;
             this.btnMini.TabStop = false;
@@ -282,7 +296,7 @@
             this.option.Image = ((System.Drawing.Image)(resources.GetObject("option.Image")));
             this.option.Location = new System.Drawing.Point(6, 3);
             this.option.Name = "option";
-            this.option.Size = new System.Drawing.Size(55, 41);
+            this.option.Size = new System.Drawing.Size(38, 38);
             this.option.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.option.TabIndex = 0;
             this.option.TabStop = false;
@@ -296,20 +310,6 @@
             this.mainpn.Size = new System.Drawing.Size(750, 603);
             this.mainpn.TabIndex = 17;
             this.mainpn.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpn_Paint);
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Location = new System.Drawing.Point(0, 453);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(250, 23);
-            this.button7.TabIndex = 21;
-            this.button7.Text = "Môn học";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MainGUI
             // 

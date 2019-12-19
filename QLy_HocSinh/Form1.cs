@@ -171,5 +171,10 @@ namespace QLy_HocSinh
             HSB.Load();
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
