@@ -8,7 +8,10 @@ namespace DTO
 {
     public  class CTMonHoc
     {
+        public static List<CTMonHoc> haveHK = new List<CTMonHoc>();
+        public static List<CTMonHoc> noneHK = new List<CTMonHoc>();
         public static List<CTMonHoc> ctmh = new List<CTMonHoc>();
+        private string MaBCMon;
         private string TenMon;
         private int MaHS;
         private int MaHK;
@@ -21,6 +24,13 @@ namespace DTO
         {
             MaMon = mamh;
             TenMon = tenmh;
+        }
+        public CTMonHoc(string MaBC,int hk,string mamh)
+        {
+            MaBCMon = MaBC;
+            MaMon = mamh;
+           
+            MaHK = hk;
         }
         public CTMonHoc(int mahs,int hk,string mamon,float d15p,float d1t,float ck )
         {
@@ -38,5 +48,6 @@ namespace DTO
         public float Diem1t1 { get => Diem1t; set => Diem1t = value; }
         public float DiemCuoiKi1 { get => DiemCuoiKi; set => DiemCuoiKi = value; }
         public string TenMon1 { get => TenMon; set => TenMon = value; }
+        public string MaBCMon1 { get => MaBCMon; set => MaBCMon = value; }
     }
 }

@@ -41,8 +41,9 @@ namespace QLy_HocSinh
                 {
                     gt = "Nam";
                 }
-                else
+                else 
                     gt = "Nữ";
+
                 DataGridViewRow row = new DataGridViewRow();
 
                 DataGridViewCell cell = new DataGridViewTextBoxCell();

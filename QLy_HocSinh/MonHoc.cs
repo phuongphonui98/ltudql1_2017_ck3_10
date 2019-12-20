@@ -152,7 +152,25 @@ namespace QLy_HocSinh
             }
 
             namhoccombo.DataSource = NH.ToList();
-           
+            yearcombo.DataSource = NH.ToList();
+
+            foreach (var s in CTMonHoc.noneHK)
+            {
+              
+
+                DataGridViewRow row = new DataGridViewRow();
+
+                DataGridViewCell cell = new DataGridViewTextBoxCell();
+                cell.Value = s.MaMon1;
+                row.Cells.Add(cell);
+                cell = new DataGridViewTextBoxCell();
+                cell.Value = s.TenMon1;
+                row.Cells.Add(cell);
+                
+                mhnothkgrid.Rows.Add(row);
+
+            }
+          
         }
 
         private void a_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,7 +268,7 @@ namespace QLy_HocSinh
                     string mh = ControlToValidate.Text;
                     string c = mh.ToLower();
                     string d = VietHoa(c);
-                    if (c =="toán" || c == "lý" || c == "hóa" || c == "sinh" || c == "sử" || c == "địa" || c == "văn" || c == "đạo đức" || c == "thể dục" )
+                    if (c =="toan" || c == "ly" || c == "hoa" || c == "sinh" || c == "su" || c == "dia" || c == "van" || c == "dao duc" || c == "the duc" )
                     {
                         
                         foreach(var s in CTMonHoc.ctmh)
@@ -264,7 +282,7 @@ namespace QLy_HocSinh
                     }
                     else
                     {
-                        ErrorMessage = "chỉ được thêm trong 9 môn {toán, lý, hóa, sinh , sử ,địa,văn,đạo đức,thể dục}";
+                        ErrorMessage = "chỉ được thêm trong 9 môn {toan, ly, hoa, sinh , su ,dia,van,dao duc,the duc}";
                         return false;
                     }
                 }
@@ -274,5 +292,79 @@ namespace QLy_HocSinh
             }
         }
 
+        private void hkcombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in CTMonHoc.haveHK)
+            {
+
+
+                DataGridViewRow row = new DataGridViewRow();
+
+                DataGridViewCell cell = new DataGridViewTextBoxCell();
+                cell.Value = s.MaMon1;
+                row.Cells.Add(cell);
+                cell = new DataGridViewTextBoxCell();
+                cell.Value = s.TenMon1;
+                row.Cells.Add(cell);
+                cell = new DataGridViewTextBoxCell();
+                cell.Value = namhoccombo.SelectedItem.ToString();
+                row.Cells.Add(cell);
+                cell = new DataGridViewTextBoxCell();
+                cell.Value = hockicomboo.SelectedItem.ToString();
+                row.Cells.Add(cell);
+
+
+                mhnothkgrid.Rows.Add(row);
+
+            }
+        }
+
+        private void hk1bt_Click(object sender, EventArgs e)
+        {
+            string x = yearcombo.SelectedItem.ToString();
+            string y = "1" + x;
+            int z = int.Parse(y);
+            int i = 0;
+            foreach(var nh in HocKi.HK )
+            {   
+                
+                if(nh.MaHK1==z && mhnothkgrid.SelectedRows.Count>0)
+                {
+                    i = 1;
+                    DataGridViewRow row = mhnothkgrid.SelectedRows[0];
+                     
+                    string mabc = nh.MaHK1+ row.Cells[0].Value.ToString();
+                    CTMonHoc chitiet = new CTMonHoc(mabc, nh.MaHK1, row.Cells[0].Value.ToString());
+                    HSB.AddMHtoHK(chitiet);
+                    MessageBox.Show("successfull");
+                }
+            }
+            if(i==0)
+            {
+                MessageBox.Show("năm học này chưa có học kì này");
+            }
+           
+        }
+
+        private void hk2bt_Click(object sender, EventArgs e)
+        {
+            string x = yearcombo.SelectedItem.ToString();
+            string y = "2" + x;
+            int z = int.Parse(y);
+            int i = 0;
+            foreach (var nh in HocKi.HK)
+            {
+
+                if (nh.MaHK1 == z)
+                {
+                    i = 1;
+                }
+            }
+            if (i == 0)
+            {
+                MessageBox.Show("năm học này chưa có học kì này");
+            }
+
+        }
     }
 }

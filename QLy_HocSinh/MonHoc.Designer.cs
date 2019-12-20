@@ -51,8 +51,8 @@
             this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.hk2bt = new System.Windows.Forms.Button();
+            this.hk1bt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -196,8 +196,8 @@
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.hk2bt);
+            this.tabPage2.Controls.Add(this.hk1bt);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -266,23 +266,25 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // hk2bt
             // 
-            this.button3.Location = new System.Drawing.Point(374, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(417, 169);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Học Kì 2";
-            this.button3.UseVisualStyleBackColor = true;
+            this.hk2bt.Location = new System.Drawing.Point(374, 3);
+            this.hk2bt.Name = "hk2bt";
+            this.hk2bt.Size = new System.Drawing.Size(417, 169);
+            this.hk2bt.TabIndex = 1;
+            this.hk2bt.Text = "Học Kì 2";
+            this.hk2bt.UseVisualStyleBackColor = true;
+            this.hk2bt.Click += new System.EventHandler(this.hk2bt_Click);
             // 
-            // button2
+            // hk1bt
             // 
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(363, 169);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Học Kì 1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.hk1bt.Location = new System.Drawing.Point(3, 3);
+            this.hk1bt.Name = "hk1bt";
+            this.hk1bt.Size = new System.Drawing.Size(363, 169);
+            this.hk1bt.TabIndex = 0;
+            this.hk1bt.Text = "Học Kì 1";
+            this.hk1bt.UseVisualStyleBackColor = true;
+            this.hk1bt.Click += new System.EventHandler(this.hk1bt_Click);
             // 
             // panel1
             // 
@@ -331,6 +333,7 @@
             this.hkcombo.Name = "hkcombo";
             this.hkcombo.Size = new System.Drawing.Size(90, 21);
             this.hkcombo.TabIndex = 9;
+            this.hkcombo.SelectedIndexChanged += new System.EventHandler(this.hkcombo_SelectedIndexChanged);
             // 
             // checkNH1
             // 
@@ -378,8 +381,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button hk2bt;
+        private System.Windows.Forms.Button hk1bt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

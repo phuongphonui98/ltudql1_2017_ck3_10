@@ -129,6 +129,45 @@ namespace DAO
                         CTMonHoc.ctmh.Add(lst);
                     }
                 }
+                CTMonHoc.noneHK.Clear();
+                var monnohk = from mh in hdb.MONHOCs select mh;
+                if (monnohk!= null)
+                {
+                    foreach (var no in monnohk)
+                    {
+
+                        var MHnHK = hdb.noneHK(no.MaMonHoc);
+                        if(MHnHK != null)
+                        {
+                            var xl = MHnHK.First();
+                            CTMonHoc ee = new CTMonHoc(xl.MaMonHoc, xl.TenMonHoc);
+                            CTMonHoc.noneHK.Add(ee);
+                        }
+                        
+                    }
+                }
+                CTMonHoc.haveHK.Clear();
+                var yesHK = from mh in hdb.MONHOCs select mh;
+                if (yesHK != null)
+                {
+                    foreach (var yes in yesHK)
+                    {
+
+                        var MHnHK = hdb.haveHK(yes.MaMonHoc);
+                        if (MHnHK != null)
+                        {
+                            var xl = MHnHK.First();
+                            string cc = xl.MaHocKi.ToString();
+                            int cc2 = int.Parse(cc);
+                            CTMonHoc ee = new CTMonHoc(xl.MaBaoCaoMon,cc2,xl.MaMonHoc);
+                            CTMonHoc.haveHK.Add(ee);
+                        }
+
+                    }
+                }
+
+
+
                 ClassDTO.khoilop.Clear();
                 clasDTO.lop.Clear();
                 var kk = from l in hdb.DANHSACHLOPs select l;
@@ -338,6 +377,20 @@ namespace DAO
             try
             {
                 hdb.AddMH(mh.MaMon1, mh.TenMon1);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool AddMHtoHK(CTMonHoc hk)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            {
+                hdb.AddMHtoNH(hk.MaBCMon1, hk.MaHK1, hk.MaMon1);
 
                 return true;
             }

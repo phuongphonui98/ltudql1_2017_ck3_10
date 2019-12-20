@@ -78,5 +78,9 @@ namespace BUS
         {
             return HS.AddMH(ct);
         }
+        public bool AddMHtoHK(CTMonHoc ct)
+        {
+            return HS.AddMHtoHK(ct);
+        }
     }
 }

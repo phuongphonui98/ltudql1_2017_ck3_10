@@ -155,4 +155,30 @@
     <Parameter Name="tenmh" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.noneHK" Method="noneHK">
+    <Parameter Name="MaMH" Parameter="maMH" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="noneHKResult">
+      <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMonHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.haveHK" Method="haveHK">
+    <Parameter Name="MaMH" Parameter="maMH" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="haveHKResult">
+      <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMonHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaBaoCaoMon" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocKi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaMon" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SoLuongDatMon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiLeDatMon" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AddMHtoNH" Method="AddMHtoNH">
+    <Parameter Name="mabc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mahk" Type="System.Int32" DbType="Int" />
+    <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
