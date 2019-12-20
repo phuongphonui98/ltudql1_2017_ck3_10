@@ -146,25 +146,7 @@ namespace DAO
                         
                     }
                 }
-                CTMonHoc.haveHK.Clear();
-                var yesHK = from mh in hdb.MONHOCs select mh;
-                if (yesHK != null)
-                {
-                    foreach (var yes in yesHK)
-                    {
-
-                        var MHnHK = hdb.haveHK(yes.MaMonHoc);
-                        if (MHnHK != null)
-                        {
-                            var xl = MHnHK.First();
-                            string cc = xl.MaHocKi.ToString();
-                            int cc2 = int.Parse(cc);
-                            CTMonHoc ee = new CTMonHoc(xl.MaBaoCaoMon,cc2,xl.MaMonHoc);
-                            CTMonHoc.haveHK.Add(ee);
-                        }
-
-                    }
-                }
+              
 
 
 
@@ -200,7 +182,31 @@ namespace DAO
             }
         }
         DataTable dt = new DataTable();
+        public  void gethavehk(int mahk)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            CTMonHoc.haveHK.Clear();
+            var yesHK = from mh in hdb.BAOCAOTONGKETMONs select mh;
+            if (yesHK != null)
+            {
+                foreach (var yes in yesHK)
+                {
 
+
+                    
+                    string cc = yes.MaHocKi.ToString();
+                    int cc2 = int.Parse(cc);
+                    if(cc2 == mahk)
+                    {
+                        CTMonHoc ee = new CTMonHoc(yes.MaBaoCaoMon, cc2, yes.MaMon);
+                        CTMonHoc.haveHK.Add(ee);
+                    }
+                    
+
+
+                }
+            }
+        }
         public bool GetMaHS(string email)
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();

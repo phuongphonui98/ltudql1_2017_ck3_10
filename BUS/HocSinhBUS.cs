@@ -16,6 +16,10 @@ namespace BUS
         {
             HS.Get();
         }
+        public void loadhavehk(int mahk)
+        {
+            HS.gethavehk(mahk);
+        }
         public void Loadhsk(string x)
         {
            

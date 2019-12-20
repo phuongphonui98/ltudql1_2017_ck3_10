@@ -128,6 +128,7 @@ namespace QLy_HocSinh
         private void MonHoc_Load(object sender, EventArgs e)
         {
             HSB.Loadkl();
+          
             hkcombo.SelectedItem = null;
            bool i = HSB.Checkhk();
             if (i == true)
@@ -144,10 +145,20 @@ namespace QLy_HocSinh
             List<string> NH = new List<string>();
             foreach (var s in HocKi.HK)
             {
+                int k = 1;
                 string x = s.MaHK1.ToString();
                 char[] ar = x.ToCharArray();
                 string nam = ar[1].ToString() + ar[2].ToString() + ar[3].ToString() + ar[4].ToString();
-                NH.Add(nam);
+                for(int o=0;o<NH.Count();o++)
+                {
+                    if(nam == NH[o])
+                    {
+                        k = 0;
+                    }
+                }
+                if(k==1)
+                    NH.Add(nam);
+
 
             }
 
@@ -294,6 +305,17 @@ namespace QLy_HocSinh
 
         private void hkcombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dsmhgrid.Rows.Clear();
+            string tt1 = namhoccombo.SelectedItem.ToString();
+            string tt2 = hockicomboo.SelectedItem.ToString();
+            string tt3 = "";
+            if(tt2 == "HK1")
+            {
+                tt3 = 1 + tt1;
+            }
+            else if(tt2 == "HK2") { tt3 = 2 + tt1; }
+            int kq = int.Parse(tt3);
+            HSB.loadhavehk(kq);
             foreach (var s in CTMonHoc.haveHK)
             {
 
@@ -314,7 +336,7 @@ namespace QLy_HocSinh
                 row.Cells.Add(cell);
 
 
-                mhnothkgrid.Rows.Add(row);
+                dsmhgrid.Rows.Add(row);
 
             }
         }

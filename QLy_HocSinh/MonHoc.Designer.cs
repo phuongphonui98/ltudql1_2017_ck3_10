@@ -71,7 +71,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(305, 145);
+            this.button1.Location = new System.Drawing.Point(303, 178);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 23);
             this.button1.TabIndex = 0;
@@ -106,7 +106,6 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.hockicomboo);
             this.tabPage1.Controls.Add(this.namhoccombo);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -180,6 +179,7 @@
             this.hockicomboo.Name = "hockicomboo";
             this.hockicomboo.Size = new System.Drawing.Size(182, 21);
             this.hockicomboo.TabIndex = 4;
+            this.hockicomboo.SelectedIndexChanged += new System.EventHandler(this.hkcombo_SelectedIndexChanged);
             // 
             // namhoccombo
             // 
@@ -274,17 +274,15 @@
             this.hk2bt.TabIndex = 1;
             this.hk2bt.Text = "Học Kì 2";
             this.hk2bt.UseVisualStyleBackColor = true;
-            this.hk2bt.Click += new System.EventHandler(this.hk2bt_Click);
             // 
             // hk1bt
             // 
-            this.hk1bt.Location = new System.Drawing.Point(3, 3);
+            this.hk1bt.Location = new System.Drawing.Point(5, 3);
             this.hk1bt.Name = "hk1bt";
             this.hk1bt.Size = new System.Drawing.Size(363, 169);
             this.hk1bt.TabIndex = 0;
             this.hk1bt.Text = "Học Kì 1";
             this.hk1bt.UseVisualStyleBackColor = true;
-            this.hk1bt.Click += new System.EventHandler(this.hk1bt_Click);
             // 
             // panel1
             // 
@@ -347,6 +345,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.hkcombo);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.namhoc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
