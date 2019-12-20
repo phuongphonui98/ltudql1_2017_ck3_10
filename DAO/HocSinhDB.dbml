@@ -181,4 +181,10 @@
     <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.mhtoclass" Method="mhtoclass">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Mamh" Parameter="mamh" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="maHK" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

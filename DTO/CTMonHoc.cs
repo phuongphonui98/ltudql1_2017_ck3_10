@@ -19,6 +19,9 @@ namespace DTO
         private float Diem15p;
         private float Diem1t;
         private float DiemCuoiKi;
+        private int SLdat;
+        private float TLdat;
+        private string MaLop;
 
         public CTMonHoc(string mamh, string tenmh)
         {
@@ -32,8 +35,18 @@ namespace DTO
            
             MaHK = hk;
         }
+        public CTMonHoc(string MaBC, int hk,string malop ,string mamh,int sl,float tl )
+        {
+            MaBCMon = MaBC;
+            MaMon = mamh;
+            MaLop = malop;
+            MaHK = hk;
+            SLdat = sl;
+            TLdat = tl;
+        }
         public CTMonHoc(int mahs,int hk,string mamon,float d15p,float d1t,float ck )
         {
+            
             MaHS = mahs;
             MaHK = hk;
             MaMon = mamon;
@@ -49,5 +62,8 @@ namespace DTO
         public float DiemCuoiKi1 { get => DiemCuoiKi; set => DiemCuoiKi = value; }
         public string TenMon1 { get => TenMon; set => TenMon = value; }
         public string MaBCMon1 { get => MaBCMon; set => MaBCMon = value; }
+        public int SLdat1 { get => SLdat; set => SLdat = value; }
+        public float TLdat1 { get => TLdat; set => TLdat = value; }
+        public string MaLop1 { get => MaLop; set => MaLop = value; }
     }
 }

@@ -191,6 +191,23 @@ namespace DAO
                 }
             }
         }
+        public void getBCM()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var qq = from si in hdb.BAOCAOTONGKETMONs select si;
+            foreach( var ss in qq.ToList())
+            {
+                String cc = ss.MaHocKi.ToString();
+                int cc2 = int.Parse(cc);
+
+                
+
+
+
+                CTMonHoc x = new CTMonHoc(ss.MaBaoCaoMon,cc2,ss.MaLop,ss.MaMon,0,0);
+                CTMonHoc.ctmh.Add(x);
+            }
+        }
         public void getnohk()
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
@@ -405,6 +422,20 @@ namespace DAO
             try
             {
                 hdb.AddMHtoNH(hk.MaBCMon1, hk.MaHK1, hk.MaMon1);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool AddMHtoClass(string ml,string mm,int mhk )
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            {
+                hdb.mhtoclass(ml, mm, mhk);
 
                 return true;
             }

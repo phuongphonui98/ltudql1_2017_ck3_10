@@ -12,6 +12,7 @@ namespace BUS
     {
       
         HocSinhDAO HS = new HocSinhDAO();
+
         public void Load()
         {
             HS.Get();
@@ -37,6 +38,10 @@ namespace BUS
         public void Loadkl()
         {
             HS.GetKL();
+        }
+        public void loadBCM()
+        {
+            HS.getBCM();
         }
         public bool Insert(HocSinhDTO hs)
         {
@@ -90,5 +95,10 @@ namespace BUS
         {
             return HS.AddMHtoHK(ct);
         }
+        public bool AddMHtoClass(string ml,string mm,int mhk)
+        {
+            return HS.AddMHtoClass(ml, mm, mhk);
+        }
     }
+
 }

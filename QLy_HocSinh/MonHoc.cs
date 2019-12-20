@@ -129,6 +129,14 @@ namespace QLy_HocSinh
         {
             HSB.Loadkl();
             HSB.loadnohk();
+            HSB.loadBCM();
+            List<string> l = new List<string>();
+            foreach (var s in clasDTO.lop)
+            {
+
+                l.Add(s.TenL1);
+            }
+            dslopcbox.DataSource = l.ToList();
             hkcombo.SelectedItem = null;
            bool i = HSB.Checkhk();
             if (i == true)
@@ -329,10 +337,11 @@ namespace QLy_HocSinh
                 cell.Value = s.TenMon1;
                 row.Cells.Add(cell);
                 cell = new DataGridViewTextBoxCell();
-                cell.Value = namhoccombo.SelectedItem.ToString();
+                cell.Value = hockicomboo.SelectedItem.ToString();
                 row.Cells.Add(cell);
                 cell = new DataGridViewTextBoxCell();
-                cell.Value = hockicomboo.SelectedItem.ToString();
+                cell.Value = namhoccombo.SelectedItem.ToString();
+
                 row.Cells.Add(cell);
 
 
@@ -408,6 +417,71 @@ namespace QLy_HocSinh
                 MessageBox.Show("Chưa chọn môn học cần thêm vào học kì");
             }
 
+        }
+
+        private void dsmhgrid_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string tenlopx = dslopcbox.SelectedItem.ToString();
+            string malopy = "";
+            DataGridViewRow row = dsmhgrid.SelectedRows[0];
+
+            string hkz= row.Cells[2].Value.ToString();
+            string namhoc = row.Cells[3].Value.ToString();
+            string mamhz2= row.Cells[0].Value.ToString();
+            string mahocki = "";
+            foreach (var i in clasDTO.lop)
+            {
+                if(i.TenL1 == tenlopx)
+                {
+                    malopy = i.MaL1;
+                }
+            }
+            int checktt = 0;
+            if (dsmhgrid.SelectedRows.Count > 0)
+            {
+                if(dslopcbox.SelectedItem.ToString() != "")
+                {
+                    foreach(var ok in CTMonHoc.ctmh)
+                    {
+                        if( ok.MaLop1 == malopy )
+                        {
+                            if(ok.MaMon1 == mamhz2)
+                            {
+                                checktt = 1;
+                                MessageBox.Show("môn học đã tồn tại trong lớp");
+                                break;
+                            }
+                            else
+                            {
+                                checktt = 0;
+                            }
+                        }
+                        
+                      
+                    }
+                    if (hkz == "HK1")
+                    {
+                        mahocki = 1 + namhoc;
+                    }
+                    else
+                    {
+                        mahocki = 2 + namhoc;
+                    }
+
+                    int mhk = int.Parse(mahocki);
+                    if(checktt ==0)
+                    {
+                       
+                       HSB.AddMHtoClass(malopy, mamhz2, mhk);
+                        MessageBox.Show("successfull");
+                    }
+                }
+            }
         }
     }
 }

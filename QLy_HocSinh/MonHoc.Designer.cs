@@ -59,6 +59,10 @@
             this.namhoc = new System.Windows.Forms.TextBox();
             this.hkcombo = new System.Windows.Forms.ComboBox();
             this.checkNH1 = new QLy_HocSinh.MonHoc.CheckNH();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dslopcbox = new System.Windows.Forms.ComboBox();
             this.a.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,6 +96,7 @@
             // 
             this.a.Controls.Add(this.tabPage1);
             this.a.Controls.Add(this.tabPage2);
+            this.a.Controls.Add(this.tabPage3);
             this.a.Dock = System.Windows.Forms.DockStyle.Fill;
             this.a.Location = new System.Drawing.Point(0, 0);
             this.a.Name = "a";
@@ -101,6 +106,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.dslopcbox);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.panel2);
@@ -149,8 +157,10 @@
             this.dsmhgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dsmhgrid.Location = new System.Drawing.Point(0, 0);
             this.dsmhgrid.Name = "dsmhgrid";
+            this.dsmhgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dsmhgrid.Size = new System.Drawing.Size(442, 218);
             this.dsmhgrid.TabIndex = 0;
+            this.dsmhgrid.SelectionChanged += new System.EventHandler(this.dsmhgrid_SelectionChanged);
             // 
             // MaMH
             // 
@@ -241,6 +251,7 @@
             this.mhnothkgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mhnothkgrid.Location = new System.Drawing.Point(0, 0);
             this.mhnothkgrid.Name = "mhnothkgrid";
+            this.mhnothkgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mhnothkgrid.Size = new System.Drawing.Size(392, 188);
             this.mhnothkgrid.TabIndex = 0;
             // 
@@ -340,6 +351,47 @@
             this.checkNH1.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkNH1.ErrorIcon")));
             this.checkNH1.ErrorMessage = null;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(792, 424);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Danh sách môn học theo lớp";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(299, 169);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Thêm Vào Lớp";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(232, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Danh Sách Lớp";
+            // 
+            // dslopcbox
+            // 
+            this.dslopcbox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dslopcbox.FormattingEnabled = true;
+            this.dslopcbox.Location = new System.Drawing.Point(364, 6);
+            this.dslopcbox.Name = "dslopcbox";
+            this.dslopcbox.Size = new System.Drawing.Size(86, 21);
+            this.dslopcbox.TabIndex = 11;
+            // 
             // MonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +410,7 @@
             this.Load += new System.EventHandler(this.MonHoc_Load);
             this.a.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsmhgrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -401,5 +454,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
         private System.Windows.Forms.ComboBox yearcombo;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox dslopcbox;
     }
 }
