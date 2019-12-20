@@ -129,23 +129,7 @@ namespace DAO
                         CTMonHoc.ctmh.Add(lst);
                     }
                 }
-                CTMonHoc.noneHK.Clear();
-                var monnohk = from mh in hdb.MONHOCs select mh;
-                if (monnohk!= null)
-                {
-                    foreach (var no in monnohk)
-                    {
-
-                        var MHnHK = hdb.noneHK(no.MaMonHoc);
-                        if(MHnHK != null)
-                        {
-                            var xl = MHnHK.First();
-                            CTMonHoc ee = new CTMonHoc(xl.MaMonHoc, xl.TenMonHoc);
-                            CTMonHoc.noneHK.Add(ee);
-                        }
-                        
-                    }
-                }
+               
               
 
 
@@ -203,6 +187,30 @@ namespace DAO
                     }
                     
 
+
+                }
+            }
+        }
+        public void getnohk()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            CTMonHoc.noneHK.Clear();
+            var monnohk = from mh in hdb.MONHOCs select mh;
+            if (monnohk != null)
+            {
+                foreach (var no in monnohk)
+                {
+
+                    var MHnHK = hdb.noneHK(no.MaMonHoc);
+                    if (MHnHK != null)
+                    {
+                        foreach(var oo in MHnHK)
+                        {
+                            CTMonHoc ee = new CTMonHoc(oo.MaMonHoc, oo.TenMonHoc);
+                            CTMonHoc.noneHK.Add(ee);
+                        }
+                      
+                    }
 
                 }
             }

@@ -128,7 +128,7 @@ namespace QLy_HocSinh
         private void MonHoc_Load(object sender, EventArgs e)
         {
             HSB.Loadkl();
-          
+            HSB.loadnohk();
             hkcombo.SelectedItem = null;
            bool i = HSB.Checkhk();
             if (i == true)
@@ -347,24 +347,32 @@ namespace QLy_HocSinh
             string y = "1" + x;
             int z = int.Parse(y);
             int i = 0;
-            foreach(var nh in HocKi.HK )
-            {   
-                
-                if(nh.MaHK1==z && mhnothkgrid.SelectedRows.Count>0)
+            if(mhnothkgrid.SelectedRows.Count > 0)
+            {
+                foreach (var nh in HocKi.HK)
                 {
-                    i = 1;
-                    DataGridViewRow row = mhnothkgrid.SelectedRows[0];
-                     
-                    string mabc = nh.MaHK1+ row.Cells[0].Value.ToString();
-                    CTMonHoc chitiet = new CTMonHoc(mabc, nh.MaHK1, row.Cells[0].Value.ToString());
-                    HSB.AddMHtoHK(chitiet);
-                    MessageBox.Show("successfull");
+
+                    if (nh.MaHK1 == z && mhnothkgrid.SelectedRows.Count > 0)
+                    {
+                        i = 1;
+                        DataGridViewRow row = mhnothkgrid.SelectedRows[0];
+
+                        string mabc = nh.MaHK1 + row.Cells[0].Value.ToString();
+                        CTMonHoc chitiet = new CTMonHoc(mabc, nh.MaHK1, row.Cells[0].Value.ToString());
+                        HSB.AddMHtoHK(chitiet);
+                        MessageBox.Show("successfull");
+                    }
+                }
+                if (i == 0)
+                {
+                    MessageBox.Show("năm học này chưa có học kì này");
                 }
             }
-            if(i==0)
+            else
             {
-                MessageBox.Show("năm học này chưa có học kì này");
+                MessageBox.Show("chưa chọn môn cần thêm vào học kì");
             }
+           
            
         }
 
@@ -374,17 +382,30 @@ namespace QLy_HocSinh
             string y = "2" + x;
             int z = int.Parse(y);
             int i = 0;
-            foreach (var nh in HocKi.HK)
+            if (mhnothkgrid.SelectedRows.Count > 0)
             {
-
-                if (nh.MaHK1 == z)
+                foreach (var nh in HocKi.HK)
                 {
-                    i = 1;
+
+                    if (nh.MaHK1 == z && mhnothkgrid.SelectedRows.Count > 0)
+                    {
+                        i = 1;
+                        DataGridViewRow row = mhnothkgrid.SelectedRows[0];
+
+                        string mabc = nh.MaHK1 + row.Cells[0].Value.ToString();
+                        CTMonHoc chitiet = new CTMonHoc(mabc, nh.MaHK1, row.Cells[0].Value.ToString());
+                        HSB.AddMHtoHK(chitiet);
+                        MessageBox.Show("successfull");
+                    }
+                }
+                if (i == 0)
+                {
+                    MessageBox.Show("năm học này chưa có học kì này");
                 }
             }
-            if (i == 0)
+            else
             {
-                MessageBox.Show("năm học này chưa có học kì này");
+                MessageBox.Show("Chưa chọn môn học cần thêm vào học kì");
             }
 
         }

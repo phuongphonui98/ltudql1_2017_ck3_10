@@ -274,6 +274,7 @@
             this.hk2bt.TabIndex = 1;
             this.hk2bt.Text = "Học Kì 2";
             this.hk2bt.UseVisualStyleBackColor = true;
+            this.hk2bt.Click += new System.EventHandler(this.hk2bt_Click);
             // 
             // hk1bt
             // 
@@ -283,6 +284,7 @@
             this.hk1bt.TabIndex = 0;
             this.hk1bt.Text = "Học Kì 1";
             this.hk1bt.UseVisualStyleBackColor = true;
+            this.hk1bt.Click += new System.EventHandler(this.hk1bt_Click);
             // 
             // panel1
             // 
@@ -331,7 +333,6 @@
             this.hkcombo.Name = "hkcombo";
             this.hkcombo.Size = new System.Drawing.Size(90, 21);
             this.hkcombo.TabIndex = 9;
-            this.hkcombo.SelectedIndexChanged += new System.EventHandler(this.hkcombo_SelectedIndexChanged);
             // 
             // checkNH1
             // 

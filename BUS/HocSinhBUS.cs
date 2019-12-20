@@ -20,6 +20,10 @@ namespace BUS
         {
             HS.gethavehk(mahk);
         }
+        public void loadnohk()
+        {
+            HS.getnohk();
+        }
         public void Loadhsk(string x)
         {
            
