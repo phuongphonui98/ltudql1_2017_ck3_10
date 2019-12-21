@@ -1,6 +1,6 @@
 # ltudql1_2017_ck3_10
-##ỨNG DỤNG QUẢN LÍ HỌC SINH
-### Thành Viên Tham Gia
+## ỨNG DỤNG QUẢN LÍ HỌC SINH
+### Thành Viên Tham Gia Nhóm 10
 | MSSV         | Tên                                                                 | Email                        |
 | -------------|:-------------------------------------------------------------------:| :---------------------------:|
 | 1660105      | [Trương Công Định](https://www.facebook.com/dinh.truong98)          | 1660105@student.hcmus.edu.vn |
