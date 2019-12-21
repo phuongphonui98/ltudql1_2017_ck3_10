@@ -99,6 +99,10 @@ namespace BUS
         {
             return HS.AddMHtoClass(ml, mm, mhk);
         }
+        public bool AddMHtoHS(int hs, int hk, string mh)
+        {
+            return HS.AddMHhs(hs, hk, mh);
+        }
     }
 
 }

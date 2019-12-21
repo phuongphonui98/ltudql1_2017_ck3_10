@@ -12,6 +12,7 @@ namespace DTO
         public static List<CTMonHoc> noneHK = new List<CTMonHoc>();
         public static List<CTMonHoc> ctmh = new List<CTMonHoc>();
         public static List<CTMonHoc> mh = new List<CTMonHoc>();
+        public static List<CTMonHoc> mhHS = new List<CTMonHoc>();
         private string MaBD;
         private string MaBCMon;
         private string TenMon;

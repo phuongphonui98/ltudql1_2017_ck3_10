@@ -461,5 +461,23 @@ namespace DAO
                 return false;
             }
         }
+        public bool AddMHhs(int hs,int hk,string mh)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try {
+                var kq = from s in hdb.MONHOCs where s.MaMonHoc == mh select s;
+                string mamh = kq.First().ToString();
+                BANGDIEM bd = new BANGDIEM { MaBangDiem = hs + mamh, MaHocSinh = hs, MaHocKi = hk, MaMonHoc = mamh, Diem15Phut = 0, Diem1Tiet = 0, DiemCuoiKi = 0 };
+                hdb.BANGDIEMs.InsertOnSubmit(bd);
+                hdb.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+
+        }
     }
 }
