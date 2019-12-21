@@ -23,14 +23,15 @@ namespace QLy_HocSinh
         private void DSclass_Load(object sender, EventArgs e)
         {
             HSB.Load();
-            if(dshsgrid.SelectedRows.Count <0)
+            HSB.loadBCM();
+            if (dshsgrid.SelectedRows.Count <0)
             {
                 button1.Visible = false;
             }
             List<string> kl = new List<string>();
             foreach (var s in ClassDTO.khoilop)
             {
-                kl.Add(s.TenK1);
+                kl.Add(s.TenK1); 
             }
 
             kLcombo.DataSource = kl.ToList();
@@ -209,13 +210,44 @@ namespace QLy_HocSinh
                     dshsgrid.Rows.Add(row);
 
                 }
-            }
+                    subjectoffclassGrid.Rows.Clear();
+
+                    string tt1 = classcombo.SelectedItem.ToString();
+
+                    HSB.loadBCM();
+                    var qq = from s in CTMonHoc.ctmh join c in clasDTO.lop on s.MaLop1 equals c.MaL1 join d in CTMonHoc.mh on s.MaMon1 equals d.MaMon1 join f in HocKi.HK on s.MaHK1 equals f.MaHK1 select new { s.MaHK1, s.MaMon1, f.TenHK1, c.TenL1, d.TenMon1 };
+                    foreach (var kq in qq.ToList())
+                    {
+
+                        if (kq.TenL1 == tt1)
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+
+                            DataGridViewCell cell = new DataGridViewTextBoxCell();
+                            cell.Value = kq.TenMon1;
+                            row.Cells.Add(cell);
+                            cell = new DataGridViewTextBoxCell();
+                            cell.Value = kq.TenHK1;
+                            row.Cells.Add(cell);
+                            string x = kq.MaHK1.ToString();
+                            char[] ar = x.ToCharArray();
+                            string nam = ar[1].ToString() + ar[2].ToString() + ar[3].ToString() + ar[4].ToString();
+
+
+                            cell = new DataGridViewTextBoxCell();
+                            cell.Value = nam;
+                            row.Cells.Add(cell);
+
+                            subjectoffclassGrid.Rows.Add(row);
+                        }
+                    }
+                }
             }
         }
 
         private void Lop_CheckedChanged(object sender, EventArgs e)
         {
-            if(Lop.Checked== true)
+            if (Lop.Checked == true)
             {
                 dshsgrid.Rows.Clear();
                 HSB.Loadhsl(classcombo.SelectedItem.ToString());
@@ -257,6 +289,37 @@ namespace QLy_HocSinh
 
                     dshsgrid.Rows.Add(row);
 
+                }
+                subjectoffclassGrid.Rows.Clear();
+
+                string tt1 = classcombo.SelectedItem.ToString();
+
+                HSB.loadBCM();
+                var qq = from s in CTMonHoc.ctmh join c in clasDTO.lop on s.MaLop1 equals c.MaL1 join d in CTMonHoc.mh on s.MaMon1 equals d.MaMon1 join f in HocKi.HK on s.MaHK1 equals f.MaHK1 select new { s.MaHK1, s.MaMon1, f.TenHK1, c.TenL1,d.TenMon1 };
+                foreach (var kq in qq.ToList())
+                {
+
+                    if (kq.TenL1 == tt1)
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        cell.Value = kq.TenMon1;
+                        row.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = kq.TenHK1;
+                        row.Cells.Add(cell);
+                        string x = kq.MaHK1.ToString();
+                        char[] ar = x.ToCharArray();
+                        string nam = ar[1].ToString() + ar[2].ToString() + ar[3].ToString() + ar[4].ToString();
+
+
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = nam;
+                        row.Cells.Add(cell);
+
+                        subjectoffclassGrid.Rows.Add(row);
+                    }
                 }
             }
         }
@@ -439,6 +502,9 @@ namespace QLy_HocSinh
                 }
                 HSB.GetMaHS(row.Cells[5].Value.ToString());
                 txtma.Text = HocSinhDTO.id.ToString();
+
+
+
 
             }
         }

@@ -11,6 +11,8 @@ namespace DTO
         public static List<CTMonHoc> haveHK = new List<CTMonHoc>();
         public static List<CTMonHoc> noneHK = new List<CTMonHoc>();
         public static List<CTMonHoc> ctmh = new List<CTMonHoc>();
+        public static List<CTMonHoc> mh = new List<CTMonHoc>();
+        private string MaBD;
         private string MaBCMon;
         private string TenMon;
         private int MaHS;
@@ -44,15 +46,23 @@ namespace DTO
             SLdat = sl;
             TLdat = tl;
         }
-        public CTMonHoc(int mahs,int hk,string mamon,float d15p,float d1t,float ck )
+        public CTMonHoc(string Mabd,int mahs,int hk,string mamon,float d15p,float d1t,float ck )
         {
-            
+            MaBD = Mabd;
             MaHS = mahs;
             MaHK = hk;
             MaMon = mamon;
             Diem15p = d15p;
             Diem1t = d1t;
             DiemCuoiKi = ck;
+        }
+        public CTMonHoc(string Mabd, int mahs, int hk, string mamon)
+        {
+            MaBD = Mabd;
+            MaHS = mahs;
+            MaHK = hk;
+            MaMon = mamon;
+           
         }
         public int MaHS1 { get => MaHS; set => MaHS = value; }
         public int MaHK1 { get => MaHK; set => MaHK = value; }
@@ -65,5 +75,6 @@ namespace DTO
         public int SLdat1 { get => SLdat; set => SLdat = value; }
         public float TLdat1 { get => TLdat; set => TLdat = value; }
         public string MaLop1 { get => MaLop; set => MaLop = value; }
+        public string MaBD1 { get => MaBD; set => MaBD = value; }
     }
 }

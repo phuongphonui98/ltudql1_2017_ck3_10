@@ -193,6 +193,8 @@ namespace DAO
         }
         public void getBCM()
         {
+            CTMonHoc.ctmh.Clear();
+
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             var qq = from si in hdb.BAOCAOTONGKETMONs select si;
             foreach( var ss in qq.ToList())
@@ -206,6 +208,21 @@ namespace DAO
 
                 CTMonHoc x = new CTMonHoc(ss.MaBaoCaoMon,cc2,ss.MaLop,ss.MaMon,0,0);
                 CTMonHoc.ctmh.Add(x);
+            }
+            CTMonHoc.mh.Clear();
+
+           
+            var mhoc = from si in hdb.MONHOCs select si;
+            foreach (var ss in mhoc.ToList())
+            {
+               
+
+
+
+
+
+                CTMonHoc x = new CTMonHoc(ss.MaMonHoc,ss.TenMonHoc);
+                CTMonHoc.mh.Add(x);
             }
         }
         public void getnohk()

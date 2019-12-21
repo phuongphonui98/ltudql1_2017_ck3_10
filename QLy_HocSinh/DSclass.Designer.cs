@@ -72,9 +72,20 @@
             this.checkDate1 = new QLy_HocSinh.Form1.CheckDate();
             this.checkName2 = new Register.CheckName();
             this.checkTenL21 = new QLy_HocSinh.DSclass.CheckTenL2();
+            this.subjectoffclassGrid = new System.Windows.Forms.DataGridView();
+            this.subjectoffstudentGrid = new System.Windows.Forms.DataGridView();
+            this.MHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HKhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectoffclassGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectoffstudentGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,9 +94,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dshsgrid);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 123);
+            this.panel1.Location = new System.Drawing.Point(0, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 327);
+            this.panel1.Size = new System.Drawing.Size(800, 238);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -449,11 +460,81 @@
             this.checkTenL21.ErrorIcon = ((System.Drawing.Icon)(resources.GetObject("checkTenL21.ErrorIcon")));
             this.checkTenL21.ErrorMessage = null;
             // 
+            // subjectoffclassGrid
+            // 
+            this.subjectoffclassGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subjectoffclassGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MH,
+            this.HK,
+            this.NHhs});
+            this.subjectoffclassGrid.Location = new System.Drawing.Point(12, 222);
+            this.subjectoffclassGrid.Name = "subjectoffclassGrid";
+            this.subjectoffclassGrid.Size = new System.Drawing.Size(307, 105);
+            this.subjectoffclassGrid.TabIndex = 24;
+            // 
+            // subjectoffstudentGrid
+            // 
+            this.subjectoffstudentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subjectoffstudentGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MHhs,
+            this.HKhs});
+            this.subjectoffstudentGrid.Location = new System.Drawing.Point(456, 222);
+            this.subjectoffstudentGrid.Name = "subjectoffstudentGrid";
+            this.subjectoffstudentGrid.Size = new System.Drawing.Size(244, 105);
+            this.subjectoffstudentGrid.TabIndex = 25;
+            // 
+            // MHhs
+            // 
+            this.MHhs.HeaderText = "Tên Môn Học";
+            this.MHhs.Name = "MHhs";
+            // 
+            // HKhs
+            // 
+            this.HKhs.HeaderText = "Học kì";
+            this.HKhs.Name = "HKhs";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(112, 196);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Môn của lớp";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(529, 196);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Môn của học sinh";
+            // 
+            // MH
+            // 
+            this.MH.HeaderText = "Tên Môn Học";
+            this.MH.Name = "MH";
+            // 
+            // HK
+            // 
+            this.HK.HeaderText = "Học Kì";
+            this.HK.Name = "HK";
+            // 
+            // NHhs
+            // 
+            this.NHhs.HeaderText = "Năm Học";
+            this.NHhs.Name = "NHhs";
+            // 
             // DSclass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.subjectoffstudentGrid);
+            this.Controls.Add(this.subjectoffclassGrid);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtmail);
             this.Controls.Add(this.panel2);
@@ -487,6 +568,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectoffclassGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectoffstudentGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,5 +620,14 @@
         private Form1.CheckDate checkDate1;
         private Register.CheckName checkName2;
         private CheckTenL2 checkTenL21;
+        private System.Windows.Forms.DataGridView subjectoffclassGrid;
+        private System.Windows.Forms.DataGridView subjectoffstudentGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MHhs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HKhs;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NHhs;
     }
 }
