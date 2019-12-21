@@ -481,17 +481,19 @@ namespace DAO
         }
         public void dsBD()
         {
+            CTMonHoc.mhHS.Clear();
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             var kq = from s in hdb.BANGDIEMs select s;
             foreach(var ok in kq.ToList())
             {
+
                 float ck = float.Parse(ok.DiemCuoiKi.ToString());
                 float p15 = float.Parse(ok.Diem15Phut.ToString());
                 float t1 = float.Parse(ok.Diem1Tiet.ToString());
                 int mhs = int.Parse(ok.MaHocSinh.ToString());
                 int mhhk = int.Parse(ok.MaHocKi.ToString());
-                CTMonHoc ctmhhs = new CTMonHoc(ok.MaBangDiem.ToString(),mhs,mhhk,ok.MaMonHoc,p15,t1,ck);
-                CTMonHoc.mhHS.Add()
+                CTMonHoc ctmhhs = new CTMonHoc(ok.MaBangDiem.ToString(),mhs,mhhk,ok.MaMonHoc.ToString(),p15,t1,ck);
+                CTMonHoc.mhHS.Add(ctmhhs);
             }
 
         }

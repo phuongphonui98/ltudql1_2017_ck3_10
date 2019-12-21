@@ -57,14 +57,7 @@ namespace DTO
             Diem1t = d1t;
             DiemCuoiKi = ck;
         }
-        public CTMonHoc(string Mabd, int mahs, int hk, string mamon)
-        {
-            MaBD = Mabd;
-            MaHS = mahs;
-            MaHK = hk;
-            MaMon = mamon;
-           
-        }
+       
         public int MaHS1 { get => MaHS; set => MaHS = value; }
         public int MaHK1 { get => MaHK; set => MaHK = value; }
         public string MaMon1 { get => MaMon; set => MaMon = value; }

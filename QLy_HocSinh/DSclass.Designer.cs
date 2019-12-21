@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSclass));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addsubjecttohs = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dshsgrid = new System.Windows.Forms.DataGridView();
@@ -73,15 +74,15 @@
             this.checkName2 = new Register.CheckName();
             this.checkTenL21 = new QLy_HocSinh.DSclass.CheckTenL2();
             this.subjectoffclassGrid = new System.Windows.Forms.DataGridView();
-            this.subjectoffstudentGrid = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addsubjecttohs = new System.Windows.Forms.Button();
+            this.subjectoffstudentGrid = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.MHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HKhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ck = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,10 +100,20 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dshsgrid);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 357);
+            this.panel1.Location = new System.Drawing.Point(0, 251);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 93);
+            this.panel1.Size = new System.Drawing.Size(800, 199);
             this.panel1.TabIndex = 0;
+            // 
+            // addsubjecttohs
+            // 
+            this.addsubjecttohs.Location = new System.Drawing.Point(65, 8);
+            this.addsubjecttohs.Name = "addsubjecttohs";
+            this.addsubjecttohs.Size = new System.Drawing.Size(145, 23);
+            this.addsubjecttohs.TabIndex = 3;
+            this.addsubjecttohs.Text = "Thêm môn học cho học sinh";
+            this.addsubjecttohs.UseVisualStyleBackColor = true;
+            this.addsubjecttohs.Click += new System.EventHandler(this.addsubjecttohs_Click);
             // 
             // button2
             // 
@@ -477,12 +488,28 @@
             this.subjectoffclassGrid.Size = new System.Drawing.Size(307, 105);
             this.subjectoffclassGrid.TabIndex = 24;
             // 
+            // MH
+            // 
+            this.MH.HeaderText = "Tên Môn Học";
+            this.MH.Name = "MH";
+            // 
+            // HK
+            // 
+            this.HK.HeaderText = "Học Kì";
+            this.HK.Name = "HK";
+            // 
+            // NHhs
+            // 
+            this.NHhs.HeaderText = "Năm Học";
+            this.NHhs.Name = "NHhs";
+            // 
             // subjectoffstudentGrid
             // 
             this.subjectoffstudentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectoffstudentGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MHhs,
             this.HKhs,
+            this.NHoc,
             this.p15,
             this.t1,
             this.ck});
@@ -509,31 +536,6 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Môn của học sinh";
             // 
-            // MH
-            // 
-            this.MH.HeaderText = "Tên Môn Học";
-            this.MH.Name = "MH";
-            // 
-            // HK
-            // 
-            this.HK.HeaderText = "Học Kì";
-            this.HK.Name = "HK";
-            // 
-            // NHhs
-            // 
-            this.NHhs.HeaderText = "Năm Học";
-            this.NHhs.Name = "NHhs";
-            // 
-            // addsubjecttohs
-            // 
-            this.addsubjecttohs.Location = new System.Drawing.Point(65, 8);
-            this.addsubjecttohs.Name = "addsubjecttohs";
-            this.addsubjecttohs.Size = new System.Drawing.Size(145, 23);
-            this.addsubjecttohs.TabIndex = 3;
-            this.addsubjecttohs.Text = "Thêm môn học cho học sinh";
-            this.addsubjecttohs.UseVisualStyleBackColor = true;
-            this.addsubjecttohs.Click += new System.EventHandler(this.addsubjecttohs_Click);
-            // 
             // MHhs
             // 
             this.MHhs.HeaderText = "Tên Môn Học";
@@ -543,6 +545,11 @@
             // 
             this.HKhs.HeaderText = "Học kì";
             this.HKhs.Name = "HKhs";
+            // 
+            // NHoc
+            // 
+            this.NHoc.HeaderText = "Năm Học";
+            this.NHoc.Name = "NHoc";
             // 
             // p15
             // 
@@ -663,6 +670,7 @@
         private System.Windows.Forms.Button addsubjecttohs;
         private System.Windows.Forms.DataGridViewTextBoxColumn MHhs;
         private System.Windows.Forms.DataGridViewTextBoxColumn HKhs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn p15;
         private System.Windows.Forms.DataGridViewTextBoxColumn t1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ck;

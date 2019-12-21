@@ -481,6 +481,7 @@ namespace QLy_HocSinh
         {
             if (dshsgrid.SelectedRows.Count > 0)
             {
+                subjectoffstudentGrid.Rows.Clear();
                 button1.Visible = true;
                 button2.Visible = true;
                 DataGridViewRow row = dshsgrid.SelectedRows[0];
@@ -502,8 +503,44 @@ namespace QLy_HocSinh
                 }
                 HSB.GetMaHS(row.Cells[5].Value.ToString());
                 txtma.Text = HocSinhDTO.id.ToString();
+                HSB.getdsbd();
+                var listmh2 = from l2 in CTMonHoc.mhHS select l2;
+                var listmh = from l in CTMonHoc.mhHS 
+                             join hk in HocKi.HK on l.MaHK1 equals hk.MaHK1
+                             join m in CTMonHoc.mh on l.MaMon1 equals m.MaMon1 select new { m.TenMon1, hk.TenHK1, l.MaHK1, l.Diem15p1,l.Diem1t1,l.DiemCuoiKi1,l.MaHS1  };
+                foreach(var list in listmh.ToList())
+                {
+                    if(list.MaHS1 == HocSinhDTO.id)
+                    {
+                        DataGridViewRow r = new DataGridViewRow();
+
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        cell.Value = list.TenMon1;
+                        r.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = list.TenHK1;
+                        r.Cells.Add(cell);
+                        string x = list.MaHK1.ToString();
+                        char[] ar = x.ToCharArray();
+                        string nam = ar[1].ToString() + ar[2].ToString() + ar[3].ToString() + ar[4].ToString();
 
 
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = nam;
+                        r.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = list.Diem15p1;
+                        r.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = list.Diem1t1;
+                        r.Cells.Add(cell);
+                        cell = new DataGridViewTextBoxCell();
+                        cell.Value = list.DiemCuoiKi1;
+                        r.Cells.Add(cell);
+
+                        subjectoffstudentGrid.Rows.Add(r);
+                    }
+                }
 
 
             }
@@ -568,10 +605,26 @@ namespace QLy_HocSinh
                     DataGridViewRow row2 = subjectoffclassGrid.SelectedRows[0];
                     string two = row2.Cells[1].Value.ToString()+ row2.Cells[2].Value.ToString();
                     int mahk2 = int.Parse(two);
+                    int test = 0;
+                    HSB.getdsbd();
+                    var mh = from m in CTMonHoc.mh where m.TenMon1 == row2.Cells[0].Value.ToString() select m.MaMon1;
+                    foreach (var kt in CTMonHoc.mhHS)
+                    {
+                        string mamh = mh.FirstOrDefault().ToString();
+                        if(kt.MaHS1==HocSinhDTO.id && kt.MaMon1==mamh)
+                        {
+                            test = 1;
+                            MessageBox.Show("học sinh này đã học môn này");
+                            break;
+                        }
 
-
-                    HSB.AddMHtoHS(HocSinhDTO.id, mahk2, row2.Cells[0].Value.ToString());
-                    MessageBox.Show("successfull");
+                    }
+                    if(test ==0)
+                    {
+                        HSB.AddMHtoHS(HocSinhDTO.id, mahk2, row2.Cells[0].Value.ToString());
+                        MessageBox.Show("successfull");
+                    }
+                  
                 }
                 else
                 {
