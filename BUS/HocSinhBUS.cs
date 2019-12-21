@@ -103,6 +103,10 @@ namespace BUS
         {
             return HS.AddMHhs(hs, hk, mh);
         }
+        public void getdsbd()
+        {
+            HS.dsBD();
+        }
     }
 
 }

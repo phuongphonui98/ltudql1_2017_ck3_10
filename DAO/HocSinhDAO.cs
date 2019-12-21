@@ -465,7 +465,7 @@ namespace DAO
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             try {
-                var kq = from s in hdb.MONHOCs where s.MaMonHoc == mh select s;
+                var kq = from s in hdb.MONHOCs where s.TenMonHoc == mh select s.MaMonHoc;
                 string mamh = kq.First().ToString();
                 BANGDIEM bd = new BANGDIEM { MaBangDiem = hs + mamh, MaHocSinh = hs, MaHocKi = hk, MaMonHoc = mamh, Diem15Phut = 0, Diem1Tiet = 0, DiemCuoiKi = 0 };
                 hdb.BANGDIEMs.InsertOnSubmit(bd);
@@ -477,6 +477,22 @@ namespace DAO
                 return false;
             }
 
+
+        }
+        public void dsBD()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var kq = from s in hdb.BANGDIEMs select s;
+            foreach(var ok in kq.ToList())
+            {
+                float ck = float.Parse(ok.DiemCuoiKi.ToString());
+                float p15 = float.Parse(ok.Diem15Phut.ToString());
+                float t1 = float.Parse(ok.Diem1Tiet.ToString());
+                int mhs = int.Parse(ok.MaHocSinh.ToString());
+                int mhhk = int.Parse(ok.MaHocKi.ToString());
+                CTMonHoc ctmhhs = new CTMonHoc(ok.MaBangDiem.ToString(),mhs,mhhk,ok.MaMonHoc,p15,t1,ck);
+                CTMonHoc.mhHS.Add()
+            }
 
         }
     }

@@ -74,13 +74,17 @@
             this.checkTenL21 = new QLy_HocSinh.DSclass.CheckTenL2();
             this.subjectoffclassGrid = new System.Windows.Forms.DataGridView();
             this.subjectoffstudentGrid = new System.Windows.Forms.DataGridView();
-            this.MHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HKhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.MH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addsubjecttohs = new System.Windows.Forms.Button();
+            this.MHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HKhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.t1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ck = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dshsgrid)).BeginInit();
             this.panel2.SuspendLayout();
@@ -90,13 +94,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.addsubjecttohs);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dshsgrid);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 212);
+            this.panel1.Location = new System.Drawing.Point(0, 357);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 238);
+            this.panel1.Size = new System.Drawing.Size(800, 93);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -477,21 +482,14 @@
             this.subjectoffstudentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectoffstudentGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MHhs,
-            this.HKhs});
-            this.subjectoffstudentGrid.Location = new System.Drawing.Point(456, 222);
+            this.HKhs,
+            this.p15,
+            this.t1,
+            this.ck});
+            this.subjectoffstudentGrid.Location = new System.Drawing.Point(340, 222);
             this.subjectoffstudentGrid.Name = "subjectoffstudentGrid";
-            this.subjectoffstudentGrid.Size = new System.Drawing.Size(244, 105);
+            this.subjectoffstudentGrid.Size = new System.Drawing.Size(374, 105);
             this.subjectoffstudentGrid.TabIndex = 25;
-            // 
-            // MHhs
-            // 
-            this.MHhs.HeaderText = "Tên Môn Học";
-            this.MHhs.Name = "MHhs";
-            // 
-            // HKhs
-            // 
-            this.HKhs.HeaderText = "Học kì";
-            this.HKhs.Name = "HKhs";
             // 
             // label12
             // 
@@ -525,6 +523,41 @@
             // 
             this.NHhs.HeaderText = "Năm Học";
             this.NHhs.Name = "NHhs";
+            // 
+            // addsubjecttohs
+            // 
+            this.addsubjecttohs.Location = new System.Drawing.Point(65, 8);
+            this.addsubjecttohs.Name = "addsubjecttohs";
+            this.addsubjecttohs.Size = new System.Drawing.Size(145, 23);
+            this.addsubjecttohs.TabIndex = 3;
+            this.addsubjecttohs.Text = "Thêm môn học cho học sinh";
+            this.addsubjecttohs.UseVisualStyleBackColor = true;
+            this.addsubjecttohs.Click += new System.EventHandler(this.addsubjecttohs_Click);
+            // 
+            // MHhs
+            // 
+            this.MHhs.HeaderText = "Tên Môn Học";
+            this.MHhs.Name = "MHhs";
+            // 
+            // HKhs
+            // 
+            this.HKhs.HeaderText = "Học kì";
+            this.HKhs.Name = "HKhs";
+            // 
+            // p15
+            // 
+            this.p15.HeaderText = "Điểm 15p";
+            this.p15.Name = "p15";
+            // 
+            // t1
+            // 
+            this.t1.HeaderText = "Điểm 1 tiết";
+            this.t1.Name = "t1";
+            // 
+            // ck
+            // 
+            this.ck.HeaderText = "Điểm cuối kì";
+            this.ck.Name = "ck";
             // 
             // DSclass
             // 
@@ -622,12 +655,16 @@
         private CheckTenL2 checkTenL21;
         private System.Windows.Forms.DataGridView subjectoffclassGrid;
         private System.Windows.Forms.DataGridView subjectoffstudentGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MHhs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HKhs;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn MH;
         private System.Windows.Forms.DataGridViewTextBoxColumn HK;
         private System.Windows.Forms.DataGridViewTextBoxColumn NHhs;
+        private System.Windows.Forms.Button addsubjecttohs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MHhs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HKhs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn t1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ck;
     }
 }

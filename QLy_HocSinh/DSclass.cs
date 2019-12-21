@@ -554,5 +554,34 @@ namespace QLy_HocSinh
                     break;
             }
         }
+
+        private void addsubjecttohs_Click(object sender, EventArgs e)
+        {
+            if(subjectoffclassGrid.SelectedRows.Count>0)
+            {
+                if(dshsgrid.SelectedRows.Count>0)
+                {
+                    
+                    DataGridViewRow row = dshsgrid.SelectedRows[0];
+                    string mail = row.Cells[4].Value.ToString();
+                    HSB.GetMaHS(mail);
+                    DataGridViewRow row2 = subjectoffclassGrid.SelectedRows[0];
+                    string two = row2.Cells[1].Value.ToString()+ row2.Cells[2].Value.ToString();
+                    int mahk2 = int.Parse(two);
+
+
+                    HSB.AddMHtoHS(HocSinhDTO.id, mahk2, row2.Cells[0].Value.ToString());
+                    MessageBox.Show("successfull");
+                }
+                else
+                {
+                    MessageBox.Show("vui lòng chọn học sinh ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("vui lòng chọn môn cần thiết");
+            }
+        }
     }
 }
