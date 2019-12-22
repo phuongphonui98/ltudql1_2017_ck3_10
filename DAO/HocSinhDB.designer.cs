@@ -238,6 +238,34 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, mamh, maHK);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateD")]
+		public int updateD([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="Int")] System.Nullable<int> maHS, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMH", DbType="VarChar(10)")] string maMH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> p15, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> t1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> ck)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHS, maMH, p15, t1, ck);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.bang")]
+		public ISingleResult<bangResult> bang()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<bangResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateSL")]
+		public int updateSL([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string malop, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, mamh);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateTL")]
+		public int updateTL([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string malop, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> tl)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, mamh, tl);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
@@ -2853,6 +2881,176 @@ namespace DAO
 				if ((this._TiLeDatMon != value))
 				{
 					this._TiLeDatMon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class bangResult
+	{
+		
+		private string _MaChiTietDSLop;
+		
+		private string _MaLop;
+		
+		private int _MaHocSinh;
+		
+		private System.Nullable<double> _TBHocKi1;
+		
+		private System.Nullable<double> _TBHocKi2;
+		
+		private string _MaMonHoc;
+		
+		private System.Nullable<double> _Diem15Phut;
+		
+		private System.Nullable<double> _Diem1Tiet;
+		
+		private System.Nullable<double> _DiemCuoiKi;
+		
+		public bangResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChiTietDSLop", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaChiTietDSLop
+		{
+			get
+			{
+				return this._MaChiTietDSLop;
+			}
+			set
+			{
+				if ((this._MaChiTietDSLop != value))
+				{
+					this._MaChiTietDSLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocSinh", DbType="Int NOT NULL")]
+		public int MaHocSinh
+		{
+			get
+			{
+				return this._MaHocSinh;
+			}
+			set
+			{
+				if ((this._MaHocSinh != value))
+				{
+					this._MaHocSinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi1", DbType="Float")]
+		public System.Nullable<double> TBHocKi1
+		{
+			get
+			{
+				return this._TBHocKi1;
+			}
+			set
+			{
+				if ((this._TBHocKi1 != value))
+				{
+					this._TBHocKi1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TBHocKi2", DbType="Float")]
+		public System.Nullable<double> TBHocKi2
+		{
+			get
+			{
+				return this._TBHocKi2;
+			}
+			set
+			{
+				if ((this._TBHocKi2 != value))
+				{
+					this._TBHocKi2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMonHoc", DbType="VarChar(10)")]
+		public string MaMonHoc
+		{
+			get
+			{
+				return this._MaMonHoc;
+			}
+			set
+			{
+				if ((this._MaMonHoc != value))
+				{
+					this._MaMonHoc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diem15Phut", DbType="Float")]
+		public System.Nullable<double> Diem15Phut
+		{
+			get
+			{
+				return this._Diem15Phut;
+			}
+			set
+			{
+				if ((this._Diem15Phut != value))
+				{
+					this._Diem15Phut = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diem1Tiet", DbType="Float")]
+		public System.Nullable<double> Diem1Tiet
+		{
+			get
+			{
+				return this._Diem1Tiet;
+			}
+			set
+			{
+				if ((this._Diem1Tiet != value))
+				{
+					this._Diem1Tiet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemCuoiKi", DbType="Float")]
+		public System.Nullable<double> DiemCuoiKi
+		{
+			get
+			{
+				return this._DiemCuoiKi;
+			}
+			set
+			{
+				if ((this._DiemCuoiKi != value))
+				{
+					this._DiemCuoiKi = value;
 				}
 			}
 		}

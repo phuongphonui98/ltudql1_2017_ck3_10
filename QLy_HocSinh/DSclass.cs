@@ -14,6 +14,7 @@ namespace QLy_HocSinh
 {
     public partial class DSclass : Form
     {
+      
         HocSinhBUS HSB = new HocSinhBUS();
         public DSclass()
         {
@@ -600,7 +601,7 @@ namespace QLy_HocSinh
                 {
                     
                     DataGridViewRow row = dshsgrid.SelectedRows[0];
-                    string mail = row.Cells[4].Value.ToString();
+                    string mail = row.Cells[5].Value.ToString();
                     HSB.GetMaHS(mail);
                     DataGridViewRow row2 = subjectoffclassGrid.SelectedRows[0];
                     string two = row2.Cells[1].Value.ToString()+ row2.Cells[2].Value.ToString();
@@ -634,6 +635,54 @@ namespace QLy_HocSinh
             else
             {
                 MessageBox.Show("vui lòng chọn môn cần thiết");
+            }
+        }
+
+        private void subjectoffstudentGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (subjectoffstudentGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = subjectoffstudentGrid.SelectedRows[0];
+                txt15p.Text = row.Cells[3].Value.ToString();
+                txt1t.Text = row.Cells[4].Value.ToString();
+                txtck.Text = row.Cells[5].Value.ToString();
+            }
+        }
+
+        private void updateD_Click(object sender, EventArgs e)
+        {
+            if(subjectoffstudentGrid.SelectedRows.Count>0)
+            {
+                DataGridViewRow row = dshsgrid.SelectedRows[0];
+                string mail = row.Cells[5].Value.ToString();
+                HSB.GetMaHS(mail);
+                HSB.getMon();
+                DataGridViewRow row2 = subjectoffstudentGrid.SelectedRows[0];
+                
+                var mon = from ma in CTMonHoc.mh where ma.TenMon1 == row2.Cells[0].Value.ToString() select ma.MaMon1;
+                string Mamh = mon.FirstOrDefault().ToString();
+                string d1 = txt15p.Text;
+                string d2 = txt1t.Text;
+                string d3 = txtck.Text;
+                float diem1 = float.Parse(d1);
+                float diem2 = float.Parse(d2);
+                float diem3 = float.Parse(d3);
+
+                if((diem1<=10 && diem1 >=0 ) && (diem1 <= 10 && diem1 >= 0) && (diem1 <= 10 && diem1 >= 0))
+                {
+                    HSB.CapNhatDiem(HocSinhDTO.id, Mamh, diem1, diem2, diem3);
+                    MessageBox.Show("update successfull");
+                    dshsgrid_SelectionChanged(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("điểm môn không được lớn hơn 10 hoặc nhỏ hơn 0");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("vui lòng chọn môn cần cập nhật");
             }
         }
     }

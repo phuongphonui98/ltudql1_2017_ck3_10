@@ -48,7 +48,7 @@ namespace QLy_HocSinh
 
         private void MainGUI_Load(object sender, EventArgs e)
         {
-           
+            HSB.TLSL();
             HSB.Loadkl();
             List<string> l = new List<string>();
            foreach(var s in clasDTO.lop)

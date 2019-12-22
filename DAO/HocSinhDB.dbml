@@ -187,4 +187,36 @@
     <Parameter Name="maHK" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.updateD" Method="updateD">
+    <Parameter Name="MaHS" Parameter="maHS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaMH" Parameter="maMH" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p15" Type="System.Double" DbType="Float" />
+    <Parameter Name="t1" Type="System.Double" DbType="Float" />
+    <Parameter Name="ck" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.bang" Method="bang">
+    <ElementType Name="bangResult">
+      <Column Name="MaChiTietDSLop" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TBHocKi1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Diem15Phut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Diem1Tiet" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemCuoiKi" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.updateSL" Method="updateSL">
+    <Parameter Name="malop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateTL" Method="updateTL">
+    <Parameter Name="malop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tl" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

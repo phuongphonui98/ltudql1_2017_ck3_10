@@ -12,7 +12,10 @@ namespace BUS
     {
       
         HocSinhDAO HS = new HocSinhDAO();
-
+        public void TLSL()
+        {
+            HS.getSLTL();
+        }
         public void Load()
         {
             HS.Get();
@@ -38,6 +41,10 @@ namespace BUS
         public void Loadkl()
         {
             HS.GetKL();
+        }
+        public void getMon()
+        {
+            HS.getMon();
         }
         public void loadBCM()
         {
@@ -106,6 +113,11 @@ namespace BUS
         public void getdsbd()
         {
             HS.dsBD();
+        }
+
+        public bool CapNhatDiem(int a,string b,float c,float d,float e)
+        {
+            return HS.UpDateDiem(a,b,c,d,e);
         }
     }
 

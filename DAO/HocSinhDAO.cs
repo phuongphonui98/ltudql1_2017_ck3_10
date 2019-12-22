@@ -12,7 +12,41 @@ namespace DAO
 {
    public  class HocSinhDAO : DBConnect
     {
+        public void getSLTL()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var table = hdb.bang().ToList();
+            var TKM = from a in hdb.BAOCAOTONGKETMONs select a;
+            foreach(var i in TKM)
+            {
+               
+                foreach (var j in table)
+                {
+                    if(j.MaLop == i.MaLop && j.MaMonHoc==i.MaMon)
+                    {
+                        var purchCount = (from purchase in table where purchase.MaLop == j.MaLop && purchase.MaMonHoc==j.MaMonHoc  select purchase).Count();
+                        string d1 = j.Diem15Phut.ToString();
+                        string d2 = j.Diem1Tiet.ToString() ;
+                        string d3 = j.DiemCuoiKi.ToString();
+                        float diem1 = float.Parse(d1);
+                        float diem2 = float.Parse(d2);
+                        float diem3 = float.Parse(d3);
+                        float TB = (diem1 + diem2 + diem3) / 3;
+                        if(TB>=5 )
+                        {
+                            hdb.updateSL(j.MaLop,j.MaMonHoc);
+                            var sl = from ss in hdb.BAOCAOTONGKETMONs where ss.MaLop == j.MaLop && ss.MaMon == j.MaMonHoc select ss.SoLuongDatMon;
+                            string SL = sl.FirstOrDefault().ToString();
+                            int kq = int.Parse(SL);
 
+                            float TL = (100 * kq) / purchCount;
+                            hdb.updateTL(j.MaLop, j.MaMonHoc, TL);
+                        }
+                    }
+                   
+                }
+            }
+        }
         public void GetHSL(string MLop)
         {
             HocSinhDTO.lisths.Clear();
@@ -191,6 +225,25 @@ namespace DAO
                 }
             }
         }
+        public void getMon()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            CTMonHoc.mh.Clear();
+
+
+            var mhoc = from si in hdb.MONHOCs select si;
+            foreach (var ss in mhoc.ToList())
+            {
+
+
+
+
+
+
+                CTMonHoc x = new CTMonHoc(ss.MaMonHoc, ss.TenMonHoc);
+                CTMonHoc.mh.Add(x);
+            }
+        }
         public void getBCM()
         {
             CTMonHoc.ctmh.Clear();
@@ -211,17 +264,17 @@ namespace DAO
             }
             CTMonHoc.mh.Clear();
 
-           
+
             var mhoc = from si in hdb.MONHOCs select si;
             foreach (var ss in mhoc.ToList())
             {
-               
 
 
 
 
 
-                CTMonHoc x = new CTMonHoc(ss.MaMonHoc,ss.TenMonHoc);
+
+                CTMonHoc x = new CTMonHoc(ss.MaMonHoc, ss.TenMonHoc);
                 CTMonHoc.mh.Add(x);
             }
         }
@@ -495,6 +548,21 @@ namespace DAO
                 CTMonHoc ctmhhs = new CTMonHoc(ok.MaBangDiem.ToString(),mhs,mhhk,ok.MaMonHoc.ToString(),p15,t1,ck);
                 CTMonHoc.mhHS.Add(ctmhhs);
             }
+
+        }
+        public bool UpDateDiem(int Mahs,string Mamh,float p15,float t1,float ck)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            try
+            {
+                hdb.updateD(Mahs, Mamh, p15, t1, ck);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
 
         }
     }
