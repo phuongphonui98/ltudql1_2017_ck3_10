@@ -225,13 +225,6 @@ namespace DAO
 			return ((ISingleResult<haveHKResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddMHtoNH")]
-		public int AddMHtoNH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mabc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mahk, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mabc, mahk, mamh);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.mhtoclass")]
 		public int mhtoclass([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="VarChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Mamh", DbType="VarChar(10)")] string mamh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHK)
 		{
@@ -264,6 +257,20 @@ namespace DAO
 		public int updateTL([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string malop, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> tl)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, mamh, tl);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddMHtoNH")]
+		public int AddMHtoNH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mabc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> mahk, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mabc, mahk, mamh);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.setup")]
+		public int setup([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string malop, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mamh)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, mamh);
 			return ((int)(result.ReturnValue));
 		}
 	}

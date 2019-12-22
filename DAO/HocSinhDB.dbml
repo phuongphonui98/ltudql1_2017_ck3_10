@@ -175,12 +175,6 @@
       <Column Name="TiLeDatMon" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.AddMHtoNH" Method="AddMHtoNH">
-    <Parameter Name="mabc" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="mahk" Type="System.Int32" DbType="Int" />
-    <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.mhtoclass" Method="mhtoclass">
     <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Mamh" Parameter="mamh" Type="System.String" DbType="VarChar(10)" />
@@ -217,6 +211,17 @@
     <Parameter Name="malop" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="tl" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddMHtoNH" Method="AddMHtoNH">
+    <Parameter Name="mabc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mahk" Type="System.Int32" DbType="Int" />
+    <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.setup" Method="setup">
+    <Parameter Name="malop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

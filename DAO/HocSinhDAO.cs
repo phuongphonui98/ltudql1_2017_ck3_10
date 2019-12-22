@@ -17,6 +17,19 @@ namespace DAO
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             var table = hdb.bang().ToList();
             var TKM = from a in hdb.BAOCAOTONGKETMONs select a;
+            foreach (var i in TKM)
+            {
+
+                foreach (var j in table)
+                {
+                    if (j.MaLop == i.MaLop && j.MaMonHoc == i.MaMon)
+                    {
+                        hdb.setup(j.MaLop, j.MaMonHoc);
+                    }
+                }
+            }
+
+
             foreach(var i in TKM)
             {
                
