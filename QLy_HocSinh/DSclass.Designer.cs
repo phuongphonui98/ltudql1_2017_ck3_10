@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSclass));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.updateD = new System.Windows.Forms.Button();
             this.addsubjecttohs = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -78,15 +79,14 @@
             this.HK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectoffstudentGrid = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.MHhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HKhs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ck = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateD = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -112,6 +112,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 213);
             this.panel1.TabIndex = 0;
+            // 
+            // updateD
+            // 
+            this.updateD.Location = new System.Drawing.Point(636, 8);
+            this.updateD.Name = "updateD";
+            this.updateD.Size = new System.Drawing.Size(113, 23);
+            this.updateD.TabIndex = 4;
+            this.updateD.Text = "Cập nhật điểm";
+            this.updateD.UseVisualStyleBackColor = true;
+            this.updateD.Click += new System.EventHandler(this.updateD_Click);
             // 
             // addsubjecttohs
             // 
@@ -527,24 +537,6 @@
             this.subjectoffstudentGrid.TabIndex = 25;
             this.subjectoffstudentGrid.SelectionChanged += new System.EventHandler(this.subjectoffstudentGrid_SelectionChanged);
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(112, 196);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 13);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Môn của lớp";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(529, 196);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 13);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Môn của học sinh";
-            // 
             // MHhs
             // 
             this.MHhs.HeaderText = "Tên Môn Học";
@@ -575,15 +567,23 @@
             this.ck.HeaderText = "Điểm cuối kì";
             this.ck.Name = "ck";
             // 
-            // updateD
+            // label12
             // 
-            this.updateD.Location = new System.Drawing.Point(636, 8);
-            this.updateD.Name = "updateD";
-            this.updateD.Size = new System.Drawing.Size(113, 23);
-            this.updateD.TabIndex = 4;
-            this.updateD.Text = "Cập nhật điểm";
-            this.updateD.UseVisualStyleBackColor = true;
-            this.updateD.Click += new System.EventHandler(this.updateD_Click);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(112, 196);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Môn của lớp";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(529, 196);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Môn của học sinh";
             // 
             // label14
             // 

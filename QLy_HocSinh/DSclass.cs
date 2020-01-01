@@ -671,6 +671,7 @@ namespace QLy_HocSinh
                 if((diem1<=10 && diem1 >=0 ) && (diem1 <= 10 && diem1 >= 0) && (diem1 <= 10 && diem1 >= 0))
                 {
                     HSB.CapNhatDiem(HocSinhDTO.id, Mamh, diem1, diem2, diem3);
+                    HSB.TLSL();
                     MessageBox.Show("update successfull");
                     dshsgrid_SelectionChanged(sender, e);
                 }
