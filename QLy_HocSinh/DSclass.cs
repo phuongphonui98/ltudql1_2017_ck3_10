@@ -683,7 +683,7 @@ namespace QLy_HocSinh
             }
             else
             {
-                MessageBox.Show("vui lòng chọn môn cần cập nhật");
+                MessageBox.Show("vui lòng chọn môn cần cập nhậtt");
             }
         }
     }
