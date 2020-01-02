@@ -69,7 +69,7 @@
         <classShapeMoniker Id="77decd34-d9a2-486b-933e-209695008d99" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.63304518880208); (5.97916666666667 : 4.63304518880208 : JumpStart); (6.23958333333333 : 4.63304518880208 : JumpEnd); (6.25 : 4.63304518880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.63304518880208); (6.25 : 4.63304518880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/DANHSACHLOP/DANHSACHLOP_BAOCAOTONGKETHK" />
       <nodes>
         <classShapeMoniker Id="dc035024-0ddb-40a6-821d-ad31a2ccc8d3" />
@@ -83,21 +83,21 @@
         <classShapeMoniker Id="180fc7bf-162d-4b31-9594-8dc99ed1f006" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.53125); (5.79166666666667 : 6.53125 : JumpStart); (6.05208333333333 : 6.53125 : JumpEnd); (9.25 : 6.53125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 6.53125); (5.88541666666667 : 6.53125 : JumpStart); (6.05208333333333 : 6.53125 : JumpEnd); (9.25 : 6.53125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/Hoc_sinh/Hoc_sinh_BANGDIEM" />
       <nodes>
         <classShapeMoniker Id="4bb2c010-30b6-4f33-988f-5f286cb2801b" />
         <classShapeMoniker Id="03289545-83ce-40d7-8e1f-c567c47051c3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.43691525225361); (6.0625 : 5.87441525225361); (6.0625 : 2.10942460742187); (6.25 : 2.10942460742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 6.43691525225361); (5.90982443490112 : 6.02709081735249 : JumpStart); (6.02767556509888 : 5.90923968715473 : JumpEnd); (6.0625 : 5.87441525225361); (6.0625 : 2.10942460742187); (6.25 : 2.10942460742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/Hoc_sinh/Hoc_sinh_CHITIETDSLOP" />
       <nodes>
         <classShapeMoniker Id="4bb2c010-30b6-4f33-988f-5f286cb2801b" />
         <classShapeMoniker Id="180fc7bf-162d-4b31-9594-8dc99ed1f006" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.31807305724159); (6.00357443490112 : 2.82164749214271 : JumpStart); (6.12142556509888 : 2.93949862234047 : JumpEnd); (6.15625 : 2.97432305724159); (6.15625 : 6.02607090494792); (9.25 : 6.02607090494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 2.31807305724159); (6.15625 : 2.97432305724159); (6.15625 : 6.02607090494792); (9.25 : 6.02607090494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/HOCKI/HOCKI_BANGDIEM" />
       <nodes>
         <classShapeMoniker Id="9c21cf99-4c9d-4b0f-94b4-25a917be3ce5" />

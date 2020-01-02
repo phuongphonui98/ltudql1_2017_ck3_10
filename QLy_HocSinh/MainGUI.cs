@@ -50,6 +50,7 @@ namespace QLy_HocSinh
         {
             HSB.TLSL();
             HSB.Loadkl();
+            HSB.AVG();
             List<string> l = new List<string>();
            foreach(var s in clasDTO.lop)
             {

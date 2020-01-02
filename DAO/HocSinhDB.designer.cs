@@ -280,6 +280,27 @@ namespace DAO
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, maHK);
 			return ((ISingleResult<KTaveResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ktclass")]
+		public ISingleResult<ktclassResult> ktclass([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Malop", DbType="VarChar(10)")] string malop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHK", DbType="Int")] System.Nullable<int> maHK)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, maHK);
+			return ((ISingleResult<ktclassResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addBCHK")]
+		public int addBCHK([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MabcHK", DbType="VarChar(10)")] string mabcHK, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHK", DbType="Int")] System.Nullable<int> maHK, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="VarChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SL", DbType="Int")] System.Nullable<int> sL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TL", DbType="Float")] System.Nullable<double> tL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mabcHK, maHK, maLop, sL, tL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TONGKET")]
+		public ISingleResult<TONGKETResult> TONGKET()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<TONGKETResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
@@ -3289,6 +3310,76 @@ namespace DAO
 				if ((this._TBHocKi2 != value))
 				{
 					this._TBHocKi2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ktclassResult
+	{
+		
+		private System.Nullable<int> _MaHocSinh;
+		
+		public ktclassResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocSinh", DbType="Int")]
+		public System.Nullable<int> MaHocSinh
+		{
+			get
+			{
+				return this._MaHocSinh;
+			}
+			set
+			{
+				if ((this._MaHocSinh != value))
+				{
+					this._MaHocSinh = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TONGKETResult
+	{
+		
+		private System.Nullable<int> _MaHocKi;
+		
+		private string _MaLop;
+		
+		public TONGKETResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocKi", DbType="Int")]
+		public System.Nullable<int> MaHocKi
+		{
+			get
+			{
+				return this._MaHocKi;
+			}
+			set
+			{
+				if ((this._MaHocKi != value))
+				{
+					this._MaHocKi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="VarChar(10)")]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
 				}
 			}
 		}

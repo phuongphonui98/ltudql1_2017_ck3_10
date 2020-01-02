@@ -12,6 +12,10 @@ namespace BUS
     {
       
         HocSinhDAO HS = new HocSinhDAO();
+        public void AVG()
+        {
+            HS.Average();
+        }
         public void TLSL()
         {
             HS.getSLTL();

@@ -242,4 +242,25 @@
       <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ktclass" Method="ktclass">
+    <Parameter Name="Malop" Parameter="malop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="MaHK" Parameter="maHK" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ktclassResult">
+      <Column Name="MaHocSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.addBCHK" Method="addBCHK">
+    <Parameter Name="MabcHK" Parameter="mabcHK" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="MaHK" Parameter="maHK" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SL" Parameter="sL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TL" Parameter="tL" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKET" Method="TONGKET">
+    <ElementType Name="TONGKETResult">
+      <Column Name="MaHocKi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

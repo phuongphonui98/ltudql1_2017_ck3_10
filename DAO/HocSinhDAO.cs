@@ -578,5 +578,62 @@ namespace DAO
 
 
         }
+
+        public void Average()
+        {
+        
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var kkk = from c1 in hdb.BAOCAOTONGKETMONs join c2 in hdb.DANHSACHLOPs on c1.MaLop equals c2.MaLop group new { c1, c2 } by new { c1.MaHocKi, c1.MaLop } into g select new { g.Key.MaHocKi, g.Key.MaLop };
+             
+            foreach(var ttk in kkk)
+            {
+                string MaLop = ttk.MaLop;
+                string Mahk = ttk.MaHocKi.ToString();
+                int MaHK = int.Parse(Mahk);
+                var q = hdb.KTave(MaLop, MaHK).ToList();
+                var k = hdb.ktclass(MaLop, MaHK).ToList();
+                int dem = 0;
+                int dem2 = 0;
+                foreach (var s in k)
+                {
+                    int xx = 0;
+
+                    dem2++;
+                    foreach (var d in q)
+                    {
+
+                        if (d.MaHocSinh == s.MaHocSinh)
+                        {
+
+
+                            if (d.DiemCuoiKi < 5)
+                            {
+
+                                xx = 1;
+                                break;
+                            }
+
+                        }
+
+                    }
+                    if (xx == 0)
+                    {
+
+                        DiemTK t = new DiemTK(int.Parse(s.MaHocSinh.ToString()));
+                        DiemTK.DS.Add(t);
+                        dem++;
+                    }
+
+                }
+
+                float TL = (100 * dem) / dem2;
+                string x = MaHK + MaLop;
+                hdb.addBCHK(x, MaHK, MaLop, dem, TL);
+
+            }
+
+
+
+        }
     }
 }
