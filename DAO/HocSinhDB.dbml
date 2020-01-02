@@ -224,4 +224,22 @@
     <Parameter Name="mamh" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.KTave" Method="KTave">
+    <Parameter Name="Malop" Parameter="malop" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="MaHK" Parameter="maHK" Type="System.Int32" DbType="Int" />
+    <ElementType Name="KTaveResult">
+      <Column Name="MaBangDiem" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaHocKi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Diem15Phut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Diem1Tiet" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemCuoiKi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaChiTietDSLop" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocSinh1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TBHocKi1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TBHocKi2" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
