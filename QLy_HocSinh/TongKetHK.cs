@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLy_HocSinh
 {
-    public partial class Update : Form
+    public partial class TongKetHK : Form
     {
-        public Update()
+        public TongKetHK()
         {
             InitializeComponent();
         }

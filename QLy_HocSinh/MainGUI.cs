@@ -148,5 +148,10 @@ namespace QLy_HocSinh
         {
             showinpanel(new MonHoc());
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            showinpanel(new TongKetMon());
+        }
     }
 }

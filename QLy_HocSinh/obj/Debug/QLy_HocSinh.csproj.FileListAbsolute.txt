@@ -85,4 +85,5 @@ D:\code\LTUDQL\DOAN\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.csproj
 D:\code\LTUDQL\DOAN\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.csproj.CopyComplete
 D:\code\LTUDQL\DOAN\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.exe
 D:\code\LTUDQL\DOAN\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.pdb
-D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.Update.resources
+D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.TongKetHK.resources
+D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.TongKetMon.resources

@@ -1,6 +1,6 @@
 ﻿namespace QLy_HocSinh
 {
-    partial class Update
+    partial class TongKetHK
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Update
+            // TongKetHK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Update";
-            this.Text = "Update";
+            this.Name = "TongKetHK";
+            this.Text = "TongKetHK";
             this.ResumeLayout(false);
 
         }
