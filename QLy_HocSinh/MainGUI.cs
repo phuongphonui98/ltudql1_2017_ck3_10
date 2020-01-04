@@ -51,14 +51,30 @@ namespace QLy_HocSinh
             HSB.TLSL();
             HSB.Loadkl();
             HSB.AVG();
-            List<string> l = new List<string>();
-           foreach(var s in clasDTO.lop)
-            {
+           
+                List<string> l = new List<string>();
+                foreach (var s in clasDTO.lop)
+                {
 
-                l.Add(s.TenL1);
+                    l.Add(s.TenL1);
+                }
+                dslopcbox.DataSource = l.ToList();
+            
+         
+
+            if (User.u.Per == 0)
+            {
+                pictureBox3.Visible = false;
+               
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
+                button7.Visible = false;
+                showinpanel(new DSclass());
             }
-            dslopcbox.DataSource = l.ToList();
-          
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)

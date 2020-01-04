@@ -36,6 +36,25 @@ namespace QLy_HocSinh
             }
 
             kLcombo.DataSource = kl.ToList();
+            if(User.u.Per ==0)
+            {
+                txtht.Enabled = false;
+                txtdate.Enabled = false;
+                txt15p.Enabled = false;
+                txt1t.Enabled = false;
+                txtaddr.Enabled = false;
+                txtck.Enabled = false;
+                txtclass.Enabled = false;
+                txtdate.Enabled = false;
+                txthk1.Enabled = false;
+                txthk2.Enabled = false;
+                txtmail.Enabled = false;
+                button1.Visible = false;
+                button2.Visible = false;
+                addsubjecttohs.Visible = false;
+                updateD.Visible = false;
+
+            }
         }
 
         private void kLcombo_SelectedIndexChanged(object sender, EventArgs e)
