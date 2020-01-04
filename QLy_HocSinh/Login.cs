@@ -63,9 +63,10 @@ namespace QLy_HocSinh
                 {
                     HSB.Login(textBox1.Text, textBox2.Text);
                     MessageBox.Show("Đăng nhập thành công");
-
+                    MainGUI.ActiveForm.Hide();
                     MainGUI m = new MainGUI();
                     m.ShowDialog();
+                    
 
                 }
                 else
