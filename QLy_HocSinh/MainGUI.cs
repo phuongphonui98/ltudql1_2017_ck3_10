@@ -62,7 +62,7 @@ namespace QLy_HocSinh
             
          
 
-            if (UsserrDTO.u.Per == 0)
+            if (UsserrDTO.u.Per == 0 )
             {
                 pictureBox3.Visible = false;
                
@@ -75,6 +75,23 @@ namespace QLy_HocSinh
                 button7.Visible = false;
                 button9.Visible = true;
                 showinpanel(new DSclass());
+            }else
+            {
+                if(UsserrDTO.u.Per == 1)
+                {
+                    pictureBox3.Visible = false;
+
+                    button1.Visible = false;
+                    button2.Visible = false;
+                    button3.Visible = false;
+                    button4.Visible = false;
+                    button5.Visible = false;
+                    button6.Visible = false;
+                    button7.Visible = false;
+                    button8.Visible = false;
+                    button9.Visible = false;
+                    button10.Visible = true;
+                }
             }
             
         }
@@ -186,6 +203,11 @@ namespace QLy_HocSinh
         {
             showinpanel(new Login());
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            showinpanel(new PhanQuyenf());
         }
     }
 }

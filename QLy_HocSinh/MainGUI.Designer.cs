@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dslopcbox = new System.Windows.Forms.ComboBox();
             this.menu = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -43,22 +42,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
+            this.mainpn = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.btnMini = new System.Windows.Forms.PictureBox();
             this.btnRestore = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.option = new System.Windows.Forms.PictureBox();
-            this.mainpn = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -71,16 +72,6 @@
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Danh Sách Lớp";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(1, 107);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(249, 47);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // dslopcbox
             // 
@@ -248,18 +239,9 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Quản Lý ";
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(4, 24);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(64, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.btnMini);
             this.panel2.Controls.Add(this.btnRestore);
@@ -288,6 +270,32 @@
             this.button8.Text = "Login";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // mainpn
+            // 
+            this.mainpn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainpn.Location = new System.Drawing.Point(250, 47);
+            this.mainpn.Name = "mainpn";
+            this.mainpn.Size = new System.Drawing.Size(750, 603);
+            this.mainpn.TabIndex = 17;
+            this.mainpn.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpn_Paint);
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.BackColor = System.Drawing.Color.HotPink;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button10.Location = new System.Drawing.Point(479, 9);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(142, 23);
+            this.button10.TabIndex = 23;
+            this.button10.Text = "Phân Quyền ";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Visible = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // btnMini
             // 
@@ -340,14 +348,25 @@
             this.option.TabStop = false;
             this.option.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
-            // mainpn
+            // pictureBox3
             // 
-            this.mainpn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpn.Location = new System.Drawing.Point(250, 47);
-            this.mainpn.Name = "mainpn";
-            this.mainpn.Size = new System.Drawing.Size(750, 603);
-            this.mainpn.TabIndex = 17;
-            this.mainpn.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpn_Paint);
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(1, 107);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(249, 47);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(4, 24);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(64, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
             // 
             // MainGUI
             // 
@@ -363,15 +382,15 @@
             this.Name = "MainGUI";
             this.Text = "MainGUI";
             this.Load += new System.EventHandler(this.MainGUI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,5 +418,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }

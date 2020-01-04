@@ -88,3 +88,4 @@ D:\code\LTUDQL\DOAN\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.pdb
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.TongKetHK.resources
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.TongKetMon.resources
 D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.Login.resources
+D:\source\ltudql1_2017_ck3_10\QLy_HocSinh\obj\Debug\QLy_HocSinh.PhanQuyenf.resources
