@@ -37,7 +37,7 @@ namespace QLy_HocSinh
             }
 
             kLcombo.DataSource = kl.ToList();
-            if(UsserrDTO.u.Per ==0)
+            if(UsserrDTO.u.Per ==0 || UsserrDTO.u.Per == 2)
             {
                 txtht.Enabled = false;
                 txtdate.Enabled = false;

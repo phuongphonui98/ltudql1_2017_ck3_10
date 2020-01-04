@@ -92,6 +92,25 @@ namespace QLy_HocSinh
                     button9.Visible = false;
                     button10.Visible = true;
                 }
+                else
+                {
+                    if(UsserrDTO.u.Per == 2)
+                    {
+                        button1.Visible = false;
+                        button2.Visible = false;
+                        button3.Visible = false;
+                        button4.Visible = false;
+                        button5.Visible = false;
+                        button6.Visible = false;
+                        button7.Visible = false;
+                        button8.Visible = false;
+                        button9.Visible = true;
+                        button11.Visible = true;
+                        button12.Visible = true;
+                        button13.Visible = true;
+
+                    }
+                }
             }
             
         }
@@ -208,6 +227,22 @@ namespace QLy_HocSinh
         private void button10_Click(object sender, EventArgs e)
         {
             showinpanel(new PhanQuyenf());
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            showinpanel(new TongKetMon());
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            showinpanel(new TongKetHK());
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+            showinpanel(new QDf());
         }
     }
 }

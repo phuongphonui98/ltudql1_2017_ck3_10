@@ -63,6 +63,36 @@ namespace QLy_HocSinh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1080776_widescreen_light_blue_backgrounds_2560x1600 {
+            get {
+                object obj = ResourceManager.GetObject("1080776-widescreen-light-blue-backgrounds-2560x1600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _212751248e6f6591846481281fe045dc {
+            get {
+                object obj = ResourceManager.GetObject("212751248e6f6591846481281fe045dc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light_blue_tech_background_vector_05 {
+            get {
+                object obj = ResourceManager.GetObject("Light-blue-tech-background-vector-05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_blue_learning_goods_office_background_image_2341 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-blue-learning-goods-office-background-image_2341", resourceCulture);
@@ -76,6 +106,16 @@ namespace QLy_HocSinh.Properties {
         internal static System.Drawing.Bitmap pngtree_vector_add_user_icon_png_image_313043 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-add-user-icon-png-image_313043", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wall_wallpaper_concrete_colored_painted_textured_concept_53876_31799 {
+            get {
+                object obj = ResourceManager.GetObject("wall-wallpaper-concrete-colored-painted-textured-concept_53876-31799", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -20,6 +20,7 @@ namespace DAO
             int sx = int.Parse(siso);
             clasDTO.SS = sx;
         }
+
         public void getSLTL()
         {
 

@@ -135,6 +135,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QDf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QDf.Designer.cs">
+      <DependentUpon>QDf.cs</DependentUpon>
+    </Compile>
     <Compile Include="TongKetHK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QDf.resx">
+      <DependentUpon>QDf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TongKetHK.resx">
       <DependentUpon>TongKetHK.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +228,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngtree-vector-add-user-icon-png-image_313043.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light-blue-tech-background-vector-05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1080776-widescreen-light-blue-backgrounds-2560x1600.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\212751248e6f6591846481281fe045dc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall-wallpaper-concrete-colored-painted-textured-concept_53876-31799.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
