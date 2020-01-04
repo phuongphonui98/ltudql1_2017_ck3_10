@@ -161,6 +161,10 @@ namespace BUS
         {
             HS.getSS();
         }
+        public void ChangeQD(int tt,int td,int ss,float d)
+        {
+            HS.UpdateQD(tt,td,ss,d);
+        }
     }
 
 }

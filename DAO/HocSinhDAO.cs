@@ -730,5 +730,11 @@ namespace DAO
             Userr k = new Userr { Id = u.Id, userName = u.Username, passWord = u.Pass, permission = u.Per };
             hdb.DelU(a);
         }
+        public void UpdateQD(int tt,int td,int ss,float diemdat)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            hdb.UpdateQD(tt, td, ss, diemdat);
+        }
+
     }
 }

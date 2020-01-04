@@ -138,5 +138,47 @@ namespace QLy_HocSinh
             lbldiemdat.Text = CTMonHoc.DiemDat.ToString();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string toida = textBox2.Text;
+            string toithieu = textBox1.Text;
+            int td = int.Parse(toida);
+            int tt = int.Parse(toithieu);
+            string ss = textBox3.Text;
+            string d = textBox4.Text;
+            int sstd = int.Parse(ss);
+            float diem = float.Parse(d);
+          
+
+            if(checkNumber1.ErrorMessage == null && checkNumber2.ErrorMessage == null && checkNumber3.ErrorMessage == null && checkNumber4.ErrorMessage == null)
+            {
+                if(tt < td)
+                {
+                    if(sstd >0)
+                    {
+                       if(diem >=0)
+                        {
+                            HSB.ChangeQD(tt, td, sstd, diem);
+                            MessageBox.Show("cập nhật thành công");
+                            QDf_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("điểm phải là số dương");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("sĩ số phải lớn hơn 0");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("tối thiểu phải nhỏ hơn tối đa");
+                }
+            }
+        }
     }
 }

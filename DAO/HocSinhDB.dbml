@@ -289,4 +289,11 @@
     <Parameter Name="per" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.UpdateQD" Method="UpdateQD">
+    <Parameter Name="tt" Type="System.Int32" DbType="Int" />
+    <Parameter Name="td" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sstd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="diemdat" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
