@@ -139,6 +139,10 @@ namespace BUS
         {
             HS.Login(username, passs);
         }
+        public void Logout()
+        {
+            HS.Logout();
+        }
         public void listAC()
         {
             HS.listaccount();

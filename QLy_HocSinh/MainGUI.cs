@@ -60,7 +60,10 @@ namespace QLy_HocSinh
                 }
                 dslopcbox.DataSource = l.ToList();
             
-         
+         if(UsserrDTO.u.Per != 0)
+            {
+                button14.Visible = true;
+            }
 
             if (UsserrDTO.u.Per == 0 )
             {
@@ -243,6 +246,14 @@ namespace QLy_HocSinh
         {
 
             showinpanel(new QDf());
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            HSB.Logout();
+            MainGUI.ActiveForm.Hide();
+            MainGUI m = new MainGUI();
+            m.ShowDialog();
         }
     }
 }

@@ -735,6 +735,11 @@ namespace DAO
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
             hdb.UpdateQD(tt, td, ss, diemdat);
         }
+        public void Logout()
+        {
+            
+            UsserrDTO.u = new UsserrDTO(0,"","", 0);
+        }
 
     }
 }
