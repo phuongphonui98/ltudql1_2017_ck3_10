@@ -103,6 +103,14 @@
       <Association Name="MONHOC_BAOCAOTONGKETMON" Member="BAOCAOTONGKETMONs" ThisKey="MaMonHoc" OtherKey="MaMon" Type="BAOCAOTONGKETMON" />
     </Type>
   </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="passWord" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="permission" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.AddHK" Method="AddHK">
     <Parameter Name="mahk" Type="System.Int32" DbType="Int" />
     <Parameter Name="tenhk" Type="System.String" DbType="VarChar(10)" />

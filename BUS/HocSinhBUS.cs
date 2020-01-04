@@ -135,6 +135,14 @@ namespace BUS
         {
             HS.GetBCHK2( mahk);
         }
+        public void Login(string username,string passs)
+        {
+            HS.Login(username, passs);
+        }
+        public void listAC()
+        {
+            HS.listaccount();
+        }
     }
 
 }

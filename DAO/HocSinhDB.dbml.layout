@@ -97,7 +97,7 @@
         <classShapeMoniker Id="180fc7bf-162d-4b31-9594-8dc99ed1f006" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.31807305724159); (6.15625 : 2.97432305724159); (6.15625 : 6.02607090494792); (9.25 : 6.02607090494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 2.31807305724159); (5.81607443490112 : 2.63414749214271 : JumpStart); (5.93392556509888 : 2.75199862234047 : JumpEnd); (6.15625 : 2.97432305724159); (6.15625 : 6.02607090494792); (9.25 : 6.02607090494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/HOCKI/HOCKI_BANGDIEM" />
       <nodes>
         <classShapeMoniker Id="9c21cf99-4c9d-4b0f-94b4-25a917be3ce5" />
@@ -111,7 +111,7 @@
         <classShapeMoniker Id="77decd34-d9a2-486b-933e-209695008d99" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.25929188736979); (5.90625 : 2.66554188736979); (5.90625 : 5.10822299934896); (5.97916666666667 : 5.10822299934896 : JumpStart); (6.23958333333333 : 5.10822299934896 : JumpEnd); (6.25 : 5.10822299934896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 2.25929188736979); (5.90625 : 2.66554188736979); (5.90625 : 5.10822299934896); (6.25 : 5.10822299934896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HocSinhDBDataContext/HOCKI/HOCKI_BAOCAOTONGKETHK" />
       <nodes>
         <classShapeMoniker Id="9c21cf99-4c9d-4b0f-94b4-25a917be3ce5" />
@@ -139,5 +139,11 @@
         <classShapeMoniker Id="77decd34-d9a2-486b-933e-209695008d99" />
       </nodes>
     </associationConnector>
+    <classShape Id="b9764bc8-cfc5-4acf-8538-5234e5508eb8" absoluteBounds="0.875, 2, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HocSinhDBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e06a10cd-f6a9-4e10-a1ed-f89d3ed2d79b" absoluteBounds="0.89, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class User
+    public class UsserrDTO
     {
-        public static User u= new User(0,"","",0);
+        public static List<UsserrDTO> lstU = new List<UsserrDTO>();
+        public static UsserrDTO u = new UsserrDTO(0, "", "", 0);
         private int id;
         private string username;
         private string pass;
         private int per;
 
-        public User(int ID, string name, string pas,int permiss )
+        public UsserrDTO()
+        {
+
+        }
+        public UsserrDTO(int ID, string name, string pas, int permiss)
         {
             id = ID;
             username = name;

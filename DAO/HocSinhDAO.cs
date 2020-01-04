@@ -677,5 +677,22 @@ namespace DAO
                 CTMonHoc.BaoCaoHocKi.Add(bcm);
             }
         }
+        public void Login(string usn,string pass)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var k = from s in hdb.Users where s.userName == usn && s.passWord == pass select s;
+            var x = k.FirstOrDefault();
+            UsserrDTO.u = new UsserrDTO(x.Id,x.userName,x.passWord,int.Parse(x.permission.ToString()));
+        }
+        public void listaccount()
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var q = from s in hdb.Users select s;
+            foreach (var kq in q.ToList())
+            {
+                UsserrDTO us = new UsserrDTO(kq.Id, kq.userName.ToString(), kq.passWord, int.Parse(kq.permission.ToString()));
+                UsserrDTO.lstU.Add(us);
+            }
+        }
     }
 }

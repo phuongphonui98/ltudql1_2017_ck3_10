@@ -46,7 +46,7 @@ namespace QLy_HocSinh
 
         }
 
-        private void MainGUI_Load(object sender, EventArgs e)
+        public void MainGUI_Load(object sender, EventArgs e)
         {
             HSB.TLSL();
             HSB.Loadkl();
@@ -62,7 +62,7 @@ namespace QLy_HocSinh
             
          
 
-            if (User.u.Per == 0)
+            if (UsserrDTO.u.Per == 0)
             {
                 pictureBox3.Visible = false;
                
@@ -76,6 +76,7 @@ namespace QLy_HocSinh
                 button9.Visible = true;
                 showinpanel(new DSclass());
             }
+            
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)

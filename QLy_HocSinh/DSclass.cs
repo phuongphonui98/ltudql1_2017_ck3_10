@@ -27,7 +27,7 @@ namespace QLy_HocSinh
             HSB.loadBCM();
             if (dshsgrid.SelectedRows.Count <0)
             {
-                if(User.u.Per ==3)
+                if(UsserrDTO.u.Per ==3)
                 button1.Visible = false;
             }
             List<string> kl = new List<string>();
@@ -37,7 +37,7 @@ namespace QLy_HocSinh
             }
 
             kLcombo.DataSource = kl.ToList();
-            if(User.u.Per ==0)
+            if(UsserrDTO.u.Per ==0)
             {
                 txtht.Enabled = false;
                 txtdate.Enabled = false;
@@ -503,7 +503,7 @@ namespace QLy_HocSinh
             if (dshsgrid.SelectedRows.Count > 0)
             {
                 subjectoffstudentGrid.Rows.Clear();
-                if(User.u.Per ==3 )
+                if(UsserrDTO.u.Per ==3 )
                 {
                     button1.Visible = true;
                     button2.Visible = true;
