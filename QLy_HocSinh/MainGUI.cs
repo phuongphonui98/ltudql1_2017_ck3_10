@@ -153,5 +153,10 @@ namespace QLy_HocSinh
         {
             showinpanel(new TongKetMon());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            showinpanel(new TongKetHK());
+        }
     }
 }

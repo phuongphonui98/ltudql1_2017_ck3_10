@@ -30,9 +30,14 @@
         {
             this.Mamoncombo = new System.Windows.Forms.ComboBox();
             this.HKcombo = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BCMgrid = new System.Windows.Forms.DataGridView();
             this.namhoccombo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.MHKbc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.BCMgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // Mamoncombo
@@ -42,6 +47,7 @@
             this.Mamoncombo.Name = "Mamoncombo";
             this.Mamoncombo.Size = new System.Drawing.Size(121, 21);
             this.Mamoncombo.TabIndex = 0;
+            this.Mamoncombo.SelectedIndexChanged += new System.EventHandler(this.Mamoncombo_SelectedIndexChanged);
             // 
             // HKcombo
             // 
@@ -50,15 +56,22 @@
             this.HKcombo.Name = "HKcombo";
             this.HKcombo.Size = new System.Drawing.Size(121, 21);
             this.HKcombo.TabIndex = 1;
+            this.HKcombo.SelectedIndexChanged += new System.EventHandler(this.HKcombo_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // BCMgrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 232);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 218);
-            this.dataGridView1.TabIndex = 2;
+            this.BCMgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BCMgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MHKbc,
+            this.MaClass,
+            this.subject,
+            this.SLD,
+            this.TLD});
+            this.BCMgrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BCMgrid.Location = new System.Drawing.Point(0, 169);
+            this.BCMgrid.Name = "BCMgrid";
+            this.BCMgrid.Size = new System.Drawing.Size(800, 281);
+            this.BCMgrid.TabIndex = 2;
             // 
             // namhoccombo
             // 
@@ -69,20 +82,45 @@
             this.namhoccombo.TabIndex = 4;
             this.namhoccombo.SelectedIndexChanged += new System.EventHandler(this.namhoccombo_SelectedIndexChanged);
             // 
+            // MHKbc
+            // 
+            this.MHKbc.HeaderText = "Mã Học Kì";
+            this.MHKbc.Name = "MHKbc";
+            // 
+            // MaClass
+            // 
+            this.MaClass.HeaderText = "Mã Lớp";
+            this.MaClass.Name = "MaClass";
+            // 
+            // subject
+            // 
+            this.subject.HeaderText = "Mã Môn";
+            this.subject.Name = "subject";
+            // 
+            // SLD
+            // 
+            this.SLD.HeaderText = "Số lượng học sinh đạt môn";
+            this.SLD.Name = "SLD";
+            // 
+            // TLD
+            // 
+            this.TLD.HeaderText = "Tỉ lệ đạt môn";
+            this.TLD.Name = "TLD";
+            // 
             // TongKetMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.namhoccombo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.BCMgrid);
             this.Controls.Add(this.HKcombo);
             this.Controls.Add(this.Mamoncombo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TongKetMon";
             this.Text = "TongKetMon";
             this.Load += new System.EventHandler(this.TongKetMon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BCMgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,7 +129,12 @@
 
         private System.Windows.Forms.ComboBox Mamoncombo;
         private System.Windows.Forms.ComboBox HKcombo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView BCMgrid;
         private System.Windows.Forms.ComboBox namhoccombo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MHKbc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaClass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TLD;
     }
 }

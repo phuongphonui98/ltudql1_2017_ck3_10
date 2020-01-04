@@ -8,6 +8,8 @@ namespace DTO
 {
     public  class CTMonHoc
     {
+        public static List<CTMonHoc> BaoCaoHocKi = new List<CTMonHoc>();
+        public static List<CTMonHoc> BaocaoMon = new List<CTMonHoc>();
         public static List<CTMonHoc> haveHK = new List<CTMonHoc>();
         public static List<CTMonHoc> noneHK = new List<CTMonHoc>();
         public static List<CTMonHoc> ctmh = new List<CTMonHoc>();
@@ -42,6 +44,15 @@ namespace DTO
         {
             MaBCMon = MaBC;
             MaMon = mamh;
+            MaLop = malop;
+            MaHK = hk;
+            SLdat = sl;
+            TLdat = tl;
+        }
+        public CTMonHoc(string MaBCHK, int hk, string malop, int sl, float tl)
+        {
+            MaBCMon = MaBCHK;
+            
             MaLop = malop;
             MaHK = hk;
             SLdat = sl;

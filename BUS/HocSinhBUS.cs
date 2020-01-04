@@ -123,6 +123,18 @@ namespace BUS
         {
             return HS.UpDateDiem(a,b,c,d,e);
         }
+        public void getBCMonHoc(string mamon,int mahk)
+        {
+            HS.GetBCMonHoc(mamon,mahk);
+        }
+        public void getBCHocKi(string mal, int mahk)
+        {
+            HS.GetBCHK(mal, mahk);
+        }
+        public void getBCHocKi2(int mahk)
+        {
+            HS.GetBCHK2( mahk);
+        }
     }
 
 }

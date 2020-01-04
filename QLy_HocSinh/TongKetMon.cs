@@ -75,5 +75,75 @@ namespace QLy_HocSinh
 
             }
         }
+
+        private void Mamoncombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BCMgrid.Rows.Clear();
+            if (Mamoncombo.SelectedItem.ToString() != "")
+            {
+               
+                string tt1 = namhoccombo.SelectedItem.ToString();
+                string mamon = Mamoncombo.SelectedItem.ToString();
+                string tt2 = HKcombo.SelectedItem.ToString();
+                string tt3 = "";
+                if (tt2 == "HK1")
+                {
+                    tt3 = 1 + tt1;
+                }
+                else if (tt2 == "HK2") { tt3 = 2 + tt1; }
+                int kq = int.Parse(tt3);
+                HSB.getBCMonHoc(mamon, kq);
+                foreach (var s in CTMonHoc.BaocaoMon)
+                {
+
+
+                    DataGridViewRow row = new DataGridViewRow();
+
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.MaHK1;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.MaLop1;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.MaMon1;
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.SLdat1;
+
+                    row.Cells.Add(cell);
+                    cell = new DataGridViewTextBoxCell();
+                    cell.Value = s.TLdat1;
+
+                    row.Cells.Add(cell);
+
+
+                  BCMgrid.Rows.Add(row);
+
+                }
+            }
+        }
+
+        private void HKcombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            string tt1 = namhoccombo.SelectedItem.ToString();
+            string tt2 = HKcombo.SelectedItem.ToString();
+            string tt3 = "";
+            if (tt2 == "HK1")
+            {
+                tt3 = 1 + tt1;
+            }
+            else if (tt2 == "HK2") { tt3 = 2 + tt1; }
+            int kq = int.Parse(tt3);
+            HSB.loadhavehk(kq);
+            List<string> ss = new List<string>();
+            foreach (var s in CTMonHoc.haveHK)
+            {
+                ss.Add(s.MaMon1);
+            
+            }
+            Mamoncombo.DataSource = ss.ToList();
+        }
     }
 }

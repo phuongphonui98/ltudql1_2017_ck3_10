@@ -635,5 +635,47 @@ namespace DAO
 
 
         }
+        public void GetBCMonHoc(string MaMon,int MaHK)
+        {
+            CTMonHoc.BaocaoMon.Clear();
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var x = from xx in hdb.BAOCAOTONGKETMONs where xx.MaHocKi == MaHK && xx.MaMon==MaMon select xx;
+            foreach(var kq in x)
+            {
+               
+                CTMonHoc bcm = new CTMonHoc(kq.MaBaoCaoMon, int.Parse(kq.MaHocKi.ToString()), kq.MaLop, kq.MaMon, int.Parse(kq.SoLuongDatMon.ToString()), float.Parse(kq.TiLeDatMon.ToString()));
+
+
+                CTMonHoc.BaocaoMon.Add(bcm);
+            }
+        }
+        public void GetBCHK(string MaLop,int MaHK)
+        {
+            CTMonHoc.BaoCaoHocKi.Clear();
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var x = from xx in hdb.BAOCAOTONGKETHKs where xx.MaHocKi == MaHK && xx.MaLop == MaLop select xx;
+            foreach (var kq in x)
+            {
+
+                CTMonHoc bcm = new CTMonHoc(kq.MaBaoCaoHK, int.Parse(kq.MaHocKi.ToString()), kq.MaLop, int.Parse(kq.SoLuongDat.ToString()), float.Parse(kq.TiLeDat.ToString()));
+
+
+                CTMonHoc.BaoCaoHocKi.Add(bcm);
+            }
+        }
+        public void GetBCHK2( int MaHK)
+        {
+            CTMonHoc.BaoCaoHocKi.Clear();
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var x = from xx in hdb.BAOCAOTONGKETHKs where xx.MaHocKi == MaHK  select xx;
+            foreach (var kq in x)
+            {
+
+                CTMonHoc bcm = new CTMonHoc(kq.MaBaoCaoHK, int.Parse(kq.MaHocKi.ToString()), kq.MaLop, int.Parse(kq.SoLuongDat.ToString()), float.Parse(kq.TiLeDat.ToString()));
+
+
+                CTMonHoc.BaoCaoHocKi.Add(bcm);
+            }
+        }
     }
 }
