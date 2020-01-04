@@ -49,6 +49,8 @@
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.option = new System.Windows.Forms.PictureBox();
             this.mainpn = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -91,6 +93,7 @@
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.menu.Controls.Add(this.button9);
             this.menu.Controls.Add(this.button7);
             this.menu.Controls.Add(this.button6);
             this.menu.Controls.Add(this.label3);
@@ -242,6 +245,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.btnMini);
             this.panel2.Controls.Add(this.btnRestore);
             this.panel2.Controls.Add(this.btnClose);
@@ -313,6 +317,37 @@
             this.mainpn.TabIndex = 17;
             this.mainpn.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpn_Paint);
             // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.LightGray;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft YaHei Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button8.Location = new System.Drawing.Point(488, 9);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(133, 23);
+            this.button8.TabIndex = 16;
+            this.button8.Text = "Login";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button9.Location = new System.Drawing.Point(1, 160);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(250, 23);
+            this.button9.TabIndex = 22;
+            this.button9.Text = "Tra cứu học sinh";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // MainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,5 +396,7 @@
         private System.Windows.Forms.Panel mainpn;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }

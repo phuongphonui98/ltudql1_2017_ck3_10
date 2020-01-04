@@ -110,7 +110,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 237);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 213);
+            this.panel1.Size = new System.Drawing.Size(820, 213);
             this.panel1.TabIndex = 0;
             // 
             // updateD
@@ -167,10 +167,11 @@
             this.Mail,
             this.TBHK1,
             this.TBHK2});
+            this.dshsgrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dshsgrid.Location = new System.Drawing.Point(0, 37);
             this.dshsgrid.Name = "dshsgrid";
             this.dshsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dshsgrid.Size = new System.Drawing.Size(800, 290);
+            this.dshsgrid.Size = new System.Drawing.Size(820, 176);
             this.dshsgrid.TabIndex = 0;
             this.dshsgrid.SelectionChanged += new System.EventHandler(this.dshsgrid_SelectionChanged);
             // 
@@ -496,13 +497,15 @@
             // 
             // subjectoffclassGrid
             // 
+            this.subjectoffclassGrid.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.subjectoffclassGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectoffclassGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MH,
             this.HK,
             this.NHhs});
-            this.subjectoffclassGrid.Location = new System.Drawing.Point(12, 222);
+            this.subjectoffclassGrid.Location = new System.Drawing.Point(3, 196);
             this.subjectoffclassGrid.Name = "subjectoffclassGrid";
+            this.subjectoffclassGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.subjectoffclassGrid.Size = new System.Drawing.Size(307, 105);
             this.subjectoffclassGrid.TabIndex = 24;
             // 
@@ -523,6 +526,7 @@
             // 
             // subjectoffstudentGrid
             // 
+            this.subjectoffstudentGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.subjectoffstudentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectoffstudentGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MHhs,
@@ -531,8 +535,9 @@
             this.p15,
             this.t1,
             this.ck});
-            this.subjectoffstudentGrid.Location = new System.Drawing.Point(340, 222);
+            this.subjectoffstudentGrid.Location = new System.Drawing.Point(394, 196);
             this.subjectoffstudentGrid.Name = "subjectoffstudentGrid";
+            this.subjectoffstudentGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.subjectoffstudentGrid.Size = new System.Drawing.Size(374, 105);
             this.subjectoffstudentGrid.TabIndex = 25;
             this.subjectoffstudentGrid.SelectionChanged += new System.EventHandler(this.subjectoffstudentGrid_SelectionChanged);
@@ -637,7 +642,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(820, 450);
             this.Controls.Add(this.txtck);
             this.Controls.Add(this.txt1t);
             this.Controls.Add(this.txt15p);

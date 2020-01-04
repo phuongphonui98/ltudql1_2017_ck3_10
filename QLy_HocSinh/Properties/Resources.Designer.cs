@@ -59,5 +59,25 @@ namespace QLy_HocSinh.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_blue_learning_goods_office_background_image_2341 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-blue-learning-goods-office-background-image_2341", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_add_user_icon_png_image_313043 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-add-user-icon-png-image_313043", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

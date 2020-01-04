@@ -73,6 +73,7 @@ namespace QLy_HocSinh
                 button5.Visible = false;
                 button6.Visible = false;
                 button7.Visible = false;
+                button9.Visible = true;
                 showinpanel(new DSclass());
             }
         }
@@ -173,6 +174,17 @@ namespace QLy_HocSinh
         private void button5_Click(object sender, EventArgs e)
         {
             showinpanel(new TongKetHK());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            showinpanel(new DSclass());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            showinpanel(new Login());
+
         }
     }
 }

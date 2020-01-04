@@ -27,6 +27,7 @@ namespace QLy_HocSinh
             HSB.loadBCM();
             if (dshsgrid.SelectedRows.Count <0)
             {
+                if(User.u.Per ==3)
                 button1.Visible = false;
             }
             List<string> kl = new List<string>();
@@ -502,8 +503,12 @@ namespace QLy_HocSinh
             if (dshsgrid.SelectedRows.Count > 0)
             {
                 subjectoffstudentGrid.Rows.Clear();
-                button1.Visible = true;
-                button2.Visible = true;
+                if(User.u.Per ==3 )
+                {
+                    button1.Visible = true;
+                    button2.Visible = true;
+                }
+               
                 DataGridViewRow row = dshsgrid.SelectedRows[0];
                 txtht.Text = row.Cells[0].Value.ToString();
                 txtclass.Text = row.Cells[1].Value.ToString();
