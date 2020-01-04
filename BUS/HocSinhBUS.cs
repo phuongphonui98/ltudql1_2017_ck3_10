@@ -157,6 +157,10 @@ namespace BUS
         {
             HS.UpdateU(u);
         }
+        public void getSS()
+        {
+            HS.getSS();
+        }
     }
 
 }

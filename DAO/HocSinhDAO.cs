@@ -12,9 +12,23 @@ namespace DAO
 {
    public  class HocSinhDAO : DBConnect
     {
-        public void getSLTL()
+        public void getSS()
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var ss = from d in hdb.THAMSOs select d.SiSoToiDa;
+            string siso = ss.FirstOrDefault().ToString();
+            int sx = int.Parse(siso);
+            clasDTO.SS = sx;
+        }
+        public void getSLTL()
+        {
+
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            var diemm = from d in hdb.THAMSOs select d.DiemDatMon;
+            string diemtieuchuan = diemm.FirstOrDefault().ToString();
+            float dtc = float.Parse(diemtieuchuan);
+            CTMonHoc.DiemDat = dtc;
+
             var table = hdb.bang().ToList();
             var TKM = from a in hdb.BAOCAOTONGKETMONs select a;
             foreach (var i in TKM)
@@ -45,7 +59,7 @@ namespace DAO
                         float diem2 = float.Parse(d2);
                         float diem3 = float.Parse(d3);
                         float TB = (diem1 + diem2 + diem3) / 3;
-                        if(TB>=5 )
+                        if(TB>=CTMonHoc.DiemDat )
                         {
                             hdb.updateSL(j.MaLop,j.MaMonHoc);
                             var sl = from ss in hdb.BAOCAOTONGKETMONs where ss.MaLop == j.MaLop && ss.MaMon == j.MaMonHoc select ss.SoLuongDatMon;

@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLHS" Class="HocSinhDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-L34EHS5\SQLEXPRESS;Initial Catalog=QLHS;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLHSConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.THAMSO" Member="THAMSOs">
-    <Type Name="THAMSO">
-      <Column Name="TuoiToiThieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TuoiToiDa" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.BANGDIEM" Member="BANGDIEMs">
     <Type Name="BANGDIEM">
       <Column Name="MaBangDiem" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -109,6 +103,14 @@
       <Column Name="userName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="passWord" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="permission" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THAMSO" Member="THAMSOs">
+    <Type Name="THAMSO">
+      <Column Name="TuoiToiThieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TuoiToiDa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiSoToiDa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiemDatMon" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.AddHK" Method="AddHK">

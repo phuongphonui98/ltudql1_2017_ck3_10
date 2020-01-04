@@ -348,9 +348,9 @@ namespace QLy_HocSinh
                 {
                     string x = ControlToValidate.Text;
                     int siso = int.Parse(x);
-                    if( siso >40 || siso<1)
+                    if( siso > clasDTO.SS || siso<1)
                     {
-                        ErrorMessage = "sỉ số nhỏ nhất là 1 và lớn nhất là 40";
+                        ErrorMessage = "sỉ số nhỏ nhất là 1 và lớn nhất là "+clasDTO.SS;
                         return false;
                     }
                    
@@ -395,6 +395,7 @@ namespace QLy_HocSinh
 
         private void AddClass_Load(object sender, EventArgs e)
         {
+            HSB.getSS();
             List<string> tl = new List<string>();
             foreach(var i in ClassDTO.khoilop)
             {

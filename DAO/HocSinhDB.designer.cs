@@ -89,14 +89,6 @@ namespace DAO
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<THAMSO> THAMSOs
-		{
-			get
-			{
-				return this.GetTable<THAMSO>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BANGDIEM> BANGDIEMs
 		{
 			get
@@ -174,6 +166,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<Userr>();
+			}
+		}
+		
+		public System.Data.Linq.Table<THAMSO> THAMSOs
+		{
+			get
+			{
+				return this.GetTable<THAMSO>();
 			}
 		}
 		
@@ -329,51 +329,6 @@ namespace DAO
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user, pass, per);
 			return ((int)(result.ReturnValue));
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
-	public partial class THAMSO
-	{
-		
-		private System.Nullable<int> _TuoiToiThieu;
-		
-		private System.Nullable<int> _TuoiToiDa;
-		
-		public THAMSO()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuoiToiThieu", DbType="Int")]
-		public System.Nullable<int> TuoiToiThieu
-		{
-			get
-			{
-				return this._TuoiToiThieu;
-			}
-			set
-			{
-				if ((this._TuoiToiThieu != value))
-				{
-					this._TuoiToiThieu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuoiToiDa", DbType="Int")]
-		public System.Nullable<int> TuoiToiDa
-		{
-			get
-			{
-				return this._TuoiToiDa;
-			}
-			set
-			{
-				if ((this._TuoiToiDa != value))
-				{
-					this._TuoiToiDa = value;
-				}
-			}
 		}
 	}
 	
@@ -2490,6 +2445,87 @@ namespace DAO
 				if ((this._permission != value))
 				{
 					this._permission = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
+	public partial class THAMSO
+	{
+		
+		private System.Nullable<int> _TuoiToiThieu;
+		
+		private System.Nullable<int> _TuoiToiDa;
+		
+		private System.Nullable<int> _SiSoToiDa;
+		
+		private System.Nullable<double> _DiemDatMon;
+		
+		public THAMSO()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuoiToiThieu", DbType="Int")]
+		public System.Nullable<int> TuoiToiThieu
+		{
+			get
+			{
+				return this._TuoiToiThieu;
+			}
+			set
+			{
+				if ((this._TuoiToiThieu != value))
+				{
+					this._TuoiToiThieu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TuoiToiDa", DbType="Int")]
+		public System.Nullable<int> TuoiToiDa
+		{
+			get
+			{
+				return this._TuoiToiDa;
+			}
+			set
+			{
+				if ((this._TuoiToiDa != value))
+				{
+					this._TuoiToiDa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SiSoToiDa", DbType="Int")]
+		public System.Nullable<int> SiSoToiDa
+		{
+			get
+			{
+				return this._SiSoToiDa;
+			}
+			set
+			{
+				if ((this._SiSoToiDa != value))
+				{
+					this._SiSoToiDa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemDatMon", DbType="Float")]
+		public System.Nullable<double> DiemDatMon
+		{
+			get
+			{
+				return this._DiemDatMon;
+			}
+			set
+			{
+				if ((this._DiemDatMon != value))
+				{
+					this._DiemDatMon = value;
 				}
 			}
 		}

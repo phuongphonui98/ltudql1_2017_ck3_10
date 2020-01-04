@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 11.625" name="HocSinhDB">
   <DataContextMoniker Name="/HocSinhDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="3c295aea-c8b2-4ba2-aac4-506558d3d803" absoluteBounds="8.75, 0.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/HocSinhDBDataContext/THAMSO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d756d956-58c6-49b5-8a48-23dfc19099d2" absoluteBounds="8.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="03289545-83ce-40d7-8e1f-c567c47051c3" absoluteBounds="9.25, 5.125, 2, 2.1554996744791666">
       <DataClassMoniker Name="/HocSinhDBDataContext/BANGDIEM" />
       <nestedChildShapes>
@@ -143,6 +137,12 @@
       <DataClassMoniker Name="/HocSinhDBDataContext/Userr" />
       <nestedChildShapes>
         <elementListCompartment Id="1c150b10-f285-4656-8ec2-118a56f25421" absoluteBounds="2.015, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd920542-9762-49b5-9363-31d434f94324" absoluteBounds="8.625, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HocSinhDBDataContext/THAMSO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="467b9c5c-d2e4-4993-a392-4f64fc85381a" absoluteBounds="8.64, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
