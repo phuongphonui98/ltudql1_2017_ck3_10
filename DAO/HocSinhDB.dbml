@@ -103,8 +103,8 @@
       <Association Name="MONHOC_BAOCAOTONGKETMON" Member="BAOCAOTONGKETMONs" ThisKey="MaMonHoc" OtherKey="MaMon" Type="BAOCAOTONGKETMON" />
     </Type>
   </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
+  <Table Name="dbo.Userr" Member="Userrs">
+    <Type Name="Userr">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="userName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="passWord" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
@@ -270,5 +270,21 @@
       <Column Name="MaHocKi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.DelU" Method="DelU">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateU" Method="UpdateU">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="per" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddU" Method="AddU">
+    <Parameter Name="user" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="per" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -169,11 +169,11 @@ namespace DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<User> Users
+		public System.Data.Linq.Table<Userr> Userrs
 		{
 			get
 			{
-				return this.GetTable<User>();
+				return this.GetTable<Userr>();
 			}
 		}
 		
@@ -308,6 +308,27 @@ namespace DAO
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<TONGKETResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DelU")]
+		public int DelU([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateU")]
+		public int UpdateU([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> per)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, pass, per);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddU")]
+		public int AddU([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string user, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> per)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user, pass, per);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -2393,8 +2414,8 @@ namespace DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Userr")]
+	public partial class Userr
 	{
 		
 		private int _Id;
@@ -2405,7 +2426,7 @@ namespace DAO
 		
 		private System.Nullable<int> _permission;
 		
-		public User()
+		public Userr()
 		{
 		}
 		

@@ -30,7 +30,7 @@
         {
             this.DsUsergrid = new System.Windows.Forms.DataGridView();
             this.UpdatePer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addUser = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.txtpass = new System.Windows.Forms.TextBox();
@@ -38,6 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.DelUser = new System.Windows.Forms.Button();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Permission = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,13 +53,15 @@
             this.DsUsergrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DsUsergrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DsUsergrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.usn,
             this.Password,
             this.Permission});
-            this.DsUsergrid.Location = new System.Drawing.Point(229, 157);
+            this.DsUsergrid.Location = new System.Drawing.Point(230, 122);
             this.DsUsergrid.Name = "DsUsergrid";
             this.DsUsergrid.Size = new System.Drawing.Size(346, 221);
             this.DsUsergrid.TabIndex = 0;
+            this.DsUsergrid.SelectionChanged += new System.EventHandler(this.DsUsergrid_SelectionChanged);
             // 
             // UpdatePer
             // 
@@ -68,22 +73,24 @@
             this.UpdatePer.TabIndex = 1;
             this.UpdatePer.Text = "Cập nhật quyền";
             this.UpdatePer.UseVisualStyleBackColor = false;
+            this.UpdatePer.Click += new System.EventHandler(this.UpdatePer_Click);
             // 
-            // button1
+            // addUser
             // 
-            this.button1.BackColor = System.Drawing.Color.Turquoise;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(412, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(388, 66);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Thêm user";
-            this.button1.UseVisualStyleBackColor = false;
+            this.addUser.BackColor = System.Drawing.Color.Turquoise;
+            this.addUser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addUser.Location = new System.Drawing.Point(412, 0);
+            this.addUser.Name = "addUser";
+            this.addUser.Size = new System.Drawing.Size(388, 66);
+            this.addUser.TabIndex = 2;
+            this.addUser.Text = "Thêm user";
+            this.addUser.UseVisualStyleBackColor = false;
+            this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.addUser);
             this.panel1.Controls.Add(this.UpdatePer);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 384);
@@ -146,6 +153,30 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Permission";
             // 
+            // DelUser
+            // 
+            this.DelUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.DelUser.Location = new System.Drawing.Point(230, 341);
+            this.DelUser.Name = "DelUser";
+            this.DelUser.Size = new System.Drawing.Size(346, 37);
+            this.DelUser.TabIndex = 10;
+            this.DelUser.Text = "Xóa User";
+            this.DelUser.UseVisualStyleBackColor = true;
+            this.DelUser.Click += new System.EventHandler(this.DelUser_Click);
+            // 
+            // txtid
+            // 
+            this.txtid.Enabled = false;
+            this.txtid.Location = new System.Drawing.Point(385, 24);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(36, 20);
+            this.txtid.TabIndex = 11;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            // 
             // usn
             // 
             this.usn.HeaderText = "Username";
@@ -167,6 +198,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLy_HocSinh.Properties.Resources.pngtree_blue_learning_goods_office_background_image_2341;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.DelUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -190,7 +223,7 @@
 
         private System.Windows.Forms.DataGridView DsUsergrid;
         private System.Windows.Forms.Button UpdatePer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addUser;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.TextBox txtpass;
@@ -198,8 +231,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button DelUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn usn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Permission;
+        private System.Windows.Forms.TextBox txtid;
     }
 }

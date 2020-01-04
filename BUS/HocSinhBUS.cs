@@ -143,6 +143,20 @@ namespace BUS
         {
             HS.listaccount();
         }
+        public void AddU(UsserrDTO u)
+        {
+            HS.AddU(u);
+
+        }
+        public void DelU(UsserrDTO u)
+        {
+            HS.DelU(u);
+        }
+
+        public void UpU(UsserrDTO u)
+        {
+            HS.UpdateU(u);
+        }
     }
 
 }

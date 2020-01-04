@@ -680,19 +680,40 @@ namespace DAO
         public void Login(string usn,string pass)
         {
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
-            var k = from s in hdb.Users where s.userName == usn && s.passWord == pass select s;
+            var k = from s in hdb.Userrs where s.userName == usn && s.passWord == pass select s;
             var x = k.FirstOrDefault();
             UsserrDTO.u = new UsserrDTO(x.Id,x.userName,x.passWord,int.Parse(x.permission.ToString()));
         }
         public void listaccount()
         {
+            UsserrDTO.lstU.Clear();
             HocSinhDBDataContext hdb = new HocSinhDBDataContext();
-            var q = from s in hdb.Users select s;
+            var q = from s in hdb.Userrs select s;
             foreach (var kq in q.ToList())
             {
                 UsserrDTO us = new UsserrDTO(kq.Id, kq.userName.ToString(), kq.passWord, int.Parse(kq.permission.ToString()));
                 UsserrDTO.lstU.Add(us);
             }
+        }
+        public void AddU(UsserrDTO u)
+        {
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            Userr k = new Userr { userName = u.Username, passWord = u.Pass, permission = u.Per };
+            hdb.AddU(u.Username, u.Pass, u.Per);
+        }
+        public void UpdateU(UsserrDTO u)
+        {
+            int a = int.Parse(u.Id.ToString());
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            Userr k = new Userr { Id = u.Id, userName = u.Username, passWord = u.Pass, permission = u.Per };
+            hdb.UpdateU(a,u.Pass,u.Per);
+        }
+        public void DelU(UsserrDTO u)
+        {
+            int a = int.Parse(u.Id.ToString());
+            HocSinhDBDataContext hdb = new HocSinhDBDataContext();
+            Userr k = new Userr { Id = u.Id, userName = u.Username, passWord = u.Pass, permission = u.Per };
+            hdb.DelU(a);
         }
     }
 }
